@@ -1,0 +1,159 @@
+<div class="resume-content p-4" style="max-width: 8.5in; margin: 0 auto; background: white; color: #333; font-family: 'Arial', sans-serif; line-height: 1.5;">
+    <!-- Header -->
+    <header class="text-center mb-4 pb-3" style="border-bottom: 2px solid #27ae60;">
+        {% if optimized_resume.personal_info.name %}
+        <h1 class="mb-2" style="color: #27ae60; font-size: 2.2rem; font-weight: bold; margin: 0;">
+            {{ optimized_resume.personal_info.name }}
+        </h1>
+        {% endif %}
+        
+        <div class="contact-info" style="color: #666; font-size: 0.95rem;">
+            {% if optimized_resume.personal_info.email %}
+                <span class="me-3">
+                    <i class="fas fa-envelope me-1"></i>{{ optimized_resume.personal_info.email }}
+                </span>
+            {% endif %}
+            {% if optimized_resume.personal_info.phone %}
+                <span class="me-3">
+                    <i class="fas fa-phone me-1"></i>{{ optimized_resume.personal_info.phone }}
+                </span>
+            {% endif %}
+            {% if optimized_resume.personal_info.address %}
+                <span>
+                    <i class="fas fa-map-marker-alt me-1"></i>{{ optimized_resume.personal_info.address }}
+                </span>
+            {% endif %}
+        </div>
+    </header>
+
+    <!-- Professional Summary -->
+    {% if optimized_resume.summary %}
+    <section class="mb-4">
+        <h2 style="color: #27ae60; font-size: 1.3rem; font-weight: bold; margin-bottom: 0.75rem; padding-bottom: 0.25rem; border-bottom: 1px solid #82e3a1;">
+            PROFESSIONAL PROFILE
+        </h2>
+        <p style="text-align: justify; margin-bottom: 0; color: #555; font-size: 0.95rem;">
+            {{ optimized_resume.summary }}
+        </p>
+    </section>
+    {% endif %}
+
+    <!-- Main Sections -->
+    {% for section in optimized_resume.sections %}
+    <section class="mb-4">
+        <h2 style="color: #27ae60; font-size: 1.3rem; font-weight: bold; margin-bottom: 0.75rem; padding-bottom: 0.25rem; border-bottom: 1px solid #82e3a1;">
+            {{ section.title.upper() }}
+        </h2>
+
+        {% if section.title == 'Core Competencies' and section.content is mapping %}
+            <!-- Grouped skills display -->
+            {% for category, skills in section.content.items() %}
+            <div class="skill-category mb-3">
+                <h3 style="color: #34495e; font-size: 1.1rem; font-weight: bold; margin-bottom: 0.5rem;">
+                    {{ category }}
+                </h3>
+                <div class="skills-container" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+                    {% for skill in skills %}
+                    <span style="background-color: #e8f5e8; color: #27ae60; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.9rem; border: 1px solid #82e3a1;">
+                        {{ skill }}
+                    </span>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+
+        {% elif section.title == 'Skills' or section.title == 'Core Competencies' %}
+            <!-- Regular skills list -->
+            {% if section.content %}
+            <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 0.5rem;">
+                {% for skill in section.content %}
+                <div style="background-color: #e8f5e8; color: #27ae60; padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.9rem; border-left: 4px solid #27ae60;">
+                    <i class="fas fa-check-circle me-2"></i>{{ skill }}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+        {% elif section.title == 'Professional Experience' %}
+            {% for exp in section.content %}
+                {% if exp.title or exp.company %}
+                <div class="experience-item mb-3" style="background-color: #f8f9fa; padding: 1rem; border-radius: 8px; border-left: 4px solid #27ae60;">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <h3 style="color: #34495e; font-size: 1rem; font-weight: bold; margin: 0;">
+                            {% if exp.title %}{{ exp.title }}{% endif %}
+                            {% if exp.title and exp.company %} | {% endif %}
+                            {% if exp.company %}{{ exp.company }}{% endif %}
+                        </h3>
+                        {% if exp.duration %}
+                        <span style="color: #666; font-style: italic; font-size: 0.9rem;">
+                            {{ exp.duration }}
+                        </span>
+                        {% endif %}
+                    </div>
+                    
+                    {% if exp.responsibilities %}
+                    <div style="color: #555; font-size: 0.9rem;">
+                        {% for resp in exp.responsibilities[:3] %}
+                        <p style="margin: 0.3rem 0;">• {{ resp }}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+            {% endfor %}
+
+        {% elif section.title == 'Education' %}
+            {% for edu in section.content %}
+                {% if edu.details or edu.institution or edu.degree %}
+                <div class="education-item mb-2" style="padding: 0.75rem; background-color: #f1f8ff; border-radius: 6px;">
+                    {% if edu.institution or edu.degree %}
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            {% if edu.degree %}
+                            <h4 style="color: #34495e; font-size: 1rem; font-weight: bold; margin: 0;">
+                                {{ edu.degree }}
+                            </h4>
+                            {% endif %}
+                            {% if edu.institution %}
+                            <p style="color: #666; margin: 0; font-size: 0.95rem;">{{ edu.institution }}</p>
+                            {% endif %}
+                        </div>
+                        {% if edu.year %}
+                        <span style="color: #666; font-style: italic; font-size: 0.9rem;">{{ edu.year }}</span>
+                        {% endif %}
+                    </div>
+                    {% else %}
+                    <p style="color: #555; margin: 0; font-size: 0.95rem;">{{ edu.details or edu }}</p>
+                    {% endif %}
+                </div>
+                {% endif %}
+            {% endfor %}
+
+        {% else %}
+            <!-- Generic section handling -->
+            {% if section.content %}
+                {% if section.content is string %}
+                    <p style="color: #555; margin: 0; font-size: 0.95rem;">{{ section.content }}</p>
+                {% elif section.content is iterable %}
+                    <div class="generic-content">
+                        {% for item in section.content %}
+                        <div style="padding: 0.5rem; margin-bottom: 0.5rem; background-color: #f8f9fa; border-radius: 6px; border-left: 3px solid #27ae60;">
+                            {% if item is mapping %}
+                                {{ item.details or item.title or item }}
+                            {% else %}
+                                {{ item }}
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endif %}
+        {% endif %}
+    </section>
+    {% endfor %}
+
+    <!-- Footer -->
+    <footer class="text-center mt-4 pt-3" style="border-top: 1px solid #82e3a1; color: #95a5a6; font-size: 0.8rem;">
+        <p style="margin: 0;">Functional format - Skills-focused resume optimized with AI analysis</p>
+    </footer>
+</div>

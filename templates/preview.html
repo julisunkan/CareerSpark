@@ -1,0 +1,249 @@
+{% extends "base.html" %}
+
+{% block title %}Preview {{ format_type.title() }} Resume - AI Resume Optimizer{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <!-- Header -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="display-6 fw-bold">
+                        <i class="fas fa-eye me-3 text-primary"></i>Resume Preview
+                    </h1>
+                    <p class="text-muted">{{ format_type.title() }} Format</p>
+                </div>
+                <div class="btn-group">
+                    <a href="{{ url_for('analyze', resume_id=resume.id) }}" class="btn btn-outline-secondary">
+                        <i class="fas fa-arrow-left me-1"></i>Back to Analysis
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Format Selection -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <h6 class="card-title">
+                        <i class="fas fa-layer-group me-2"></i>Choose Format
+                    </h6>
+                    <div class="btn-group w-100" role="group">
+                        <a href="{{ url_for('preview', resume_id=resume.id, format_type='chronological') }}" 
+                           class="btn btn-{{ 'primary' if format_type == 'chronological' else 'outline-primary' }}">
+                            <i class="fas fa-timeline me-1"></i>Chronological
+                        </a>
+                        <a href="{{ url_for('preview', resume_id=resume.id, format_type='functional') }}" 
+                           class="btn btn-{{ 'success' if format_type == 'functional' else 'outline-success' }}">
+                            <i class="fas fa-cogs me-1"></i>Functional
+                        </a>
+                        <a href="{{ url_for('preview', resume_id=resume.id, format_type='combination') }}" 
+                           class="btn btn-{{ 'warning' if format_type == 'combination' else 'outline-warning' }}">
+                            <i class="fas fa-layer-group me-1"></i>Combination
+                        </a>
+                        <a href="{{ url_for('preview', resume_id=resume.id, format_type='targeted') }}" 
+                           class="btn btn-{{ 'info' if format_type == 'targeted' else 'outline-info' }}">
+                            <i class="fas fa-bullseye me-1"></i>Targeted
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resume Preview -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card border-0 shadow">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">
+                        <i class="fas fa-file-alt me-2"></i>{{ format_type.title() }} Resume Preview
+                    </h5>
+                    <div class="btn-group btn-group-sm">
+                        <button type="button" class="btn btn-outline-secondary" onclick="printResume()">
+                            <i class="fas fa-print me-1"></i>Print
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary" onclick="zoomIn()">
+                            <i class="fas fa-search-plus me-1"></i>Zoom In
+                        </button>
+                        <button type="button" class="btn btn-outline-secondary" onclick="zoomOut()">
+                            <i class="fas fa-search-minus me-1"></i>Zoom Out
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body p-0">
+                    <div id="resumePreview" class="resume-preview" style="transform-origin: top left;">
+                        {% if format_type == 'chronological' %}
+                            {% include 'resume_templates/chronological.html' %}
+                        {% elif format_type == 'functional' %}
+                            {% include 'resume_templates/functional.html' %}
+                        {% elif format_type == 'combination' %}
+                            {% include 'resume_templates/combination.html' %}
+                        {% elif format_type == 'targeted' %}
+                            {% include 'resume_templates/targeted.html' %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Download Options -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card border-0 shadow">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-download me-2"></i>Download Options
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="d-grid">
+                                <a href="{{ url_for('download', resume_id=resume.id, format_type=format_type, file_format='pdf') }}" 
+                                   class="btn btn-primary">
+                                    <i class="fas fa-file-pdf me-2"></i>Download as PDF
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-grid">
+                                <a href="{{ url_for('download', resume_id=resume.id, format_type=format_type, file_format='txt') }}" 
+                                   class="btn btn-outline-primary">
+                                    <i class="fas fa-file-alt me-2"></i>Download as TXT
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr class="my-3">
+                    
+                    <div class="text-center">
+                        <a href="{{ url_for('download_all', resume_id=resume.id) }}" 
+                           class="btn btn-success btn-lg">
+                            <i class="fas fa-archive me-2"></i>Download All Formats (ZIP)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optimization Highlights -->
+    {% if resume.analysis.missing_keywords %}
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-0 shadow">
+                <div class="card-header bg-warning bg-opacity-10">
+                    <h6 class="mb-0">
+                        <i class="fas fa-lightbulb me-2 text-warning"></i>Optimization Highlights
+                    </h6>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted mb-3">This {{ format_type }} format has been optimized with:</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-plus-circle text-success me-1"></i>Added Keywords:</h6>
+                            <div class="d-flex flex-wrap gap-1 mb-3">
+                                {% for keyword in resume.analysis.missing_keywords[:5] %}
+                                    <span class="badge bg-success bg-opacity-20 text-success">{{ keyword }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-star text-primary me-1"></i>Format Benefits:</h6>
+                            <ul class="list-unstyled">
+                                {% if format_type == 'chronological' %}
+                                    <li><i class="fas fa-check text-success me-1"></i>Clear career progression</li>
+                                    <li><i class="fas fa-check text-success me-1"></i>Easy for ATS systems</li>
+                                {% elif format_type == 'functional' %}
+                                    <li><i class="fas fa-check text-success me-1"></i>Skills-focused approach</li>
+                                    <li><i class="fas fa-check text-success me-1"></i>Highlights competencies</li>
+                                {% elif format_type == 'combination' %}
+                                    <li><i class="fas fa-check text-success me-1"></i>Best of both formats</li>
+                                    <li><i class="fas fa-check text-success me-1"></i>Comprehensive overview</li>
+                                {% elif format_type == 'targeted' %}
+                                    <li><i class="fas fa-check text-success me-1"></i>Job-specific optimization</li>
+                                    <li><i class="fas fa-check text-success me-1"></i>Maximum relevance</li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+let currentZoom = 1;
+
+function printResume() {
+    const printContent = document.getElementById('resumePreview').innerHTML;
+    const originalContent = document.body.innerHTML;
+    
+    document.body.innerHTML = `
+        <html>
+        <head>
+            <title>Resume - {{ format_type.title() }}</title>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+                .resume-content { max-width: 8.5in; margin: 0 auto; }
+                @media print { body { margin: 0; padding: 0; } }
+            </style>
+        </head>
+        <body>
+            <div class="resume-content">${printContent}</div>
+        </body>
+        </html>
+    `;
+    
+    window.print();
+    document.body.innerHTML = originalContent;
+    location.reload();
+}
+
+function zoomIn() {
+    currentZoom += 0.1;
+    updateZoom();
+}
+
+function zoomOut() {
+    currentZoom = Math.max(0.5, currentZoom - 0.1);
+    updateZoom();
+}
+
+function updateZoom() {
+    const preview = document.getElementById('resumePreview');
+    preview.style.transform = `scale(${currentZoom})`;
+    preview.style.transformOrigin = 'top left';
+}
+
+// Auto-adjust preview size on load
+document.addEventListener('DOMContentLoaded', function() {
+    const preview = document.getElementById('resumePreview');
+    const container = preview.parentElement;
+    
+    // Add responsive behavior
+    function adjustPreview() {
+        const containerWidth = container.clientWidth;
+        const previewWidth = preview.scrollWidth;
+        
+        if (previewWidth > containerWidth) {
+            currentZoom = containerWidth / previewWidth * 0.95;
+            updateZoom();
+        }
+    }
+    
+    adjustPreview();
+    window.addEventListener('resize', adjustPreview);
+});
+</script>
+{% endblock %}

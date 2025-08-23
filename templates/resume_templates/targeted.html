@@ -1,0 +1,273 @@
+<div class="resume-content p-4" style="max-width: 8.5in; margin: 0 auto; background: white; color: #333; font-family: 'Arial', sans-serif; line-height: 1.5;">
+    <!-- Header -->
+    <header class="text-center mb-4 pb-3" style="border-bottom: 2px solid #3498db;">
+        {% if optimized_resume.personal_info.name %}
+        <h1 class="mb-2" style="color: #3498db; font-size: 2.2rem; font-weight: bold; margin: 0;">
+            {{ optimized_resume.personal_info.name }}
+        </h1>
+        {% endif %}
+        
+        <div class="contact-info" style="color: #666; font-size: 0.95rem;">
+            {% if optimized_resume.personal_info.email %}
+                <span class="me-3">
+                    <i class="fas fa-envelope me-1"></i>{{ optimized_resume.personal_info.email }}
+                </span>
+            {% endif %}
+            {% if optimized_resume.personal_info.phone %}
+                <span class="me-3">
+                    <i class="fas fa-phone me-1"></i>{{ optimized_resume.personal_info.phone }}
+                </span>
+            {% endif %}
+            {% if optimized_resume.personal_info.address %}
+                <span>
+                    <i class="fas fa-map-marker-alt me-1"></i>{{ optimized_resume.personal_info.address }}
+                </span>
+            {% endif %}
+        </div>
+    </header>
+
+    <!-- Targeted Summary -->
+    {% if optimized_resume.summary %}
+    <section class="mb-4">
+        <h2 style="color: #3498db; font-size: 1.3rem; font-weight: bold; margin-bottom: 0.75rem; padding-bottom: 0.25rem; border-bottom: 1px solid #74b9ff;">
+            TARGETED PROFESSIONAL SUMMARY
+        </h2>
+        <div style="background: linear-gradient(135deg, #e3f2fd 0%, #f0f8ff 100%); padding: 1.5rem; border-radius: 12px; border: 1px solid #74b9ff; position: relative;">
+            <div style="position: absolute; top: 1rem; right: 1rem; background-color: #3498db; color: white; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem; font-weight: bold;">
+                <i class="fas fa-bullseye me-1"></i>TARGETED
+            </div>
+            <p style="text-align: justify; margin-bottom: 0; color: #333; font-size: 0.95rem; font-weight: 500;">
+                {{ optimized_resume.summary }}
+            </p>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Job-Relevant Keywords Highlight -->
+    {% if resume.analysis.missing_keywords %}
+    <section class="mb-4">
+        <div style="background-color: #e8f4f8; padding: 1rem; border-radius: 8px; border-left: 4px solid #3498db;">
+            <h6 style="color: #3498db; font-weight: bold; margin-bottom: 0.5rem;">
+                <i class="fas fa-target me-2"></i>Job-Optimized Keywords Integrated:
+            </h6>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                {% for keyword in resume.analysis.missing_keywords[:8] %}
+                <span style="background-color: #3498db; color: white; padding: 0.3rem 0.6rem; border-radius: 15px; font-size: 0.85rem; font-weight: 500;">
+                    {{ keyword }}
+                </span>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Main Sections -->
+    {% for section in optimized_resume.sections %}
+    <section class="mb-4">
+        <h2 style="color: #3498db; font-size: 1.3rem; font-weight: bold; margin-bottom: 0.75rem; padding-bottom: 0.25rem; border-bottom: 1px solid #74b9ff;">
+            {{ section.title.upper() }}
+            {% if section.title == 'Relevant Skills' %}
+            <span style="font-size: 0.7rem; color: #666; font-weight: normal; margin-left: 0.5rem;">
+                <i class="fas fa-bullseye me-1"></i>Job-Matched
+            </span>
+            {% endif %}
+        </h2>
+
+        {% if section.title == 'Relevant Skills' %}
+            <!-- Prioritized skills display -->
+            {% if section.content %}
+            <div style="background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%); padding: 1.5rem; border-radius: 12px; border: 1px solid #74b9ff;">
+                <div class="targeted-skills" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+                    {% for skill in section.content %}
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1); border-left: 4px solid #3498db;">
+                        <div style="display: flex; align-items: center;">
+                            <i class="fas fa-check-circle" style="color: #27ae60; margin-right: 0.75rem; font-size: 1.1rem;"></i>
+                            <span style="color: #333; font-weight: 500; font-size: 0.95rem;">{{ skill }}</span>
+                        </div>
+                        {% if loop.index <= 5 %}
+                        <span style="background-color: #e74c3c; color: white; padding: 0.2rem 0.5rem; border-radius: 10px; font-size: 0.7rem; font-weight: bold;">
+                            HIGH MATCH
+                        </span>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+        {% elif section.title == 'Relevant Experience' %}
+            {% for exp in section.content %}
+                {% if exp.title or exp.company %}
+                <div class="experience-item mb-4" style="position: relative; background: linear-gradient(135deg, #f8fbff 0%, #f0f8ff 100%); padding: 1.5rem; border-radius: 12px; border: 1px solid #74b9ff;">
+                    <!-- Relevance indicator -->
+                    <div style="position: absolute; top: 1rem; right: 1rem;">
+                        <div style="background-color: #27ae60; color: white; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.75rem; font-weight: bold;">
+                            <i class="fas fa-bullseye me-1"></i>RELEVANT
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div style="flex-grow: 1; margin-right: 1rem;">
+                            {% if exp.title %}
+                            <h3 style="color: #333; font-size: 1.1rem; font-weight: bold; margin: 0 0 0.25rem 0;">
+                                {{ exp.title }}
+                            </h3>
+                            {% endif %}
+                            {% if exp.company %}
+                            <h4 style="color: #3498db; font-size: 1rem; font-weight: 600; margin: 0;">
+                                {{ exp.company }}
+                            </h4>
+                            {% endif %}
+                        </div>
+                        {% if exp.duration %}
+                        <span style="color: #666; font-style: italic; font-size: 0.9rem; background-color: white; padding: 0.5rem; border-radius: 8px; border: 1px solid #ddd;">
+                            {{ exp.duration }}
+                        </span>
+                        {% endif %}
+                    </div>
+                    
+                    {% if exp.responsibilities %}
+                    <div style="margin-top: 1rem;">
+                        <h6 style="color: #3498db; font-size: 0.9rem; font-weight: bold; margin-bottom: 0.75rem;">
+                            KEY ACHIEVEMENTS & RESPONSIBILITIES:
+                        </h6>
+                        <ul style="margin: 0; padding: 0; color: #555; font-size: 0.95rem; list-style: none;">
+                            {% for resp in exp.responsibilities %}
+                            <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                                <div style="position: absolute; left: 0; top: 0.25rem; width: 8px; height: 8px; background-color: #3498db; border-radius: 50%;"></div>
+                                {{ resp }}
+                                {% if loop.index <= 2 %}
+                                <span style="background-color: #f39c12; color: white; padding: 0.1rem 0.4rem; border-radius: 8px; font-size: 0.65rem; font-weight: bold; margin-left: 0.5rem;">
+                                    KEY MATCH
+                                </span>
+                                {% endif %}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+            {% endfor %}
+
+        {% elif section.title == 'Education' %}
+            {% for edu in section.content %}
+                {% if edu.details or edu.institution or edu.degree %}
+                <div class="education-item mb-3" style="display: flex; align-items: center; padding: 1rem; background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%); border-radius: 10px; border: 1px solid #74b9ff;">
+                    <div style="flex-shrink: 0; width: 60px; height: 60px; background: linear-gradient(135deg, #3498db, #74b9ff); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                        <i class="fas fa-graduation-cap" style="color: white; font-size: 1.5rem;"></i>
+                    </div>
+                    <div style="flex-grow: 1;">
+                        {% if edu.institution or edu.degree %}
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                {% if edu.degree %}
+                                <h4 style="color: #333; font-size: 1rem; font-weight: bold; margin: 0;">
+                                    {{ edu.degree }}
+                                </h4>
+                                {% endif %}
+                                {% if edu.institution %}
+                                <p style="color: #666; margin: 0; font-size: 0.95rem;">{{ edu.institution }}</p>
+                                {% endif %}
+                            </div>
+                            {% if edu.year %}
+                            <span style="color: #3498db; font-weight: 600; font-size: 0.9rem;">{{ edu.year }}</span>
+                            {% endif %}
+                        </div>
+                        {% else %}
+                        <p style="color: #555; margin: 0; font-size: 0.95rem;">{{ edu.details or edu }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+
+        {% elif section.title == 'Key Achievements' %}
+            {% if section.content %}
+            <div style="background: linear-gradient(135deg, #fff5f5 0%, #ffebee 100%); padding: 1.5rem; border-radius: 12px; border: 1px solid #ff7675;">
+                <div class="achievements-targeted" style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
+                    {% for achievement in section.content %}
+                    <div style="display: flex; align-items: start; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(231, 76, 60, 0.1); border-left: 4px solid #e74c3c;">
+                        <div style="flex-shrink: 0; width: 40px; height: 40px; background: linear-gradient(135deg, #e74c3c, #ff7675); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+                            <i class="fas fa-trophy" style="color: white; font-size: 1rem;"></i>
+                        </div>
+                        <div style="flex-grow: 1;">
+                            <span style="color: #333; font-size: 0.95rem; line-height: 1.4; font-weight: 500;">{{ achievement }}</span>
+                            {% if loop.index <= 2 %}
+                            <div style="margin-top: 0.5rem;">
+                                <span style="background-color: #27ae60; color: white; padding: 0.2rem 0.5rem; border-radius: 10px; font-size: 0.7rem; font-weight: bold;">
+                                    RELEVANT TO ROLE
+                                </span>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+        {% else %}
+            <!-- Generic section handling with targeting emphasis -->
+            {% if section.content %}
+                {% if section.content is string %}
+                    <div style="background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%); padding: 1rem; border-radius: 8px; border-left: 4px solid #3498db;">
+                        <p style="color: #333; margin: 0; font-size: 0.95rem; font-weight: 500;">{{ section.content }}</p>
+                    </div>
+                {% elif section.content is iterable %}
+                    <div class="generic-targeted" style="background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%); padding: 1rem; border-radius: 8px;">
+                        {% for item in section.content %}
+                        <div style="padding: 0.75rem; margin-bottom: 0.75rem; background-color: white; border-radius: 6px; border-left: 3px solid #3498db; box-shadow: 0 2px 4px rgba(52, 152, 219, 0.1);">
+                            <div style="display: flex; align-items: center;">
+                                <i class="fas fa-bullseye" style="color: #3498db; margin-right: 0.75rem; font-size: 0.9rem;"></i>
+                                <span style="color: #333; font-weight: 500;">
+                                    {% if item is mapping %}
+                                        {{ item.details or item.title or item }}
+                                    {% else %}
+                                        {{ item }}
+                                    {% endif %}
+                                </span>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endif %}
+        {% endif %}
+    </section>
+    {% endfor %}
+
+    <!-- Targeting Summary Footer -->
+    <section class="mb-4">
+        <div style="background: linear-gradient(135deg, #e8f4f8 0%, #d6eaf8 100%); padding: 1.5rem; border-radius: 12px; border: 1px solid #3498db; text-align: center;">
+            <h6 style="color: #3498db; font-weight: bold; margin-bottom: 0.75rem;">
+                <i class="fas fa-bullseye me-2"></i>TARGETING OPTIMIZATION SUMMARY
+            </h6>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div style="color: #27ae60; font-weight: bold; font-size: 1.2rem;">
+                        {% if resume.analysis.keyword_overlap %}{{ resume.analysis.keyword_overlap|round(1) }}%{% else %}N/A{% endif %}
+                    </div>
+                    <small style="color: #666;">Keyword Match</small>
+                </div>
+                <div class="col-md-4">
+                    <div style="color: #f39c12; font-weight: bold; font-size: 1.2rem;">
+                        {% if resume.analysis.skills_match %}{{ resume.analysis.skills_match.percentage|round(1) }}%{% else %}N/A{% endif %}
+                    </div>
+                    <small style="color: #666;">Skills Alignment</small>
+                </div>
+                <div class="col-md-4">
+                    <div style="color: #e74c3c; font-weight: bold; font-size: 1.2rem;">
+                        {% if resume.score %}{{ resume.score.overall_score }}%{% else %}N/A{% endif %}
+                    </div>
+                    <small style="color: #666;">Overall Score</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center mt-4 pt-3" style="border-top: 1px solid #74b9ff; color: #95a5a6; font-size: 0.8rem;">
+        <p style="margin: 0;">Targeted format - Job-specific resume optimized with AI analysis for maximum relevance</p>
+    </footer>
+</div>
