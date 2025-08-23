@@ -138,7 +138,32 @@ def download(resume_id, format_type, file_format):
             resume_data, format_type, file_format, app.config['DOWNLOAD_FOLDER']
         )
         
-        return send_file(filename, as_attachment=True)
+        # Get original filename for better download experience
+        original_name = resume_data.get('original_filename', 'resume')
+        base_name = os.path.splitext(original_name)[0]
+        download_name = f'{base_name}_{format_type}.{file_format}'
+        
+        # Set proper MIME type
+        mimetype = 'application/pdf' if file_format == 'pdf' else 'text/plain'
+        
+        # Use send_file with proper server-side download configuration
+        response = send_file(
+            filename, 
+            as_attachment=True, 
+            download_name=download_name,
+            mimetype=mimetype
+        )
+        
+        # Clean up file after sending (in a background task or delayed cleanup)
+        @response.call_on_close
+        def cleanup_file():
+            try:
+                if os.path.exists(filename):
+                    os.remove(filename)
+            except Exception:
+                pass  # Log error in production
+        
+        return response
         
     except Exception as e:
         flash(f'Error generating download: {str(e)}', 'error')
@@ -154,22 +179,47 @@ def download_all(resume_id):
     try:
         from utils.resume_generator import generate_downloadable_resume
         
-        # Create a ZIP file with all formats
-        zip_filename = os.path.join(app.config['DOWNLOAD_FOLDER'], f'resume_{resume_id}_all_formats.zip')
+        # Get original filename for better naming
+        original_name = resume_data.get('original_filename', 'resume')
+        base_name = os.path.splitext(original_name)[0]
+        zip_filename = os.path.join(app.config['DOWNLOAD_FOLDER'], f'{base_name}_all_formats_{resume_id}.zip')
         
-        with zipfile.ZipFile(zip_filename, 'w') as zipf:
+        with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zipf:
             for format_type in ['chronological', 'functional', 'combination', 'targeted']:
                 for file_format in ['pdf', 'txt']:
                     try:
                         filename = generate_downloadable_resume(
                             resume_data, format_type, file_format, app.config['DOWNLOAD_FOLDER']
                         )
-                        zipf.write(filename, f'{format_type}_resume.{file_format}')
+                        # Use better names in ZIP file
+                        archive_name = f'{base_name}_{format_type}.{file_format}'
+                        zipf.write(filename, archive_name)
                         os.remove(filename)  # Clean up individual files
                     except Exception as e:
                         app.logger.warning(f'Failed to generate {format_type} {file_format}: {str(e)}')
         
-        return send_file(zip_filename, as_attachment=True)
+        # Ensure ZIP file was created and has content
+        if not os.path.exists(zip_filename) or os.path.getsize(zip_filename) == 0:
+            raise Exception('Failed to create ZIP file with resume formats')
+        
+        download_name = f'{base_name}_all_formats.zip'
+        response = send_file(
+            zip_filename, 
+            as_attachment=True, 
+            download_name=download_name,
+            mimetype='application/zip'
+        )
+        
+        # Clean up ZIP file after sending
+        @response.call_on_close
+        def cleanup_zip():
+            try:
+                if os.path.exists(zip_filename):
+                    os.remove(zip_filename)
+            except Exception:
+                pass  # Log error in production
+        
+        return response
         
     except Exception as e:
         flash(f'Error generating ZIP file: {str(e)}', 'error')
