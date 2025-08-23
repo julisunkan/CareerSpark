@@ -23,6 +23,9 @@ function initializeApp() {
     // Initialize keyboard shortcuts
     initializeKeyboardShortcuts();
     
+    // PWA offline handling
+    interceptOfflineActions();
+    
     // Performance monitoring
     monitorPerformance();
 }
@@ -139,13 +142,21 @@ function formatFileSize(bytes) {
 }
 
 /**
- * Enhanced form validation
+ * Enhanced form validation with offline handling
  */
 function initializeFormValidation() {
     const forms = document.querySelectorAll('form');
     
     forms.forEach(form => {
         form.addEventListener('submit', function(e) {
+            // Check online status for forms that require internet
+            if (requiresInternet(this) && !navigator.onLine) {
+                e.preventDefault();
+                e.stopPropagation();
+                showAlert('This action requires an internet connection. Please check your connection and try again.', 'warning');
+                return;
+            }
+            
             if (!validateForm(this)) {
                 e.preventDefault();
                 e.stopPropagation();
@@ -159,6 +170,23 @@ function initializeFormValidation() {
             input.addEventListener('input', () => clearFieldError(input));
         });
     });
+}
+
+/**
+ * Check if form requires internet connection
+ */
+function requiresInternet(form) {
+    // Upload forms always require internet
+    if (form.id === 'uploadForm' || form.action.includes('upload')) {
+        return true;
+    }
+    
+    // Any form that sends data to server
+    if (form.method.toLowerCase() === 'post') {
+        return true;
+    }
+    
+    return false;
 }
 
 /**
@@ -708,6 +736,70 @@ function fallbackCopyToClipboard(text, successMessage) {
 }
 
 /**
+ * PWA offline handling functions
+ */
+function handleOfflineDownload(element) {
+    if (!navigator.onLine) {
+        showAlert('Downloads are not available offline. Please connect to the internet to download files.', 'warning');
+        return false;
+    }
+    return true;
+}
+
+function interceptOfflineActions() {
+    // Intercept download links
+    document.querySelectorAll('a[href*="download"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (!navigator.onLine) {
+                e.preventDefault();
+                showAlert('Downloads require an internet connection. Please go online and try again.', 'warning');
+            }
+        });
+    });
+    
+    // Intercept upload actions
+    document.querySelectorAll('form[action*="upload"]').forEach(form => {
+        form.addEventListener('submit', function(e) {
+            if (!navigator.onLine) {
+                e.preventDefault();
+                showAlert('File uploads require an internet connection. Please go online and try again.', 'warning');
+            }
+        });
+    });
+}
+
+/**
+ * Cache management for offline usage
+ */
+function clearOfflineCache() {
+    if ('caches' in window) {
+        caches.keys().then(names => {
+            names.forEach(name => {
+                caches.delete(name);
+            });
+        });
+        showAlert('Offline cache cleared successfully', 'success');
+    }
+}
+
+/**
+ * Check service worker status
+ */
+function checkServiceWorkerStatus() {
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(registrations => {
+            if (registrations.length > 0) {
+                console.log('Service Worker active:', registrations[0].active);
+                return true;
+            } else {
+                console.log('No active Service Worker');
+                return false;
+            }
+        });
+    }
+}
+
+/**
  * Export functions for global use
  */
 window.resumeOptimizer = {
@@ -717,7 +809,10 @@ window.resumeOptimizer = {
     zoomIn,
     zoomOut,
     resetZoom,
-    updateCharacterCount
+    updateCharacterCount,
+    handleOfflineDownload,
+    clearOfflineCache,
+    checkServiceWorkerStatus
 };
 
 // Console welcome message

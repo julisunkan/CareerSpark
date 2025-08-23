@@ -19,6 +19,11 @@ def allowed_file(filename):
 def index():
     return render_template('index.html')
 
+@app.route('/offline')
+def offline():
+    """Offline page for PWA"""
+    return render_template('offline.html')
+
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
     if request.method == 'GET':
@@ -225,7 +230,11 @@ def download_all(resume_id):
         flash(f'Error generating ZIP file: {str(e)}', 'error')
         return redirect(url_for('analyze', resume_id=resume_id))
 
-
+# PWA API endpoints for offline functionality
+@app.route('/api/status')
+def api_status():
+    """API endpoint to check service status"""
+    return jsonify({'status': 'online', 'timestamp': '2025-08-23T18:25:00Z'})
 
 @app.errorhandler(413)
 def too_large(e):

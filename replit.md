@@ -2,7 +2,7 @@
 
 ## Overview
 
-The AI-Powered Resume Optimizer is a comprehensive web application that analyzes, optimizes, and generates professional resumes in multiple formats. The system uses artificial intelligence and natural language processing to provide intelligent keyword matching, grammar checking, and resume scoring. Users can upload resumes in various formats (PDF, DOCX, TXT), input job descriptions, and receive detailed analysis with actionable suggestions for improvement.
+The AI-Powered Resume Optimizer is a comprehensive Progressive Web Application (PWA) that analyzes, optimizes, and generates professional resumes in multiple formats. The system uses artificial intelligence and natural language processing to provide intelligent keyword matching, grammar checking, and resume scoring. Users can upload resumes in various formats (PDF, DOCX, TXT), input job descriptions, and receive detailed analysis with actionable suggestions for improvement. The application functions offline and can be installed as a native app on mobile and desktop devices.
 
 ## User Preferences
 
@@ -32,10 +32,14 @@ Preferred communication style: Simple, everyday language.
 - **Performance Categorization**: Automatic classification of resume quality with targeted recommendations
 
 ### Frontend Architecture
+- **Progressive Web App (PWA)**: Full PWA implementation with offline capabilities and app-like experience
+- **Service Worker**: Advanced caching strategies with offline-first approach for static assets
+- **App Manifest**: Complete PWA manifest with custom icons, shortcuts, and installation prompts
 - **Bootstrap-based UI**: Responsive design using Bootstrap with custom CSS for enhanced user experience
 - **Progressive Enhancement**: JavaScript-enhanced interactions with graceful fallbacks
 - **File Upload Interface**: Drag-and-drop file upload with real-time validation and preview
 - **Mobile-first Design**: Fully responsive interface optimized for all device sizes
+- **Offline Error Handling**: Intelligent detection and user-friendly messaging for offline scenarios
 
 ## External Dependencies
 
@@ -66,3 +70,13 @@ Preferred communication style: Simple, everyday language.
 - **Replit Environment**: Cloud-based development and hosting platform
 - **File System Storage**: Local file system for uploads, downloads, and data persistence
 - **Environment Variables**: Configuration management for sensitive settings
+
+## Recent Changes
+
+### Date: August 23, 2025
+- **Progressive Web App Implementation**: Converted application to full PWA with manifest.json and service worker
+- **Offline Capabilities**: Implemented comprehensive offline error handling and caching strategies
+- **Custom PWA Icons**: Generated and implemented custom PNG icons for app installation (regular and maskable)
+- **Service Worker Features**: Advanced caching, update notifications, and offline page functionality
+- **Enhanced Server-Side Downloads**: Improved download functionality with proper MIME types and automatic cleanup
+- **Offline Error Handling**: Smart detection of offline state with user-friendly error messages and guidance

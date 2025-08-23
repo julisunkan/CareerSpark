@@ -1,0 +1,236 @@
+{% extends "base.html" %}
+
+{% block title %}Offline - AI Resume Optimizer{% endblock %}
+
+{% block header_title %}You're Offline{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <section class="app-section">
+        <div class="text-center animate-fade-scale">
+            <div class="mb-4">
+                <i class="fas fa-wifi-slash fa-5x text-gradient" style="opacity: 0.7;"></i>
+            </div>
+            <h1 class="display-6 fw-bold text-gradient mb-3">
+                You're Offline
+            </h1>
+            <p class="lead text-secondary mb-4">
+                It looks like you've lost your internet connection. Some features may not be available until you're back online.
+            </p>
+            
+            <!-- Offline Features -->
+            <div class="card glass-effect mb-4">
+                <div class="card-body">
+                    <h5 class="text-gradient mb-3">
+                        <i class="fas fa-check-circle me-2"></i>Available Offline
+                    </h5>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-eye text-success me-3"></i>
+                                <span>View cached resumes</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-search text-success me-3"></i>
+                                <span>Browse previous analyses</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-copy text-success me-3"></i>
+                                <span>Copy resume content</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-print text-success me-3"></i>
+                                <span>Print resumes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Unavailable Features -->
+            <div class="card glass-effect mb-4">
+                <div class="card-body">
+                    <h5 class="text-gradient mb-3">
+                        <i class="fas fa-times-circle me-2"></i>Requires Internet
+                    </h5>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-upload text-muted me-3"></i>
+                                <span class="text-muted">Upload new resumes</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-brain text-muted me-3"></i>
+                                <span class="text-muted">AI analysis</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-download text-muted me-3"></i>
+                                <span class="text-muted">Generate downloads</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-spell-check text-muted me-3"></i>
+                                <span class="text-muted">Grammar checking</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Connection Status -->
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <button class="btn btn-primary btn-lg" onclick="checkConnection()">
+                    <i class="fas fa-sync me-2"></i>Check Connection
+                </button>
+                <a href="/" class="btn btn-outline-secondary btn-lg">
+                    <i class="fas fa-home me-2"></i>Go Home
+                </a>
+            </div>
+            
+            <!-- Connection Status Indicator -->
+            <div id="connectionStatus" class="mt-4"></div>
+        </div>
+    </section>
+
+    <!-- Tips for Offline Use -->
+    <section class="app-section">
+        <div class="card glass-effect">
+            <div class="card-body">
+                <h5 class="text-gradient mb-3">
+                    <i class="fas fa-lightbulb me-2"></i>Tips for Offline Use
+                </h5>
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <i class="fas fa-clock fa-2x text-gradient mb-2"></i>
+                            <h6>Work on Previous Analyses</h6>
+                            <p class="small text-muted">Review and refine resumes you've already analyzed</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <i class="fas fa-edit fa-2x text-gradient mb-2"></i>
+                            <h6>Copy & Edit</h6>
+                            <p class="small text-muted">Copy resume text to edit in your preferred editor</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <i class="fas fa-bookmark fa-2x text-gradient mb-2"></i>
+                            <h6>Save for Later</h6>
+                            <p class="small text-muted">Bookmark ideas to implement when back online</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function checkConnection() {
+    const statusDiv = document.getElementById('connectionStatus');
+    const btn = event.target;
+    const originalText = btn.innerHTML;
+    
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Checking...';
+    btn.disabled = true;
+    
+    // Check navigator.onLine first
+    if (!navigator.onLine) {
+        showConnectionStatus(false, 'Browser reports offline');
+        resetButton();
+        return;
+    }
+    
+    // Try to fetch a small resource
+    fetch('/api/status', {
+        method: 'GET',
+        cache: 'no-cache',
+        headers: {
+            'Cache-Control': 'no-cache'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            showConnectionStatus(true, 'Connection restored!');
+            setTimeout(() => {
+                window.location.href = '/';
+            }, 2000);
+        } else {
+            showConnectionStatus(false, 'Server not responding');
+        }
+    })
+    .catch(error => {
+        showConnectionStatus(false, 'No internet connection');
+    })
+    .finally(() => {
+        resetButton();
+    });
+    
+    function resetButton() {
+        setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        }, 2000);
+    }
+}
+
+function showConnectionStatus(isOnline, message) {
+    const statusDiv = document.getElementById('connectionStatus');
+    const alertClass = isOnline ? 'alert-success' : 'alert-warning';
+    const icon = isOnline ? 'fa-check-circle' : 'fa-exclamation-triangle';
+    
+    statusDiv.innerHTML = `
+        <div class="alert ${alertClass} animate-fade-scale">
+            <i class="fas ${icon} me-2"></i>${message}
+        </div>
+    `;
+    
+    // Clear status after 5 seconds
+    setTimeout(() => {
+        statusDiv.innerHTML = '';
+    }, 5000);
+}
+
+// Auto-check connection every 30 seconds
+setInterval(() => {
+    if (navigator.onLine) {
+        fetch('/api/status', { 
+            method: 'HEAD',
+            cache: 'no-cache' 
+        })
+        .then(response => {
+            if (response.ok) {
+                // Redirect to main page if connection is restored
+                window.location.href = '/';
+            }
+        })
+        .catch(() => {
+            // Still offline
+        });
+    }
+}, 30000);
+
+// Listen for online event
+window.addEventListener('online', () => {
+    showConnectionStatus(true, 'Connection restored! Redirecting...');
+    setTimeout(() => {
+        window.location.href = '/';
+    }, 2000);
+});
+</script>
+{% endblock %}

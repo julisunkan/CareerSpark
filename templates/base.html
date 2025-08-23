@@ -3,10 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="theme-color" content="#0f0f0f">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#6366f1">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Resume AI">
+    <meta name="application-name" content="Resume AI">
+    <meta name="msapplication-TileColor" content="#6366f1">
+    <meta name="msapplication-tap-highlight" content="no">
+    
+    <!-- PWA Icons -->
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename='icons/icon-152x152.png') }}">
+    <link rel="apple-touch-icon" sizes="192x192" href="{{ url_for('static', filename='icons/icon-192x192.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='icons/icon-192x192.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='icons/icon-192x192.png') }}">
+    <link rel="mask-icon" href="{{ url_for('static', filename='icons/icon-192x192.png') }}" color="#6366f1">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+    
     <title>{% block title %}AI Resume Optimizer{% endblock %}</title>
     
     <!-- Bootstrap CSS (Replit Dark Theme) -->
@@ -238,6 +255,130 @@
     
     <!-- Custom JS -->
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    
+    <!-- PWA Service Worker Registration -->
+    <script>
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/static/sw.js')
+                    .then(function(registration) {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                        
+                        // Check for updates
+                        registration.addEventListener('updatefound', function() {
+                            const newWorker = registration.installing;
+                            newWorker.addEventListener('statechange', function() {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    showUpdateNotification();
+                                }
+                            });
+                        });
+                    })
+                    .catch(function(error) {
+                        console.log('ServiceWorker registration failed: ', error);
+                    });
+            });
+        }
+        
+        // PWA Install prompt
+        let deferredPrompt;
+        let installButton = null;
+        
+        window.addEventListener('beforeinstallprompt', function(e) {
+            e.preventDefault();
+            deferredPrompt = e;
+            showInstallPrompt();
+        });
+        
+        function showInstallPrompt() {
+            if (installButton) return;
+            
+            installButton = document.createElement('button');
+            installButton.className = 'btn btn-primary position-fixed';
+            installButton.style.cssText = 'bottom: 20px; right: 20px; z-index: 1000; border-radius: 50px; padding: 12px 20px;';
+            installButton.innerHTML = '<i class="fas fa-download me-2"></i>Install App';
+            installButton.addEventListener('click', installApp);
+            document.body.appendChild(installButton);
+            
+            // Auto-hide after 10 seconds
+            setTimeout(() => {
+                if (installButton && installButton.parentNode) {
+                    installButton.remove();
+                    installButton = null;
+                }
+            }, 10000);
+        }
+        
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then(function(choiceResult) {
+                    console.log('User ' + choiceResult.outcome + ' the install prompt');
+                    deferredPrompt = null;
+                    if (installButton && installButton.parentNode) {
+                        installButton.remove();
+                        installButton = null;
+                    }
+                });
+            }
+        }
+        
+        function showUpdateNotification() {
+            const updateBanner = document.createElement('div');
+            updateBanner.className = 'alert alert-info position-fixed w-100';
+            updateBanner.style.cssText = 'top: 0; z-index: 1001; margin: 0; border-radius: 0;';
+            updateBanner.innerHTML = `
+                <div class="container d-flex justify-content-between align-items-center">
+                    <span><i class="fas fa-info-circle me-2"></i>A new version is available!</span>
+                    <button class="btn btn-sm btn-outline-info" onclick="updateApp()">Update</button>
+                </div>
+            `;
+            document.body.prepend(updateBanner);
+        }
+        
+        function updateApp() {
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                    registrations.forEach(function(registration) {
+                        registration.unregister();
+                    });
+                    window.location.reload();
+                });
+            }
+        }
+        
+        // Offline status handling
+        function updateOnlineStatus() {
+            const offlineIndicator = document.getElementById('offlineIndicator');
+            
+            if (!navigator.onLine) {
+                if (!offlineIndicator) {
+                    const indicator = document.createElement('div');
+                    indicator.id = 'offlineIndicator';
+                    indicator.className = 'alert alert-warning position-fixed w-100';
+                    indicator.style.cssText = 'bottom: 0; z-index: 1001; margin: 0; border-radius: 0;';
+                    indicator.innerHTML = `
+                        <div class="container text-center">
+                            <i class="fas fa-wifi-slash me-2"></i>
+                            You're offline. Some features may not work.
+                        </div>
+                    `;
+                    document.body.appendChild(indicator);
+                }
+            } else {
+                if (offlineIndicator) {
+                    offlineIndicator.remove();
+                }
+            }
+        }
+        
+        window.addEventListener('online', updateOnlineStatus);
+        window.addEventListener('offline', updateOnlineStatus);
+        
+        // Check initial status
+        document.addEventListener('DOMContentLoaded', updateOnlineStatus);
+    </script>
     
     {% block scripts %}{% endblock %}
 </body>
