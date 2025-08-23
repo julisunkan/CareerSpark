@@ -13,27 +13,27 @@
                 <div class="card animate-fade-scale">
                     <div class="card-header text-center">
                         <i class="fas fa-cloud-upload-alt fa-3x text-gradient mb-3"></i>
-                        <h3 class="text-gradient mb-0">Upload Your Resume</h3>
-                        <p class="text-secondary small mb-0">AI-powered optimization in seconds</p>
+                        <h3 class="text-gradient mb-0">Create or Optimize Resume</h3>
+                        <p class="text-secondary small mb-0">AI-powered optimization and generation in seconds</p>
                     </div>
                     <div class="card-body">
                         <form method="POST" enctype="multipart/form-data" id="uploadForm">
                             <!-- File Upload Area -->
                             <div class="mb-4">
                                 <label class="form-label">
-                                    <i class="fas fa-file-alt me-2"></i>Resume File
+                                    <i class="fas fa-file-alt me-2"></i>Resume File <span class="text-muted">(Optional)</span>
                                 </label>
                                 <div class="file-upload-area" id="fileUploadArea">
                                     <i class="fas fa-cloud-upload-alt"></i>
-                                    <h5 class="mt-3 mb-2">Drop your resume here</h5>
-                                    <p class="text-secondary mb-3">or click to browse files</p>
+                                    <h5 class="mt-3 mb-2">Drop your resume here to optimize</h5>
+                                    <p class="text-secondary mb-3">or click to browse files • <strong>Leave empty to generate new resume</strong></p>
                                     <div class="supported-formats">
                                         <span class="badge bg-primary me-2">PDF</span>
                                         <span class="badge bg-primary me-2">DOCX</span>
                                         <span class="badge bg-primary">TXT</span>
                                     </div>
                                     <input type="file" name="resume_file" id="resumeFile" 
-                                           accept=".pdf,.docx,.txt" required 
+                                           accept=".pdf,.docx,.txt" 
                                            style="display: none;">
                                 </div>
                                 <div id="fileInfo" class="mt-3" style="display: none;">
@@ -68,7 +68,7 @@
                             <!-- Submit Button -->
                             <div class="d-grid gap-2">
                                 <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
-                                    <i class="fas fa-brain me-2"></i>Optimize My Resume
+                                    <i class="fas fa-brain me-2"></i><span id="submitText">Optimize My Resume</span>
                                 </button>
                                 <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">
                                     <i class="fas fa-arrow-left me-2"></i>Back to Home

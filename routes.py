@@ -29,23 +29,20 @@ def upload():
     if request.method == 'GET':
         return render_template('upload.html')
     
-    # Handle file upload
-    if 'resume_file' not in request.files:
-        flash('No file selected', 'error')
-        return redirect(request.url)
-    
-    file = request.files['resume_file']
     job_description = request.form.get('job_description', '').strip()
-    
-    if file.filename == '':
-        flash('No file selected', 'error')
-        return redirect(request.url)
     
     if not job_description:
         flash('Job description is required', 'error')
         return redirect(request.url)
     
-    if file and file.filename and allowed_file(file.filename):
+    # Check if file was uploaded
+    file = request.files.get('resume_file')
+    has_file = (file is not None and 
+                hasattr(file, 'filename') and 
+                file.filename is not None and 
+                file.filename != '')
+    
+    if has_file and file is not None and file.filename is not None and allowed_file(file.filename):
         filename = secure_filename(file.filename)
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(filepath)
@@ -98,9 +95,52 @@ def upload():
             if os.path.exists(filepath):
                 os.remove(filepath)
             return redirect(request.url)
-    else:
+    elif has_file:
         flash('Invalid file type. Please upload PDF, DOCX, or TXT files only.', 'error')
         return redirect(request.url)
+    else:
+        # No file uploaded - generate resume from job description
+        try:
+            from utils.resume_generator_from_job import generate_resume_from_job_description
+            
+            # Generate new resume from job description
+            resume_text = generate_resume_from_job_description(job_description)
+            
+            # Analyze the generated resume vs job description
+            analysis = analyze_resume_vs_job(resume_text, job_description)
+            
+            # Check grammar on generated content
+            grammar_results = check_grammar(resume_text)
+            
+            # Calculate score
+            score = calculate_resume_score(analysis, grammar_results)
+            
+            # Generate optimized resume formats
+            optimized_resumes = generate_resume_formats(resume_text, job_description, analysis)
+            
+            # Save to history
+            resume_data = {
+                'original_filename': 'generated_resume.txt',
+                'original_text': resume_text,
+                'job_description': job_description,
+                'analysis': analysis,
+                'score': score,
+                'suggestions': {
+                    'grammar': grammar_results,
+                    'keywords': analysis.get('missing_keywords', []),
+                    'improvements': analysis.get('suggestions', [])
+                },
+                'optimized_resumes': optimized_resumes,
+                'is_generated': True  # Flag to indicate this was generated
+            }
+            
+            resume_id = resume_history.save_resume(resume_data)
+            
+            return redirect(url_for('analyze', resume_id=resume_id))
+            
+        except Exception as e:
+            flash(f'Error generating resume: {str(e)}', 'error')
+            return redirect(request.url)
 
 @app.route('/analyze/<resume_id>')
 def analyze(resume_id):

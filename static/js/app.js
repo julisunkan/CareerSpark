@@ -128,6 +128,19 @@ function showFilePreview(file) {
         preview.style.display = 'block';
         preview.classList.add('fade-in');
     }
+    
+    // Update submit button text
+    updateSubmitButtonText(true);
+}
+
+/**
+ * Update submit button text based on whether file is uploaded
+ */
+function updateSubmitButtonText(hasFile) {
+    const submitText = document.getElementById('submitText');
+    if (submitText) {
+        submitText.textContent = hasFile ? 'Optimize My Resume' : 'Generate New Resume';
+    }
 }
 
 /**
@@ -219,17 +232,14 @@ function validateUploadForm(form) {
     
     let isValid = true;
     
-    // File validation
-    if (!fileInput.files.length) {
-        showFieldError(fileInput, 'Please select a resume file.');
-        isValid = false;
-    }
-    
-    // Job description validation
+    // Job description validation (always required)
     if (jobDescription.value.trim().length < 50) {
         showFieldError(jobDescription, 'Job description must be at least 50 characters long.');
         isValid = false;
     }
+    
+    // Update submit button text based on whether file is selected
+    updateSubmitButtonText(fileInput.files.length > 0);
     
     return isValid;
 }
