@@ -1,0 +1,84 @@
+Project Name: AI-Powered Resume Optimizer
+
+Description:
+Build a fully-featured web application using Python and Flask that allows users to upload their resumes (PDF, DOCX, TXT) and paste a job description. The app analyzes the resume for keyword matching, grammar and clarity, formatting improvements, and generates a **score**. Users can preview and download their optimized resume in **four formats**: Chronological, Functional, Combination, and Targeted (job-description-focused). Users can also select from multiple **custom resume templates** with different layouts and styles. The app saves resume versions/history in SQLite and allows exporting all four formats at once in a ZIP file.
+
+Tech Stack:
+- Backend: Python 3 + Flask
+- Text Extraction: PyPDF2, python-docx
+- NLP / Keyword Matching: spaCy, NLTK, scikit-learn
+- Grammar Check: LanguageTool Python API (free)
+- PDF Generation: WeasyPrint or FPDF
+- Frontend: HTML, CSS, Bootstrap or Tailwind CSS
+- Database: SQLite
+
+Features (All Implemented):
+1. Upload resume in PDF, DOCX, or TXT format
+2. Paste job description for keyword/skills matching
+3. Analyze resume for:
+- Missing keywords compared to job description
+- Grammar and clarity improvements
+- Formatting consistency
+4. Calculate **Resume Score (0–100)** based on:
+- Keyword match
+- Grammar
+- Formatting
+5. Provide actionable improvement suggestions
+6. **Select Resume Format**:
+- Chronological
+- Functional
+- Combination
+- Targeted (job-description-focused)
+7. **Select Custom Template** for layout/style
+8. Preview optimized resume in the browser
+9. Download optimized resume as **PDF or TXT**
+10. **Save resume versions/history** in SQLite database
+11. Export **all four formats in a single ZIP file**
+12. Highlight missing keywords in the preview
+13. Provide sample sentences for missing skills
+14. Show resume scoring breakdown in a dashboard
+15. Mobile-friendly, responsive UI
+
+Free Resources:
+- spaCy / NLTK (NLP)
+- scikit-learn (TF-IDF similarity)
+- LanguageTool (grammar check)
+- PyPDF2 / python-docx (resume parsing)
+- FPDF / WeasyPrint (PDF generation)
+- Bootstrap / Tailwind CSS (frontend)
+- SQLite (database)
+
+Steps:
+1. Create Flask project in Replit
+2. Set up upload form for resumes
+3. Add textarea for job description input
+4. Implement text extraction from uploaded resumes
+5. Implement NLP keyword extraction and matching
+6. Implement grammar check using LanguageTool
+7. Create **four resume format templates** using Jinja2
+8. Implement **template selection and dynamic content injection**
+9. Implement PDF generation using WeasyPrint / FPDF
+10. Display preview and allow downloads in PDF or TXT
+11. Save resume versions/history in SQLite
+12. Implement export of all four formats in a ZIP file
+13. Display **resume scoring dashboard** and missing keywords highlights
+14. Provide **sample suggestions for missing skills**
+15. Ensure fully responsive and mobile-friendly UI
+
+Instructions:
+- All code must use **free/open-source libraries only**
+- App must implement **all listed features**
+- Provide a README with clear instructions for running locally or on Replit
+
+requirements.txt includes:
+
+Flask
+PyPDF2
+python-docx
+spacy
+nltk
+scikit-learn
+language-tool-python
+fpdf
+weasyprint
+zipfile36
