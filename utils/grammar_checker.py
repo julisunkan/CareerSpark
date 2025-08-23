@@ -1,6 +1,7 @@
 import language_tool_python
 from typing import List, Dict, Any
 import logging
+import signal
 
 # Initialize LanguageTool
 tool = None
@@ -10,33 +11,38 @@ def get_language_tool():
     global tool
     if tool is None:
         try:
-            import signal
-            
             def timeout_handler(signum, frame):
                 raise TimeoutError("LanguageTool initialization timed out")
             
-            # Set a 30-second timeout for initialization
+            # Set a 10-second timeout for initialization
             signal.signal(signal.SIGALRM, timeout_handler)
-            signal.alarm(30)
+            signal.alarm(10)
             
             try:
-                # Try to use remote service first (faster)
+                # Try to use remote service first (faster) with reduced timeout
                 tool = language_tool_python.LanguageToolPublicAPI('en-US')
-                # Quick test
+                # Quick test with timeout
                 tool.check("Test.")
             except:
-                # Fallback to local with minimal config
-                tool = language_tool_python.LanguageTool('en-US', config={
-                    'cacheSize': 100,
-                    'maxTextLength': 10000
-                })
+                try:
+                    # Fallback to local with minimal config and timeout
+                    tool = language_tool_python.LanguageTool('en-US', config={
+                        'cacheSize': 100,
+                        'maxTextLength': 5000
+                    })
+                except:
+                    # If everything fails, mark as unavailable
+                    raise Exception("All LanguageTool options failed")
             
             signal.alarm(0)  # Cancel the alarm
             
         except (TimeoutError, Exception) as e:
             logging.warning(f"LanguageTool unavailable, using fallback: {e}")
             tool = False  # Use False to indicate permanent failure
-            signal.alarm(0)  # Cancel the alarm
+            try:
+                signal.alarm(0)  # Cancel the alarm safely
+            except:
+                pass
     return tool if tool is not False else None
 
 def check_grammar(text: str) -> Dict[str, Any]:
@@ -60,7 +66,19 @@ def check_grammar(text: str) -> Dict[str, Any]:
     
     try:
         # Check for grammar issues with timeout protection
-        matches = tool.check(text)
+        def timeout_handler(signum, frame):
+            raise TimeoutError("Grammar check timed out")
+        
+        # Set a 5-second timeout for grammar checking
+        signal.signal(signal.SIGALRM, timeout_handler)
+        signal.alarm(5)
+        
+        try:
+            matches = tool.check(text)
+            signal.alarm(0)  # Cancel timeout on success
+        except (TimeoutError, Exception):
+            signal.alarm(0)  # Cancel timeout
+            raise
         
         # Process matches into structured format
         issues = []
