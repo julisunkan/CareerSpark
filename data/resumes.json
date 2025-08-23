@@ -12977,5 +12977,1213 @@
         ]
       }
     }
+  },
+  {
+    "id": "1755978718055",
+    "timestamp": "2025-08-23T19:51:58.055379",
+    "original_filename": "generated_resume.txt",
+    "original_text": "[Your Name]\n[your.email@example.com] | [Your Phone Number] | [Your City, State]\n[LinkedIn Profile URL]\n\nPROFESSIONAL SUMMARY\nExperienced professional with 3-5 years of experience in finance. Seeking to leverage strong analytical and problem-solving skills in a city manager role.\n\nWORK EXPERIENCE\n\n[Previous Job Title 1]\n[Company Name 1] | [City, State] | [Start Date - End Date]\n\u2022 Managed key client relationships and accounts\n\u2022 Analyzed business processes and identified improvement opportunities\n\u2022 Collaborated with stakeholders to achieve project objectives\n\u2022 Prepared detailed reports and presentations for management\n\n[Previous Job Title 2]\n[Company Name 2] | [City, State] | [Start Date - End Date]\n\u2022 Managed key client relationships and accounts\n\u2022 Analyzed business processes and identified improvement opportunities\n\u2022 Collaborated with stakeholders to achieve project objectives\n\u2022 Prepared detailed reports and presentations for management\n\nEDUCATION\nBachelor's Degree in Finance\n[University Name] | [City, State] | [Graduation Year]\n\nTECHNICAL SKILLS\n\u2022 Technical: Financial Modeling, Excel, Bloomberg, Risk Analysis\n\u2022 Soft Skills: Communication, Leadership, Problem Solving, Team Collaboration, Time Management\n\nCERTIFICATIONS\n\u2022 CFA Level I\n\u2022 Financial Risk Manager (FRM)",
+    "job_description": "Tasks and duties\r\n\r\nYou are in charge of the daily reconciliation of cash collections from riders, this consists in:\r\nmaking sure that all delivered orders have been paid for\r\nverifying the payment method indicated by the delivery associates and the corresponding cash / POS remittance\r\nbooking all collections in CPMT against the list of orders delivered\r\nYou are responsible for the cash collected and its timely remittance to the Finance team\r\nat the end of each day, you will remit the cash collected to FETS and get a proof of deposit\r\nyou will transfer this proof of deposit to the Finance team and create a payment in CPMT\r\nYou are responsible of the accuracy of the balances of each rider and your hub\r\nall collections must be completed and recorded the same day\r\nat the beginning of each day, you will report the collections of the previous day and share the list of any outstanding collections\r\nYou will publish daily remittance collection pending report by riders from cpmt. The information will be used by the city managers to chase the recovery from the reported riders daily with necessary actions if needed.\r\n\r\n\r\nQualifications\r\nGreat attention to details\r\nRigorous and won't close business before making sure all orders are reconciled and cash is collected.\r\nFull collection of payments will be his/her responsibility.\r\n1-2 years experience\r\nBSc in Accounting or any related course",
+    "analysis": {
+      "keyword_overlap": 8.771929824561402,
+      "skills_match": {
+        "percentage": 0.0,
+        "matched_skills": [],
+        "missing_skills": []
+      },
+      "semantic_similarity": 2.7729927329078583,
+      "missing_keywords": [
+        "any outstanding collections",
+        "daily remittance collection",
+        "the daily reconciliation",
+        "the delivery associates",
+        "his/her responsibility",
+        "all delivered orders",
+        "the reported riders",
+        "any related course",
+        "the payment method",
+        "necessary actions",
+        "the city managers",
+        "cash collections",
+        "the finance team",
+        "the previous day",
+        "all collections",
+        "full collection",
+        "great attention",
+        "the collections",
+        "the information",
+        "pending report"
+      ],
+      "resume_keywords": [
+        "project",
+        "manager",
+        "university name",
+        "graduation",
+        "team collaboration, time management certifications \u2022 cfa level i \u2022 financial risk",
+        "soft skills",
+        "report",
+        "analyzed",
+        "[your name",
+        "risk",
+        "[city, state] |",
+        "previous job title 2",
+        "start date - end date] \u2022 managed",
+        "excel",
+        "certifications",
+        "improvement opportunities",
+        "modeling",
+        "date",
+        "3-5 years",
+        "year",
+        "business",
+        "presentations",
+        "opportunity",
+        "problem",
+        "financial",
+        "collaborate",
+        "detailed",
+        "cfa",
+        "risk analysis",
+        "[company name",
+        "work",
+        "previous",
+        "financial risk manager",
+        "time management certifications",
+        "improvement",
+        "management",
+        "bloomberg, risk analysis \u2022 soft skills: communication, leadership, problem solving",
+        "analyzed business processes",
+        "manage",
+        "process",
+        "experience",
+        "profile",
+        "skill",
+        "i",
+        "analysis",
+        "communication",
+        "end",
+        "your phone number",
+        "client",
+        "number",
+        "[university name",
+        "presentation",
+        "finance",
+        "university",
+        "prepare",
+        "team",
+        "technical",
+        "bachelor",
+        "\u2022 analyzed",
+        "[your.email@example.com] |",
+        "problem solving",
+        "city",
+        "analytical",
+        "time",
+        "leverage",
+        "job",
+        "linkedin profile",
+        "summary",
+        "bloomberg",
+        "url",
+        "company",
+        "achieve",
+        "professional",
+        "level",
+        "linkedin",
+        "account",
+        "relationship",
+        "your city",
+        "key",
+        "education",
+        "|",
+        "accounts",
+        "phone",
+        "solve",
+        "project objectives",
+        "skills",
+        "role",
+        "stakeholders",
+        "degree",
+        "title",
+        "objective",
+        "frm",
+        "identify",
+        "\u2022 collaborated",
+        "collaboration",
+        "state",
+        "team collaboration",
+        "soft",
+        "\u2022 prepared",
+        "work experience",
+        "seek",
+        "leadership",
+        "solving",
+        "stakeholder",
+        "strong"
+      ],
+      "job_keywords": [
+        "manager",
+        "duty",
+        "deliver",
+        "any outstanding collections",
+        "daily remittance collection",
+        "report",
+        "riders",
+        "share",
+        "the collections",
+        "proof",
+        "the cash",
+        "daily",
+        "the balances",
+        "need",
+        "year",
+        "great",
+        "business",
+        "the beginning",
+        "cpmt",
+        "pending report",
+        "create",
+        "payment",
+        "you",
+        "necessary",
+        "timely",
+        "the delivery associates",
+        "reconcile",
+        "previous",
+        "all collections",
+        "close",
+        "necessary actions",
+        "rider",
+        "pos",
+        "make",
+        "accuracy",
+        "his/her responsibility",
+        "experience",
+        "order",
+        "remit",
+        "consist",
+        "list",
+        "collect",
+        "outstanding",
+        "course",
+        "reconciliation",
+        "detail",
+        "verify",
+        "indicate",
+        "end",
+        "information",
+        "pende",
+        "all delivered orders",
+        "publish",
+        "qualifications",
+        "finance",
+        "remittance",
+        "team",
+        "a proof",
+        "the finance team",
+        "chase",
+        "the information",
+        "accounting",
+        "each day",
+        "recovery",
+        "the previous day",
+        "city",
+        "the reported riders",
+        "collection",
+        "any related course",
+        "fets",
+        "orders",
+        "responsibility",
+        "charge",
+        "task",
+        "associate",
+        "hub",
+        "rigorous",
+        "the daily reconciliation",
+        "attention",
+        "record",
+        "responsible",
+        "this proof",
+        "details",
+        "all orders",
+        "cash collections",
+        "delivery",
+        "the end",
+        "the city managers",
+        "this",
+        "bsc",
+        "the list",
+        "deposit",
+        "day",
+        "each rider",
+        "beginning",
+        "payments",
+        "book",
+        "transfer",
+        "balance",
+        "complete",
+        "action",
+        "sure",
+        "pay",
+        "the accuracy",
+        "the payment method",
+        "method",
+        "cash",
+        "qualification",
+        "great attention",
+        "the recovery",
+        "full collection",
+        "a payment",
+        "correspond",
+        "related"
+      ],
+      "resume_skills": [
+        "excel"
+      ],
+      "job_skills": [],
+      "suggestions": [
+        "Add these important keywords: any outstanding collections, daily remittance collection, the daily reconciliation, the delivery associates, his/her responsibility",
+        "Consider rephrasing your experience to better match the job description language",
+        "Your resume appears to be generic. Tailor it more specifically to this job."
+      ]
+    },
+    "score": {
+      "overall_score": 32.1,
+      "category": "Poor Match",
+      "breakdown": {
+        "keyword_match": 20,
+        "skills_match": 30,
+        "semantic_similarity": 2.8,
+        "grammar": 88.8,
+        "completeness": 75.0
+      },
+      "weights": {
+        "keyword_match": 0.35,
+        "skills_match": 0.25,
+        "semantic_similarity": 0.2,
+        "grammar": 0.15,
+        "completeness": 0.05
+      },
+      "recommendations": [
+        "Major revisions needed to match this job",
+        "Consider if this position aligns with your experience",
+        "Focus on highlighting transferable skills and relevant experience"
+      ],
+      "improvement_potential": [
+        {
+          "area": "Keyword Optimization",
+          "current_score": 20,
+          "potential_gain": 25,
+          "priority": "High",
+          "actions": [
+            "Add missing keywords from job description",
+            "Use industry-specific terminology",
+            "Include relevant technical terms"
+          ]
+        },
+        {
+          "area": "Skills Alignment",
+          "current_score": 30,
+          "potential_gain": 25,
+          "priority": "High",
+          "actions": [
+            "Highlight relevant technical skills",
+            "Add missing required skills",
+            "Organize skills by relevance"
+          ]
+        },
+        {
+          "area": "Content Relevance",
+          "current_score": 2.7729927329078583,
+          "potential_gain": 25,
+          "priority": "Medium",
+          "actions": [
+            "Rewrite experience using job description language",
+            "Focus on relevant achievements",
+            "Align content with job requirements"
+          ]
+        }
+      ]
+    },
+    "suggestions": {
+      "grammar": {
+        "issues": [
+          {
+            "message": "If specifying a range, consider using an en dash instead of a hyphen.",
+            "context": "...L SUMMARY Experienced professional with 3-5 years of experience in finance. Seeking...",
+            "offset": 155,
+            "length": 3,
+            "replacements": [
+              "3\u20135"
+            ],
+            "rule_id": "HYPHEN_TO_EN",
+            "category": "PUNCTUATION"
+          },
+          {
+            "message": "This noun or verb \u201cProblem-Solving\u201d is spelled with a hyphen.",
+            "context": "...Soft Skills: Communication, Leadership, Problem Solving, Team Collaboration, Time Management  C...",
+            "offset": 1168,
+            "length": 15,
+            "replacements": [
+              "Problem-Solving"
+            ],
+            "rule_id": "PROBLEM_SOLVE_HYPHEN",
+            "category": "GRAMMAR"
+          }
+        ],
+        "issue_count": 2,
+        "suggestions": [
+          "Consider changing '...' to '3\u20135'",
+          "Consider changing '...Soft Skills:' to 'Problem-Solving'",
+          "Minor grammar improvements detected"
+        ],
+        "score": 88.76404494382022
+      },
+      "keywords": [
+        "any outstanding collections",
+        "daily remittance collection",
+        "the daily reconciliation",
+        "the delivery associates",
+        "his/her responsibility",
+        "all delivered orders",
+        "the reported riders",
+        "any related course",
+        "the payment method",
+        "necessary actions",
+        "the city managers",
+        "cash collections",
+        "the finance team",
+        "the previous day",
+        "all collections",
+        "full collection",
+        "great attention",
+        "the collections",
+        "the information",
+        "pending report"
+      ],
+      "improvements": [
+        "Add these important keywords: any outstanding collections, daily remittance collection, the daily reconciliation, the delivery associates, his/her responsibility",
+        "Consider rephrasing your experience to better match the job description language",
+        "Your resume appears to be generic. Tailor it more specifically to this job."
+      ]
+    },
+    "optimized_resumes": {
+      "chronological": {
+        "format_type": "chronological",
+        "personal_info": {
+          "email": "your.email@example.com"
+        },
+        "summary": "Experienced professional with 3\u20135 years of experience in the daily reconciliation in daily remittance collection in any outstanding collections in finance. Seeking to leverage strong analytical and problem-solving skills in a city manager role.",
+        "sections": [
+          {
+            "title": "Professional Experience",
+            "content": []
+          },
+          {
+            "title": "Skills",
+            "content": [
+              "\u2022 Technical: Financial Modeling",
+              "Excel",
+              "Bloomberg",
+              "Risk Analysis",
+              "\u2022 Soft Skills: Communication",
+              "Leadership",
+              "Problem Solving",
+              "Team Collaboration",
+              "Time Management",
+              "CERTIFICATIONS",
+              "CFA Level I",
+              "Financial Risk Manager (FRM)",
+              "his/her responsibility",
+              "necessary actions",
+              "cash collections"
+            ]
+          },
+          {
+            "title": "Education",
+            "content": [
+              {
+                "institution": "",
+                "degree": "",
+                "year": "",
+                "details": "[University Name] | [City, State] | [Graduation Year]"
+              }
+            ]
+          },
+          {
+            "title": "Achievements",
+            "content": [
+              "Successfully applied any outstanding collections expertise to deliver exceptional results",
+              "Successfully applied daily remittance collection expertise to deliver exceptional results",
+              "Successfully applied the daily reconciliation expertise to deliver exceptional results",
+              "Recognized for outstanding performance and commitment to excellence",
+              "Consistently exceeded performance targets and quality standards"
+            ]
+          }
+        ]
+      },
+      "functional": {
+        "format_type": "functional",
+        "personal_info": {
+          "email": "your.email@example.com"
+        },
+        "summary": "Experienced professional with 3\u20135 years of experience in the daily reconciliation in daily remittance collection in any outstanding collections in finance. Seeking to leverage strong analytical and problem-solving skills in a city manager role.",
+        "sections": [
+          {
+            "title": "Core Competencies",
+            "content": {
+              "Tools & Technologies": [
+                "Excel"
+              ],
+              "Soft Skills": [
+                "\u2022 Soft Skills: Communication",
+                "Leadership",
+                "Time Management"
+              ],
+              "Other Skills": [
+                "\u2022 Technical: Financial Modeling",
+                "Bloomberg",
+                "Risk Analysis",
+                "Problem Solving",
+                "Team Collaboration",
+                "CERTIFICATIONS",
+                "CFA Level I",
+                "Financial Risk Manager (FRM)",
+                "his/her responsibility",
+                "necessary actions",
+                "cash collections"
+              ]
+            }
+          },
+          {
+            "title": "Professional Experience",
+            "content": []
+          },
+          {
+            "title": "Education",
+            "content": [
+              {
+                "institution": "",
+                "degree": "",
+                "year": "",
+                "details": "[University Name] | [City, State] | [Graduation Year]"
+              }
+            ]
+          }
+        ]
+      },
+      "combination": {
+        "format_type": "combination",
+        "personal_info": {
+          "email": "your.email@example.com"
+        },
+        "summary": "Experienced professional with 3\u20135 years of experience in the daily reconciliation in daily remittance collection in any outstanding collections in finance. Seeking to leverage strong analytical and problem-solving skills in a city manager role.",
+        "sections": [
+          {
+            "title": "Skills Summary",
+            "content": [
+              "\u2022 Technical: Financial Modeling",
+              "Excel",
+              "Bloomberg",
+              "Risk Analysis",
+              "\u2022 Soft Skills: Communication",
+              "Leadership",
+              "Problem Solving",
+              "Team Collaboration",
+              "Time Management",
+              "CERTIFICATIONS",
+              "CFA Level I",
+              "Financial Risk Manager (FRM)",
+              "his/her responsibility",
+              "necessary actions",
+              "cash collections"
+            ]
+          },
+          {
+            "title": "Professional Experience",
+            "content": []
+          },
+          {
+            "title": "Education",
+            "content": [
+              {
+                "institution": "",
+                "degree": "",
+                "year": "",
+                "details": "[University Name] | [City, State] | [Graduation Year]"
+              }
+            ]
+          },
+          {
+            "title": "Additional Achievements",
+            "content": [
+              "Successfully applied any outstanding collections expertise to deliver exceptional results",
+              "Successfully applied daily remittance collection expertise to deliver exceptional results",
+              "Successfully applied the daily reconciliation expertise to deliver exceptional results",
+              "Recognized for outstanding performance and commitment to excellence",
+              "Consistently exceeded performance targets and quality standards"
+            ]
+          }
+        ]
+      },
+      "targeted": {
+        "format_type": "targeted",
+        "personal_info": {
+          "email": "your.email@example.com"
+        },
+        "summary": "Experienced professional with 3\u20135 years of experience in the daily reconciliation in daily remittance collection in any outstanding collections in finance. Seeking to leverage strong analytical and problem-solving skills in a city manager role. Experienced in any outstanding collections, daily remittance collection, the daily reconciliation with proven track record of success.",
+        "sections": [
+          {
+            "title": "Relevant Skills",
+            "content": [
+              "\u2022 Technical: Financial Modeling",
+              "Excel",
+              "Bloomberg",
+              "Risk Analysis",
+              "\u2022 Soft Skills: Communication",
+              "Leadership",
+              "Problem Solving",
+              "Team Collaboration",
+              "Time Management",
+              "CERTIFICATIONS",
+              "CFA Level I",
+              "Financial Risk Manager (FRM)",
+              "his/her responsibility",
+              "necessary actions",
+              "cash collections"
+            ]
+          },
+          {
+            "title": "Relevant Experience",
+            "content": []
+          },
+          {
+            "title": "Education",
+            "content": [
+              {
+                "institution": "",
+                "degree": "",
+                "year": "",
+                "details": "[University Name] | [City, State] | [Graduation Year]"
+              }
+            ]
+          },
+          {
+            "title": "Key Achievements",
+            "content": [
+              "Successfully applied any outstanding collections expertise to deliver exceptional results",
+              "Successfully applied daily remittance collection expertise to deliver exceptional results",
+              "Successfully applied the daily reconciliation expertise to deliver exceptional results",
+              "Recognized for outstanding performance and commitment to excellence",
+              "Consistently exceeded performance targets and quality standards"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "1755978723641",
+    "timestamp": "2025-08-23T19:52:03.641062",
+    "original_filename": "generated_resume.txt",
+    "original_text": "[Your Name]\n[your.email@example.com] | [Your Phone Number] | [Your City, State]\n[LinkedIn Profile URL]\n\nPROFESSIONAL SUMMARY\nExperienced professional with 3-5 years of experience in finance. Seeking to leverage strong analytical and problem-solving skills in a city manager role.\n\nWORK EXPERIENCE\n\n[Previous Job Title 1]\n[Company Name 1] | [City, State] | [Start Date - End Date]\n\u2022 Managed key client relationships and accounts\n\u2022 Analyzed business processes and identified improvement opportunities\n\u2022 Collaborated with stakeholders to achieve project objectives\n\u2022 Prepared detailed reports and presentations for management\n\n[Previous Job Title 2]\n[Company Name 2] | [City, State] | [Start Date - End Date]\n\u2022 Managed key client relationships and accounts\n\u2022 Analyzed business processes and identified improvement opportunities\n\u2022 Collaborated with stakeholders to achieve project objectives\n\u2022 Prepared detailed reports and presentations for management\n\nEDUCATION\nBachelor's Degree in Finance\n[University Name] | [City, State] | [Graduation Year]\n\nTECHNICAL SKILLS\n\u2022 Technical: Financial Modeling, Excel, Bloomberg, Risk Analysis\n\u2022 Soft Skills: Communication, Leadership, Problem Solving, Team Collaboration, Time Management\n\nCERTIFICATIONS\n\u2022 CFA Level I\n\u2022 Financial Risk Manager (FRM)",
+    "job_description": "Tasks and duties\r\n\r\nYou are in charge of the daily reconciliation of cash collections from riders, this consists in:\r\nmaking sure that all delivered orders have been paid for\r\nverifying the payment method indicated by the delivery associates and the corresponding cash / POS remittance\r\nbooking all collections in CPMT against the list of orders delivered\r\nYou are responsible for the cash collected and its timely remittance to the Finance team\r\nat the end of each day, you will remit the cash collected to FETS and get a proof of deposit\r\nyou will transfer this proof of deposit to the Finance team and create a payment in CPMT\r\nYou are responsible of the accuracy of the balances of each rider and your hub\r\nall collections must be completed and recorded the same day\r\nat the beginning of each day, you will report the collections of the previous day and share the list of any outstanding collections\r\nYou will publish daily remittance collection pending report by riders from cpmt. The information will be used by the city managers to chase the recovery from the reported riders daily with necessary actions if needed.\r\n\r\n\r\nQualifications\r\nGreat attention to details\r\nRigorous and won't close business before making sure all orders are reconciled and cash is collected.\r\nFull collection of payments will be his/her responsibility.\r\n1-2 years experience\r\nBSc in Accounting or any related course",
+    "analysis": {
+      "keyword_overlap": 8.771929824561402,
+      "skills_match": {
+        "percentage": 0.0,
+        "matched_skills": [],
+        "missing_skills": []
+      },
+      "semantic_similarity": 2.7729927329078583,
+      "missing_keywords": [
+        "any outstanding collections",
+        "daily remittance collection",
+        "the daily reconciliation",
+        "the delivery associates",
+        "his/her responsibility",
+        "all delivered orders",
+        "the reported riders",
+        "any related course",
+        "the payment method",
+        "necessary actions",
+        "the city managers",
+        "cash collections",
+        "the finance team",
+        "the previous day",
+        "all collections",
+        "full collection",
+        "great attention",
+        "the collections",
+        "the information",
+        "pending report"
+      ],
+      "resume_keywords": [
+        "project",
+        "manager",
+        "university name",
+        "graduation",
+        "team collaboration, time management certifications \u2022 cfa level i \u2022 financial risk",
+        "soft skills",
+        "report",
+        "analyzed",
+        "[your name",
+        "risk",
+        "[city, state] |",
+        "previous job title 2",
+        "start date - end date] \u2022 managed",
+        "excel",
+        "certifications",
+        "improvement opportunities",
+        "modeling",
+        "date",
+        "3-5 years",
+        "year",
+        "business",
+        "presentations",
+        "opportunity",
+        "problem",
+        "financial",
+        "collaborate",
+        "detailed",
+        "cfa",
+        "risk analysis",
+        "[company name",
+        "work",
+        "previous",
+        "financial risk manager",
+        "time management certifications",
+        "improvement",
+        "management",
+        "bloomberg, risk analysis \u2022 soft skills: communication, leadership, problem solving",
+        "analyzed business processes",
+        "manage",
+        "process",
+        "experience",
+        "profile",
+        "skill",
+        "i",
+        "analysis",
+        "communication",
+        "end",
+        "your phone number",
+        "client",
+        "number",
+        "[university name",
+        "presentation",
+        "finance",
+        "university",
+        "prepare",
+        "team",
+        "technical",
+        "bachelor",
+        "\u2022 analyzed",
+        "[your.email@example.com] |",
+        "problem solving",
+        "city",
+        "analytical",
+        "time",
+        "leverage",
+        "job",
+        "linkedin profile",
+        "summary",
+        "bloomberg",
+        "url",
+        "company",
+        "achieve",
+        "professional",
+        "level",
+        "linkedin",
+        "account",
+        "relationship",
+        "your city",
+        "key",
+        "education",
+        "|",
+        "accounts",
+        "phone",
+        "solve",
+        "project objectives",
+        "skills",
+        "role",
+        "stakeholders",
+        "degree",
+        "title",
+        "objective",
+        "frm",
+        "identify",
+        "\u2022 collaborated",
+        "collaboration",
+        "state",
+        "team collaboration",
+        "soft",
+        "\u2022 prepared",
+        "work experience",
+        "seek",
+        "leadership",
+        "solving",
+        "stakeholder",
+        "strong"
+      ],
+      "job_keywords": [
+        "manager",
+        "duty",
+        "deliver",
+        "any outstanding collections",
+        "daily remittance collection",
+        "report",
+        "riders",
+        "share",
+        "the collections",
+        "proof",
+        "the cash",
+        "daily",
+        "the balances",
+        "need",
+        "year",
+        "great",
+        "business",
+        "the beginning",
+        "cpmt",
+        "pending report",
+        "create",
+        "payment",
+        "you",
+        "necessary",
+        "timely",
+        "the delivery associates",
+        "reconcile",
+        "previous",
+        "all collections",
+        "close",
+        "necessary actions",
+        "rider",
+        "pos",
+        "make",
+        "accuracy",
+        "his/her responsibility",
+        "experience",
+        "order",
+        "remit",
+        "consist",
+        "list",
+        "collect",
+        "outstanding",
+        "course",
+        "reconciliation",
+        "detail",
+        "verify",
+        "indicate",
+        "end",
+        "information",
+        "pende",
+        "all delivered orders",
+        "publish",
+        "qualifications",
+        "finance",
+        "remittance",
+        "team",
+        "a proof",
+        "the finance team",
+        "chase",
+        "the information",
+        "accounting",
+        "each day",
+        "recovery",
+        "the previous day",
+        "city",
+        "the reported riders",
+        "collection",
+        "any related course",
+        "fets",
+        "orders",
+        "responsibility",
+        "charge",
+        "task",
+        "associate",
+        "hub",
+        "rigorous",
+        "the daily reconciliation",
+        "attention",
+        "record",
+        "responsible",
+        "this proof",
+        "details",
+        "all orders",
+        "cash collections",
+        "delivery",
+        "the end",
+        "the city managers",
+        "this",
+        "bsc",
+        "the list",
+        "deposit",
+        "day",
+        "each rider",
+        "beginning",
+        "payments",
+        "book",
+        "transfer",
+        "balance",
+        "complete",
+        "action",
+        "sure",
+        "pay",
+        "the accuracy",
+        "the payment method",
+        "method",
+        "cash",
+        "qualification",
+        "great attention",
+        "the recovery",
+        "full collection",
+        "a payment",
+        "correspond",
+        "related"
+      ],
+      "resume_skills": [
+        "excel"
+      ],
+      "job_skills": [],
+      "suggestions": [
+        "Add these important keywords: any outstanding collections, daily remittance collection, the daily reconciliation, the delivery associates, his/her responsibility",
+        "Consider rephrasing your experience to better match the job description language",
+        "Your resume appears to be generic. Tailor it more specifically to this job."
+      ]
+    },
+    "score": {
+      "overall_score": 32.1,
+      "category": "Poor Match",
+      "breakdown": {
+        "keyword_match": 20,
+        "skills_match": 30,
+        "semantic_similarity": 2.8,
+        "grammar": 88.8,
+        "completeness": 75.0
+      },
+      "weights": {
+        "keyword_match": 0.35,
+        "skills_match": 0.25,
+        "semantic_similarity": 0.2,
+        "grammar": 0.15,
+        "completeness": 0.05
+      },
+      "recommendations": [
+        "Major revisions needed to match this job",
+        "Consider if this position aligns with your experience",
+        "Focus on highlighting transferable skills and relevant experience"
+      ],
+      "improvement_potential": [
+        {
+          "area": "Keyword Optimization",
+          "current_score": 20,
+          "potential_gain": 25,
+          "priority": "High",
+          "actions": [
+            "Add missing keywords from job description",
+            "Use industry-specific terminology",
+            "Include relevant technical terms"
+          ]
+        },
+        {
+          "area": "Skills Alignment",
+          "current_score": 30,
+          "potential_gain": 25,
+          "priority": "High",
+          "actions": [
+            "Highlight relevant technical skills",
+            "Add missing required skills",
+            "Organize skills by relevance"
+          ]
+        },
+        {
+          "area": "Content Relevance",
+          "current_score": 2.7729927329078583,
+          "potential_gain": 25,
+          "priority": "Medium",
+          "actions": [
+            "Rewrite experience using job description language",
+            "Focus on relevant achievements",
+            "Align content with job requirements"
+          ]
+        }
+      ]
+    },
+    "suggestions": {
+      "grammar": {
+        "issues": [
+          {
+            "message": "If specifying a range, consider using an en dash instead of a hyphen.",
+            "context": "...L SUMMARY Experienced professional with 3-5 years of experience in finance. Seeking...",
+            "offset": 155,
+            "length": 3,
+            "replacements": [
+              "3\u20135"
+            ],
+            "rule_id": "HYPHEN_TO_EN",
+            "category": "PUNCTUATION"
+          },
+          {
+            "message": "This noun or verb \u201cProblem-Solving\u201d is spelled with a hyphen.",
+            "context": "...Soft Skills: Communication, Leadership, Problem Solving, Team Collaboration, Time Management  C...",
+            "offset": 1168,
+            "length": 15,
+            "replacements": [
+              "Problem-Solving"
+            ],
+            "rule_id": "PROBLEM_SOLVE_HYPHEN",
+            "category": "GRAMMAR"
+          }
+        ],
+        "issue_count": 2,
+        "suggestions": [
+          "Consider changing '...' to '3\u20135'",
+          "Consider changing '...Soft Skills:' to 'Problem-Solving'",
+          "Minor grammar improvements detected"
+        ],
+        "score": 88.76404494382022
+      },
+      "keywords": [
+        "any outstanding collections",
+        "daily remittance collection",
+        "the daily reconciliation",
+        "the delivery associates",
+        "his/her responsibility",
+        "all delivered orders",
+        "the reported riders",
+        "any related course",
+        "the payment method",
+        "necessary actions",
+        "the city managers",
+        "cash collections",
+        "the finance team",
+        "the previous day",
+        "all collections",
+        "full collection",
+        "great attention",
+        "the collections",
+        "the information",
+        "pending report"
+      ],
+      "improvements": [
+        "Add these important keywords: any outstanding collections, daily remittance collection, the daily reconciliation, the delivery associates, his/her responsibility",
+        "Consider rephrasing your experience to better match the job description language",
+        "Your resume appears to be generic. Tailor it more specifically to this job."
+      ]
+    },
+    "optimized_resumes": {
+      "chronological": {
+        "format_type": "chronological",
+        "personal_info": {
+          "email": "your.email@example.com"
+        },
+        "summary": "Experienced professional with 3\u20135 years of experience in the daily reconciliation in daily remittance collection in any outstanding collections in finance. Seeking to leverage strong analytical and problem-solving skills in a city manager role.",
+        "sections": [
+          {
+            "title": "Professional Experience",
+            "content": []
+          },
+          {
+            "title": "Skills",
+            "content": [
+              "\u2022 Technical: Financial Modeling",
+              "Excel",
+              "Bloomberg",
+              "Risk Analysis",
+              "\u2022 Soft Skills: Communication",
+              "Leadership",
+              "Problem Solving",
+              "Team Collaboration",
+              "Time Management",
+              "CERTIFICATIONS",
+              "CFA Level I",
+              "Financial Risk Manager (FRM)",
+              "his/her responsibility",
+              "necessary actions",
+              "cash collections"
+            ]
+          },
+          {
+            "title": "Education",
+            "content": [
+              {
+                "institution": "",
+                "degree": "",
+                "year": "",
+                "details": "[University Name] | [City, State] | [Graduation Year]"
+              }
+            ]
+          },
+          {
+            "title": "Achievements",
+            "content": [
+              "Successfully applied any outstanding collections expertise to deliver exceptional results",
+              "Successfully applied daily remittance collection expertise to deliver exceptional results",
+              "Successfully applied the daily reconciliation expertise to deliver exceptional results",
+              "Recognized for outstanding performance and commitment to excellence",
+              "Consistently exceeded performance targets and quality standards"
+            ]
+          }
+        ]
+      },
+      "functional": {
+        "format_type": "functional",
+        "personal_info": {
+          "email": "your.email@example.com"
+        },
+        "summary": "Experienced professional with 3\u20135 years of experience in the daily reconciliation in daily remittance collection in any outstanding collections in finance. Seeking to leverage strong analytical and problem-solving skills in a city manager role.",
+        "sections": [
+          {
+            "title": "Core Competencies",
+            "content": {
+              "Tools & Technologies": [
+                "Excel"
+              ],
+              "Soft Skills": [
+                "\u2022 Soft Skills: Communication",
+                "Leadership",
+                "Time Management"
+              ],
+              "Other Skills": [
+                "\u2022 Technical: Financial Modeling",
+                "Bloomberg",
+                "Risk Analysis",
+                "Problem Solving",
+                "Team Collaboration",
+                "CERTIFICATIONS",
+                "CFA Level I",
+                "Financial Risk Manager (FRM)",
+                "his/her responsibility",
+                "necessary actions",
+                "cash collections"
+              ]
+            }
+          },
+          {
+            "title": "Professional Experience",
+            "content": []
+          },
+          {
+            "title": "Education",
+            "content": [
+              {
+                "institution": "",
+                "degree": "",
+                "year": "",
+                "details": "[University Name] | [City, State] | [Graduation Year]"
+              }
+            ]
+          }
+        ]
+      },
+      "combination": {
+        "format_type": "combination",
+        "personal_info": {
+          "email": "your.email@example.com"
+        },
+        "summary": "Experienced professional with 3\u20135 years of experience in the daily reconciliation in daily remittance collection in any outstanding collections in finance. Seeking to leverage strong analytical and problem-solving skills in a city manager role.",
+        "sections": [
+          {
+            "title": "Skills Summary",
+            "content": [
+              "\u2022 Technical: Financial Modeling",
+              "Excel",
+              "Bloomberg",
+              "Risk Analysis",
+              "\u2022 Soft Skills: Communication",
+              "Leadership",
+              "Problem Solving",
+              "Team Collaboration",
+              "Time Management",
+              "CERTIFICATIONS",
+              "CFA Level I",
+              "Financial Risk Manager (FRM)",
+              "his/her responsibility",
+              "necessary actions",
+              "cash collections"
+            ]
+          },
+          {
+            "title": "Professional Experience",
+            "content": []
+          },
+          {
+            "title": "Education",
+            "content": [
+              {
+                "institution": "",
+                "degree": "",
+                "year": "",
+                "details": "[University Name] | [City, State] | [Graduation Year]"
+              }
+            ]
+          },
+          {
+            "title": "Additional Achievements",
+            "content": [
+              "Successfully applied any outstanding collections expertise to deliver exceptional results",
+              "Successfully applied daily remittance collection expertise to deliver exceptional results",
+              "Successfully applied the daily reconciliation expertise to deliver exceptional results",
+              "Recognized for outstanding performance and commitment to excellence",
+              "Consistently exceeded performance targets and quality standards"
+            ]
+          }
+        ]
+      },
+      "targeted": {
+        "format_type": "targeted",
+        "personal_info": {
+          "email": "your.email@example.com"
+        },
+        "summary": "Experienced professional with 3\u20135 years of experience in the daily reconciliation in daily remittance collection in any outstanding collections in finance. Seeking to leverage strong analytical and problem-solving skills in a city manager role. Experienced in any outstanding collections, daily remittance collection, the daily reconciliation with proven track record of success.",
+        "sections": [
+          {
+            "title": "Relevant Skills",
+            "content": [
+              "\u2022 Technical: Financial Modeling",
+              "Excel",
+              "Bloomberg",
+              "Risk Analysis",
+              "\u2022 Soft Skills: Communication",
+              "Leadership",
+              "Problem Solving",
+              "Team Collaboration",
+              "Time Management",
+              "CERTIFICATIONS",
+              "CFA Level I",
+              "Financial Risk Manager (FRM)",
+              "his/her responsibility",
+              "necessary actions",
+              "cash collections"
+            ]
+          },
+          {
+            "title": "Relevant Experience",
+            "content": []
+          },
+          {
+            "title": "Education",
+            "content": [
+              {
+                "institution": "",
+                "degree": "",
+                "year": "",
+                "details": "[University Name] | [City, State] | [Graduation Year]"
+              }
+            ]
+          },
+          {
+            "title": "Key Achievements",
+            "content": [
+              "Successfully applied any outstanding collections expertise to deliver exceptional results",
+              "Successfully applied daily remittance collection expertise to deliver exceptional results",
+              "Successfully applied the daily reconciliation expertise to deliver exceptional results",
+              "Recognized for outstanding performance and commitment to excellence",
+              "Consistently exceeded performance targets and quality standards"
+            ]
+          }
+        ]
+      }
+    }
   }
 ]
