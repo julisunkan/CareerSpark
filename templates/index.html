@@ -1,235 +1,279 @@
 {% extends "base.html" %}
 
-{% block title %}AI Resume Optimizer - Home{% endblock %}
+{% block title %}AI Resume Optimizer - Mobile App{% endblock %}
 
 {% block content %}
-<!-- Hero Section -->
-<section class="py-5 bg-primary text-white">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-8">
-                <h1 class="display-4 fw-bold mb-4">
-                    <i class="fas fa-robot me-3"></i>AI-Powered Resume Optimizer
-                </h1>
-                <p class="lead mb-4">
-                    Transform your resume with intelligent analysis, keyword optimization, and professional formatting. 
-                    Get personalized suggestions and download in multiple formats - all powered by free, open-source AI tools.
-                </p>
-                <div class="d-flex gap-3">
-                    <a href="{{ url_for('upload') }}" class="btn btn-light btn-lg">
-                        <i class="fas fa-upload me-2"></i>Optimize My Resume
-                    </a>
-                    <a href="{{ url_for('history') }}" class="btn btn-outline-light btn-lg">
-                        <i class="fas fa-history me-2"></i>View History
-                    </a>
-                </div>
+<div class="container-fluid">
+    <!-- Hero Section -->
+    <section class="app-section">
+        <div class="text-center animate-fade-scale">
+            <div class="mb-4">
+                <i class="fas fa-robot fa-5x text-gradient"></i>
             </div>
-            <div class="col-lg-4 text-center">
-                <i class="fas fa-file-alt" style="font-size: 8rem; opacity: 0.3;"></i>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Features Section -->
-<section class="py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center mb-5">
-                <h2 class="display-5 fw-bold">Powerful Features</h2>
-                <p class="lead text-muted">Everything you need to create the perfect resume</p>
-            </div>
-        </div>
-        
-        <div class="row g-4">
-            <!-- Upload & Analysis -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                             style="width: 60px; height: 60px;">
-                            <i class="fas fa-file-upload text-primary fa-2x"></i>
-                        </div>
-                        <h5 class="card-title">Smart Upload</h5>
-                        <p class="card-text text-muted">
-                            Upload PDF, DOCX, or TXT files. Our AI extracts and analyzes your content automatically.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- AI Analysis -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <div class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                             style="width: 60px; height: 60px;">
-                            <i class="fas fa-brain text-success fa-2x"></i>
-                        </div>
-                        <h5 class="card-title">AI Analysis</h5>
-                        <p class="card-text text-muted">
-                            Advanced NLP powered by spaCy and NLTK analyzes keyword matching and content optimization.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Grammar Check -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <div class="bg-warning bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                             style="width: 60px; height: 60px;">
-                            <i class="fas fa-spell-check text-warning fa-2x"></i>
-                        </div>
-                        <h5 class="card-title">Grammar Check</h5>
-                        <p class="card-text text-muted">
-                            Free LanguageTool integration detects grammar issues and suggests improvements.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Multiple Formats -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <div class="bg-info bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                             style="width: 60px; height: 60px;">
-                            <i class="fas fa-layer-group text-info fa-2x"></i>
-                        </div>
-                        <h5 class="card-title">4 Formats</h5>
-                        <p class="card-text text-muted">
-                            Generate Chronological, Functional, Combination, and Targeted resumes instantly.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- How It Works -->
-<section class="py-5 bg-light">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center mb-5">
-                <h2 class="display-5 fw-bold">How It Works</h2>
-                <p class="lead text-muted">Simple 4-step process to optimize your resume</p>
-            </div>
-        </div>
-        
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-3">
-                <div class="text-center">
-                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                         style="width: 50px; height: 50px; font-weight: bold; font-size: 1.2rem;">
-                        1
-                    </div>
-                    <h5>Upload Resume</h5>
-                    <p class="text-muted">Upload your existing resume in PDF, DOCX, or TXT format</p>
-                </div>
-            </div>
-            
-            <div class="col-md-6 col-lg-3">
-                <div class="text-center">
-                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                         style="width: 50px; height: 50px; font-weight: bold; font-size: 1.2rem;">
-                        2
-                    </div>
-                    <h5>Add Job Description</h5>
-                    <p class="text-muted">Paste the job description you're targeting for keyword analysis</p>
-                </div>
-            </div>
-            
-            <div class="col-md-6 col-lg-3">
-                <div class="text-center">
-                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                         style="width: 50px; height: 50px; font-weight: bold; font-size: 1.2rem;">
-                        3
-                    </div>
-                    <h5>Get AI Analysis</h5>
-                    <p class="text-muted">Receive detailed scoring and optimization suggestions</p>
-                </div>
-            </div>
-            
-            <div class="col-md-6 col-lg-3">
-                <div class="text-center">
-                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                         style="width: 50px; height: 50px; font-weight: bold; font-size: 1.2rem;">
-                        4
-                    </div>
-                    <h5>Download Optimized</h5>
-                    <p class="text-muted">Preview and download your optimized resume in multiple formats</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Technology Stack -->
-<section class="py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center mb-5">
-                <h2 class="display-5 fw-bold">Powered by Open Source</h2>
-                <p class="lead text-muted">Built with free, professional-grade AI and NLP tools</p>
-            </div>
-        </div>
-        
-        <div class="row g-4 justify-content-center">
-            <div class="col-6 col-md-4 col-lg-2 text-center">
-                <div class="p-3">
-                    <i class="fab fa-python fa-3x text-primary mb-2"></i>
-                    <h6>Python & Flask</h6>
-                </div>
-            </div>
-            
-            <div class="col-6 col-md-4 col-lg-2 text-center">
-                <div class="p-3">
-                    <i class="fas fa-brain fa-3x text-success mb-2"></i>
-                    <h6>spaCy NLP</h6>
-                </div>
-            </div>
-            
-            <div class="col-6 col-md-4 col-lg-2 text-center">
-                <div class="p-3">
-                    <i class="fas fa-language fa-3x text-warning mb-2"></i>
-                    <h6>NLTK</h6>
-                </div>
-            </div>
-            
-            <div class="col-6 col-md-4 col-lg-2 text-center">
-                <div class="p-3">
-                    <i class="fas fa-spell-check fa-3x text-info mb-2"></i>
-                    <h6>LanguageTool</h6>
-                </div>
-            </div>
-            
-            <div class="col-6 col-md-4 col-lg-2 text-center">
-                <div class="p-3">
-                    <i class="fas fa-file-pdf fa-3x text-danger mb-2"></i>
-                    <h6>WeasyPrint</h6>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- CTA Section -->
-<section class="py-5 bg-dark text-white">
-    <div class="container">
-        <div class="row justify-content-center text-center">
-            <div class="col-lg-8">
-                <h2 class="display-5 fw-bold mb-4">Ready to Optimize Your Resume?</h2>
-                <p class="lead mb-4">
-                    Join thousands of job seekers who have improved their resumes with our free AI-powered tool
-                </p>
-                <a href="{{ url_for('upload') }}" class="btn btn-primary btn-lg">
-                    <i class="fas fa-rocket me-2"></i>Get Started Now
+            <h1 class="display-5 fw-bold text-gradient mb-3">
+                AI Resume Optimizer
+            </h1>
+            <p class="lead text-secondary mb-4">
+                Transform your resume with AI-powered optimization and professional formatting
+            </p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="{{ url_for('upload') }}" class="btn btn-primary btn-lg animate-slide-up">
+                    <i class="fas fa-upload me-2"></i>Upload Resume
+                </a>
+                <a href="{{ url_for('history') }}" class="btn btn-outline-secondary btn-lg animate-slide-up">
+                    <i class="fas fa-history me-2"></i>View History
                 </a>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <!-- Features Section -->
+    <section class="app-section">
+        <div class="row g-4">
+            <div class="col-12">
+                <h2 class="app-section-title text-center">
+                    <i class="fas fa-sparkles me-2"></i>Features
+                </h2>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="stats-card animate-slide-left">
+                    <i class="fas fa-brain"></i>
+                    <h4>Smart Analysis</h4>
+                    <p class="text-secondary small">
+                        AI-powered keyword matching and content optimization
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="stats-card animate-slide-left" style="animation-delay: 0.1s;">
+                    <i class="fas fa-spell-check"></i>
+                    <h4>Grammar Check</h4>
+                    <p class="text-secondary small">
+                        Professional grammar and style analysis
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="stats-card animate-slide-left" style="animation-delay: 0.2s;">
+                    <i class="fas fa-file-export"></i>
+                    <h4>Multiple Formats</h4>
+                    <p class="text-secondary small">
+                        Generate chronological, functional, and targeted resumes
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="stats-card animate-slide-left" style="animation-delay: 0.3s;">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Score Analysis</h4>
+                    <p class="text-secondary small">
+                        Detailed scoring with improvement suggestions
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="app-section">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="app-section-title text-center mb-5">
+                    <i class="fas fa-cogs me-2"></i>How It Works
+                </h2>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 animate-fade-scale" style="animation-delay: 0.1s;">
+                    <div class="card-body text-center">
+                        <div class="mb-4">
+                            <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-gradient" 
+                                 style="width: 80px; height: 80px; background: var(--primary-gradient);">
+                                <i class="fas fa-upload fa-2x text-white"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title text-gradient">1. Upload Resume</h5>
+                        <p class="card-text text-secondary">
+                            Upload your resume in PDF, DOCX, or TXT format along with the job description you're targeting.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card h-100 animate-fade-scale" style="animation-delay: 0.2s;">
+                    <div class="card-body text-center">
+                        <div class="mb-4">
+                            <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-gradient" 
+                                 style="width: 80px; height: 80px; background: var(--success-gradient);">
+                                <i class="fas fa-brain fa-2x text-white"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title text-gradient">2. AI Analysis</h5>
+                        <p class="card-text text-secondary">
+                            Our AI analyzes your resume for keyword matching, grammar, skills alignment, and provides a detailed score.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card h-100 animate-fade-scale" style="animation-delay: 0.3s;">
+                    <div class="card-body text-center">
+                        <div class="mb-4">
+                            <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-gradient" 
+                                 style="width: 80px; height: 80px; background: var(--secondary-gradient);">
+                                <i class="fas fa-download fa-2x text-white"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title text-gradient">3. Download Optimized</h5>
+                        <p class="card-text text-secondary">
+                            Get your optimized resume in multiple professional formats, ready for job applications.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats Section -->
+    <section class="app-section">
+        <div class="card glass-effect">
+            <div class="card-body">
+                <h3 class="text-center text-gradient mb-4">
+                    <i class="fas fa-chart-bar me-2"></i>Optimization Stats
+                </h3>
+                <div class="row g-4 text-center">
+                    <div class="col-6 col-md-3">
+                        <div class="animate-slide-up">
+                            <i class="fas fa-file-alt fa-2x text-gradient mb-2"></i>
+                            <h4 class="text-gradient mb-1">4</h4>
+                            <small class="text-secondary">Resume Formats</small>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="animate-slide-up" style="animation-delay: 0.1s;">
+                            <i class="fas fa-language fa-2x text-gradient mb-2"></i>
+                            <h4 class="text-gradient mb-1">AI</h4>
+                            <small class="text-secondary">Grammar Check</small>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="animate-slide-up" style="animation-delay: 0.2s;">
+                            <i class="fas fa-search fa-2x text-gradient mb-2"></i>
+                            <h4 class="text-gradient mb-1">Smart</h4>
+                            <small class="text-secondary">Keyword Match</small>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="animate-slide-up" style="animation-delay: 0.3s;">
+                            <i class="fas fa-star fa-2x text-gradient mb-2"></i>
+                            <h4 class="text-gradient mb-1">100%</h4>
+                            <small class="text-secondary">Free & Open</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="app-section">
+        <div class="card glass-effect">
+            <div class="card-body text-center">
+                <div class="mb-4">
+                    <i class="fas fa-rocket fa-4x text-gradient"></i>
+                </div>
+                <h3 class="text-gradient mb-3">Ready to Optimize Your Resume?</h3>
+                <p class="text-secondary mb-4">
+                    Join thousands of professionals who have improved their resumes with AI-powered optimization.
+                </p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="{{ url_for('upload') }}" class="btn btn-primary btn-lg">
+                        <i class="fas fa-play me-2"></i>Get Started Now
+                    </a>
+                    <button class="btn btn-outline-secondary btn-lg" onclick="showAppInfo()">
+                        <i class="fas fa-info-circle me-2"></i>Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Add staggered animation delays to feature cards
+    const featureCards = document.querySelectorAll('.stats-card');
+    featureCards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.1}s`;
+    });
+    
+    // Add parallax effect to hero icon on scroll (mobile-friendly)
+    const heroIcon = document.querySelector('.fa-robot.fa-5x');
+    let ticking = false;
+    
+    function updateHeroIcon() {
+        const scrolled = window.pageYOffset;
+        const parallax = scrolled * 0.5;
+        
+        if (heroIcon) {
+            heroIcon.style.transform = `translateY(${parallax}px) scale(${1 + scrolled * 0.0005})`;
+        }
+        ticking = false;
+    }
+    
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateHeroIcon);
+            ticking = true;
+        }
+    }
+    
+    window.addEventListener('scroll', requestTick);
+    
+    // Add touch interaction feedback for cards
+    const cards = document.querySelectorAll('.card, .stats-card');
+    cards.forEach(card => {
+        card.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.98)';
+            this.style.transition = 'transform 0.1s ease';
+        });
+        
+        card.addEventListener('touchend', function() {
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 100);
+        });
+    });
+    
+    // Add intersection observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fade-scale');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Observe all animatable elements
+    document.querySelectorAll('.stats-card, .card').forEach(el => {
+        observer.observe(el);
+    });
+});
+</script>
 {% endblock %}

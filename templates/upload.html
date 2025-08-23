@@ -2,170 +2,160 @@
 
 {% block title %}Upload Resume - AI Resume Optimizer{% endblock %}
 
+{% block header_title %}Upload Resume{% endblock %}
+
 {% block content %}
-<div class="container py-5">
-    <div class="row justify-content-center">
-        <div class="col-lg-8">
-            <!-- Header -->
-            <div class="text-center mb-5">
-                <h1 class="display-5 fw-bold">
-                    <i class="fas fa-upload me-3 text-primary"></i>Upload Your Resume
-                </h1>
-                <p class="lead text-muted">
-                    Upload your resume and job description to get AI-powered optimization suggestions
-                </p>
-            </div>
+<div class="container-fluid">
+    <!-- Upload Section -->
+    <section class="app-section">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-xl-6">
+                <div class="card animate-fade-scale">
+                    <div class="card-header text-center">
+                        <i class="fas fa-cloud-upload-alt fa-3x text-gradient mb-3"></i>
+                        <h3 class="text-gradient mb-0">Upload Your Resume</h3>
+                        <p class="text-secondary small mb-0">AI-powered optimization in seconds</p>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" enctype="multipart/form-data" id="uploadForm">
+                            <!-- File Upload Area -->
+                            <div class="mb-4">
+                                <label class="form-label">
+                                    <i class="fas fa-file-alt me-2"></i>Resume File
+                                </label>
+                                <div class="file-upload-area" id="fileUploadArea">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <h5 class="mt-3 mb-2">Drop your resume here</h5>
+                                    <p class="text-secondary mb-3">or click to browse files</p>
+                                    <div class="supported-formats">
+                                        <span class="badge bg-primary me-2">PDF</span>
+                                        <span class="badge bg-primary me-2">DOCX</span>
+                                        <span class="badge bg-primary">TXT</span>
+                                    </div>
+                                    <input type="file" name="resume_file" id="resumeFile" 
+                                           accept=".pdf,.docx,.txt" required 
+                                           style="display: none;">
+                                </div>
+                                <div id="fileInfo" class="mt-3" style="display: none;">
+                                    <div class="d-flex align-items-center p-3 rounded" 
+                                         style="background: var(--glass-bg); border: 1px solid var(--border-glass);">
+                                        <i class="fas fa-file-alt fa-2x me-3 text-gradient"></i>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-0" id="fileName"></h6>
+                                            <small class="text-secondary" id="fileSize"></small>
+                                        </div>
+                                        <button type="button" class="btn btn-sm btn-outline-danger" onclick="removeFile()">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
 
-            <!-- Upload Form -->
-            <div class="card shadow-lg border-0">
-                <div class="card-header bg-primary text-white">
-                    <h5 class="mb-0">
-                        <i class="fas fa-file-upload me-2"></i>Resume Analysis
-                    </h5>
-                </div>
-                
-                <div class="card-body p-4">
-                    <form method="POST" enctype="multipart/form-data" id="uploadForm">
-                        <!-- File Upload -->
-                        <div class="mb-4">
-                            <label for="resume_file" class="form-label">
-                                <i class="fas fa-file-alt me-2"></i>Select Resume File
-                                <span class="text-danger">*</span>
-                            </label>
-                            
-                            <div class="position-relative">
-                                <input type="file" 
-                                       class="form-control form-control-lg" 
-                                       id="resume_file" 
-                                       name="resume_file" 
-                                       accept=".pdf,.docx,.txt"
-                                       required>
+                            <!-- Job Description -->
+                            <div class="mb-4">
+                                <label for="job_description" class="form-label">
+                                    <i class="fas fa-briefcase me-2"></i>Job Description
+                                </label>
+                                <textarea name="job_description" id="job_description" 
+                                          class="form-control" rows="8" required
+                                          placeholder="Paste the job description you're applying for. This helps our AI optimize your resume with relevant keywords and skills."></textarea>
                                 <div class="form-text">
-                                    <i class="fas fa-info-circle me-1"></i>
-                                    Supported formats: PDF, DOCX, TXT (Max 16MB)
+                                    <i class="fas fa-lightbulb me-1 text-warning"></i>
+                                    <small>Include the full job posting for best keyword matching results</small>
                                 </div>
                             </div>
-                            
-                            <!-- File Preview -->
-                            <div id="filePreview" class="mt-3" style="display: none;">
-                                <div class="alert alert-info">
-                                    <i class="fas fa-check-circle me-2"></i>
-                                    <span id="fileName"></span>
-                                    <small class="text-muted ms-2" id="fileSize"></small>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- Job Description -->
-                        <div class="mb-4">
-                            <label for="job_description" class="form-label">
-                                <i class="fas fa-briefcase me-2"></i>Job Description
-                                <span class="text-danger">*</span>
-                            </label>
-                            <textarea class="form-control" 
-                                      id="job_description" 
-                                      name="job_description" 
-                                      rows="8" 
-                                      placeholder="Paste the complete job description here for accurate keyword analysis and optimization..."
-                                      required></textarea>
-                            <div class="form-text">
-                                <i class="fas fa-lightbulb me-1"></i>
-                                Include the complete job description for best results. The more detailed, the better the analysis.
+                            <!-- Submit Button -->
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
+                                    <i class="fas fa-brain me-2"></i>Optimize My Resume
+                                </button>
+                                <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">
+                                    <i class="fas fa-arrow-left me-2"></i>Back to Home
+                                </a>
                             </div>
-                            
-                            <!-- Character Count -->
-                            <div class="d-flex justify-content-between mt-2">
-                                <small class="text-muted">
-                                    <span id="charCount">0</span> characters
-                                </small>
-                                <small class="text-muted">
-                                    Recommended: 500+ characters
-                                </small>
-                            </div>
-                        </div>
-
-                        <!-- Analysis Options -->
-                        <div class="mb-4">
-                            <h6 class="fw-bold">
-                                <i class="fas fa-cogs me-2"></i>Analysis Options
-                            </h6>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="grammarCheck" checked>
-                                        <label class="form-check-label" for="grammarCheck">
-                                            <i class="fas fa-spell-check me-1"></i>Grammar Analysis
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="keywordAnalysis" checked>
-                                        <label class="form-check-label" for="keywordAnalysis">
-                                            <i class="fas fa-key me-1"></i>Keyword Matching
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="formatSuggestions" checked>
-                                        <label class="form-check-label" for="formatSuggestions">
-                                            <i class="fas fa-edit me-1"></i>Format Suggestions
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="skillsAnalysis" checked>
-                                        <label class="form-check-label" for="skillsAnalysis">
-                                            <i class="fas fa-tools me-1"></i>Skills Analysis
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Submit Button -->
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
-                                <i class="fas fa-magic me-2"></i>Analyze Resume
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <!-- Features Info -->
-            <div class="row mt-5">
-                <div class="col-md-4">
-                    <div class="text-center">
-                        <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                             style="width: 60px; height: 60px;">
-                            <i class="fas fa-shield-alt text-primary fa-2x"></i>
-                        </div>
-                        <h6>100% Secure</h6>
-                        <p class="text-muted small">Your resume data is processed securely and not stored permanently</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="text-center">
-                        <div class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                             style="width: 60px; height: 60px;">
-                            <i class="fas fa-clock text-success fa-2x"></i>
-                        </div>
-                        <h6>Fast Analysis</h6>
-                        <p class="text-muted small">Get comprehensive results in under 30 seconds</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="text-center">
-                        <div class="bg-info bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                             style="width: 60px; height: 60px;">
-                            <i class="fas fa-download text-info fa-2x"></i>
-                        </div>
-                        <h6>Multiple Formats</h6>
-                        <p class="text-muted small">Download optimized resume in 4 different formats</p>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Feature Highlights -->
+    <section class="app-section">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="stats-card animate-slide-left">
+                    <i class="fas fa-zap"></i>
+                    <h6 class="mb-2">Lightning Fast</h6>
+                    <p class="text-secondary small mb-0">Analysis completed in seconds</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stats-card animate-slide-left" style="animation-delay: 0.1s;">
+                    <i class="fas fa-shield-alt"></i>
+                    <h6 class="mb-2">Secure & Private</h6>
+                    <p class="text-secondary small mb-0">Your data is processed locally</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stats-card animate-slide-left" style="animation-delay: 0.2s;">
+                    <i class="fas fa-magic"></i>
+                    <h6 class="mb-2">AI-Powered</h6>
+                    <p class="text-secondary small mb-0">Advanced NLP & ML algorithms</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section class="app-section">
+        <div class="card glass-effect">
+            <div class="card-body">
+                <h5 class="text-gradient mb-3">
+                    <i class="fas fa-lightbulb me-2"></i>Pro Tips for Best Results
+                </h5>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="d-flex">
+                            <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                            <div>
+                                <h6 class="mb-1">Complete Job Description</h6>
+                                <small class="text-secondary">Include the entire job posting for accurate keyword analysis</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex">
+                            <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                            <div>
+                                <h6 class="mb-1">Clear Format</h6>
+                                <small class="text-secondary">Use well-formatted PDFs or Word documents</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex">
+                            <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                            <div>
+                                <h6 class="mb-1">Complete Information</h6>
+                                <small class="text-secondary">Include all relevant experience and skills</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex">
+                            <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                            <div>
+                                <h6 class="mb-1">Recent Resume</h6>
+                                <small class="text-secondary">Use your most up-to-date resume version</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 
 <!-- Loading Modal -->
@@ -173,18 +163,15 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-body text-center py-5">
-                <div class="spinner-border text-primary mb-3" role="status" style="width: 3rem; height: 3rem;">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-                <h5>Analyzing Your Resume</h5>
-                <p class="text-muted mb-0">Please wait while our AI processes your resume...</p>
-                
-                <div class="mt-4">
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" 
-                             role="progressbar" style="width: 0%" id="progressBar"></div>
+                <div class="mb-4">
+                    <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+                        <span class="visually-hidden">Loading...</span>
                     </div>
-                    <small class="text-muted mt-2 d-block" id="progressText">Extracting text from file...</small>
+                </div>
+                <h5 class="text-gradient mb-3">Optimizing Your Resume</h5>
+                <p class="text-secondary mb-3" id="loadingText">Analyzing your resume content...</p>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-animated" id="progressBar" style="width: 0%"></div>
                 </div>
             </div>
         </div>
@@ -195,107 +182,174 @@
 {% block scripts %}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const fileInput = document.getElementById('resume_file');
-    const filePreview = document.getElementById('filePreview');
+    const fileUploadArea = document.getElementById('fileUploadArea');
+    const fileInput = document.getElementById('resumeFile');
+    const fileInfo = document.getElementById('fileInfo');
     const fileName = document.getElementById('fileName');
     const fileSize = document.getElementById('fileSize');
-    const jobDescription = document.getElementById('job_description');
-    const charCount = document.getElementById('charCount');
-    const uploadForm = document.getElementById('uploadForm');
-    const submitBtn = document.getElementById('submitBtn');
+    const form = document.getElementById('uploadForm');
     const loadingModal = new bootstrap.Modal(document.getElementById('loadingModal'));
+
+    // File upload area interactions
+    fileUploadArea.addEventListener('click', () => fileInput.click());
     
-    // File input handling
-    fileInput.addEventListener('change', function(e) {
-        const file = e.target.files[0];
-        if (file) {
-            fileName.textContent = file.name;
-            fileSize.textContent = `(${(file.size / 1024 / 1024).toFixed(2)} MB)`;
-            filePreview.style.display = 'block';
-            
-            // Validate file size
-            if (file.size > 16 * 1024 * 1024) {
-                alert('File size exceeds 16MB limit. Please choose a smaller file.');
-                fileInput.value = '';
-                filePreview.style.display = 'none';
-            }
-        } else {
-            filePreview.style.display = 'none';
-        }
+    fileUploadArea.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        fileUploadArea.classList.add('dragover');
     });
     
-    // Character count for job description
-    jobDescription.addEventListener('input', function() {
-        charCount.textContent = this.value.length;
-        
-        // Visual feedback for recommended length
-        if (this.value.length >= 500) {
-            charCount.className = 'text-success';
-        } else if (this.value.length >= 200) {
-            charCount.className = 'text-warning';
-        } else {
-            charCount.className = 'text-muted';
-        }
+    fileUploadArea.addEventListener('dragleave', (e) => {
+        e.preventDefault();
+        fileUploadArea.classList.remove('dragover');
     });
     
-    // Form submission with loading animation
-    uploadForm.addEventListener('submit', function(e) {
-        const file = fileInput.files[0];
-        const jobDesc = jobDescription.value.trim();
-        
-        // Validation
-        if (!file) {
-            e.preventDefault();
-            alert('Please select a resume file.');
-            return;
+    fileUploadArea.addEventListener('drop', (e) => {
+        e.preventDefault();
+        fileUploadArea.classList.remove('dragover');
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+            fileInput.files = files;
+            displayFileInfo(files[0]);
         }
-        
-        if (!jobDesc) {
-            e.preventDefault();
-            alert('Please enter a job description.');
-            return;
+    });
+
+    fileInput.addEventListener('change', (e) => {
+        if (e.target.files.length > 0) {
+            displayFileInfo(e.target.files[0]);
         }
-        
-        if (jobDesc.length < 50) {
-            e.preventDefault();
-            alert('Job description is too short. Please provide more details for better analysis.');
-            return;
-        }
+    });
+
+    function displayFileInfo(file) {
+        const size = (file.size / 1024 / 1024).toFixed(2);
+        fileName.textContent = file.name;
+        fileSize.textContent = `${size} MB`;
+        fileInfo.style.display = 'block';
+        fileUploadArea.style.display = 'none';
+    }
+
+    window.removeFile = function() {
+        fileInput.value = '';
+        fileInfo.style.display = 'none';
+        fileUploadArea.style.display = 'block';
+    }
+
+    // Form submission with loading states
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
         
         // Show loading modal
-        submitBtn.disabled = true;
         loadingModal.show();
         
-        // Simulate progress for better UX
-        simulateProgress();
-    });
-    
-    function simulateProgress() {
+        // Simulate loading progress
         const progressBar = document.getElementById('progressBar');
-        const progressText = document.getElementById('progressText');
-        const steps = [
-            { percent: 20, text: 'Extracting text from file...' },
-            { percent: 40, text: 'Analyzing keywords and content...' },
-            { percent: 60, text: 'Checking grammar and style...' },
-            { percent: 80, text: 'Generating optimization suggestions...' },
-            { percent: 95, text: 'Finalizing analysis...' }
+        const loadingText = document.getElementById('loadingText');
+        let progress = 0;
+        
+        const messages = [
+            'Extracting text from your resume...',
+            'Analyzing content structure...',
+            'Matching keywords with job description...',
+            'Checking grammar and style...',
+            'Calculating optimization score...',
+            'Generating optimized formats...',
+            'Finalizing analysis...'
         ];
         
-        let currentStep = 0;
-        
-        const interval = setInterval(() => {
-            if (currentStep < steps.length) {
-                const step = steps[currentStep];
-                progressBar.style.width = step.percent + '%';
-                progressText.textContent = step.text;
-                currentStep++;
-            } else {
-                clearInterval(interval);
-                progressBar.style.width = '100%';
-                progressText.textContent = 'Complete! Redirecting...';
+        const progressInterval = setInterval(() => {
+            progress += Math.random() * 15 + 5;
+            if (progress > 95) progress = 95;
+            
+            progressBar.style.width = progress + '%';
+            
+            const messageIndex = Math.floor((progress / 100) * messages.length);
+            if (messageIndex < messages.length) {
+                loadingText.textContent = messages[messageIndex];
             }
-        }, 1000);
-    }
+        }, 800);
+        
+        // Submit form
+        const formData = new FormData(form);
+        fetch(form.action || window.location.href, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            clearInterval(progressInterval);
+            progressBar.style.width = '100%';
+            loadingText.textContent = 'Complete! Redirecting...';
+            
+            if (response.ok) {
+                return response.text();
+            }
+            throw new Error('Upload failed');
+        })
+        .then(html => {
+            // Parse the response to see if it's a redirect or error
+            if (html.includes('analyze')) {
+                // Success - redirect will happen
+                setTimeout(() => {
+                    window.location.href = response.url;
+                }, 1000);
+            } else {
+                // Parse and show any errors
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const alerts = doc.querySelectorAll('.alert');
+                
+                loadingModal.hide();
+                
+                if (alerts.length > 0) {
+                    // Show error message
+                    const container = document.querySelector('.container-fluid');
+                    const alertHTML = alerts[0].outerHTML;
+                    container.insertAdjacentHTML('afterbegin', alertHTML);
+                }
+            }
+        })
+        .catch(error => {
+            clearInterval(progressInterval);
+            loadingModal.hide();
+            console.error('Upload error:', error);
+            
+            // Show error message
+            const container = document.querySelector('.container-fluid');
+            const errorAlert = `
+                <div class="alert alert-danger alert-dismissible fade show animate-slide-up" role="alert">
+                    <i class="fas fa-exclamation-circle me-2"></i>
+                    Upload failed. Please try again.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            `;
+            container.insertAdjacentHTML('afterbegin', errorAlert);
+        });
+        
+        // Actually submit the form after a delay
+        setTimeout(() => {
+            form.submit();
+        }, 2000);
+    });
+
+    // Add character counter for job description
+    const jobDescription = document.getElementById('job_description');
+    const charCounter = document.createElement('div');
+    charCounter.className = 'form-text text-end';
+    charCounter.innerHTML = '<small class="text-muted">0 characters</small>';
+    jobDescription.parentNode.appendChild(charCounter);
+
+    jobDescription.addEventListener('input', function() {
+        const count = this.value.length;
+        charCounter.innerHTML = `<small class="text-muted">${count.toLocaleString()} characters</small>`;
+        
+        if (count > 100) {
+            charCounter.innerHTML = `<small class="text-success">${count.toLocaleString()} characters - Good length for analysis</small>`;
+        }
+    });
+
+    // Auto-resize textarea
+    jobDescription.addEventListener('input', function() {
+        this.style.height = 'auto';
+        this.style.height = this.scrollHeight + 'px';
+    });
 });
 </script>
 {% endblock %}

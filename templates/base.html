@@ -2,7 +2,11 @@
 <html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#0f0f0f">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>{% block title %}AI Resume Optimizer{% endblock %}</title>
     
     <!-- Bootstrap CSS (Replit Dark Theme) -->
@@ -11,52 +15,33 @@
     <!-- Font Awesome Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     
-    <!-- Custom CSS -->
+    <!-- Custom Mobile App CSS -->
     <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url_for('index') }}">
-                <i class="fas fa-robot me-2"></i>AI Resume Optimizer
-            </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+    <!-- Mobile App Header -->
+    <header class="mobile-header">
+        <h1>
+            <i class="fas fa-robot me-2"></i>{% block header_title %}AI Resume Optimizer{% endblock %}
+        </h1>
+        <div class="header-actions">
+            {% block header_actions %}
+            <button class="btn" onclick="toggleTheme()" title="Toggle Theme">
+                <i class="fas fa-palette"></i>
             </button>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('index') }}">
-                            <i class="fas fa-home me-1"></i>Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('upload') }}">
-                            <i class="fas fa-upload me-1"></i>Upload Resume
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('history') }}">
-                            <i class="fas fa-history me-1"></i>History
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            {% endblock %}
         </div>
-    </nav>
+    </header>
 
     <!-- Flash Messages -->
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
             <div class="container mt-3">
                 {% for category, message in messages %}
-                    <div class="alert alert-{{ 'danger' if category == 'error' else 'success' if category == 'success' else 'info' }} alert-dismissible fade show" role="alert">
+                    <div class="alert alert-{{ 'danger' if category == 'error' else 'success' if category == 'success' else 'info' }} alert-dismissible fade show animate-slide-up" role="alert">
                         <i class="fas fa-{{ 'exclamation-circle' if category == 'error' else 'check-circle' if category == 'success' else 'info-circle' }} me-2"></i>
                         {{ message }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 {% endfor %}
             </div>
@@ -68,25 +53,192 @@
         {% block content %}{% endblock %}
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-light py-4 mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h6><i class="fas fa-robot me-2"></i>AI Resume Optimizer</h6>
-                    <p class="text-muted small">Powered by free and open-source tools</p>
+    <!-- Mobile Bottom Navigation -->
+    <nav class="bottom-nav mobile-safe-area">
+        <a href="{{ url_for('index') }}" class="nav-item {{ 'active' if request.endpoint == 'index' }}">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="{{ url_for('upload') }}" class="nav-item {{ 'active' if request.endpoint == 'upload' }}">
+            <i class="fas fa-plus-circle"></i>
+            <span>Upload</span>
+        </a>
+        <a href="{{ url_for('history') }}" class="nav-item {{ 'active' if request.endpoint == 'history' }}">
+            <i class="fas fa-clock-rotate-left"></i>
+            <span>History</span>
+        </a>
+        <button class="nav-item" onclick="showAppInfo()" style="background: none; border: none;">
+            <i class="fas fa-info-circle"></i>
+            <span>About</span>
+        </button>
+    </nav>
+
+    <!-- App Info Modal -->
+    <div class="modal fade" id="appInfoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-robot me-2 text-gradient"></i>AI Resume Optimizer
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="col-md-6 text-md-end">
-                    <p class="small text-muted">
-                        Built with Python, Flask, spaCy, NLTK, and ❤️
+                <div class="modal-body text-center">
+                    <div class="mb-4">
+                        <i class="fas fa-robot fa-4x text-gradient"></i>
+                    </div>
+                    <h6 class="text-gradient mb-3">Mobile App Experience</h6>
+                    <p class="text-secondary">
+                        Transform your resume with AI-powered optimization. Upload your resume, get instant analysis, and download professional formats.
                     </p>
+                    <div class="d-flex justify-content-center gap-3 mt-4">
+                        <div class="text-center">
+                            <i class="fas fa-upload fa-2x text-gradient mb-2"></i>
+                            <p class="small text-muted mb-0">Upload</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-brain fa-2x text-gradient mb-2"></i>
+                            <p class="small text-muted mb-0">Analyze</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-download fa-2x text-gradient mb-2"></i>
+                            <p class="small text-muted mb-0">Download</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <small class="text-muted">Built with Python, Flask, spaCy, NLTK, and ❤️</small>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Mobile App JS -->
+    <script>
+        // Theme toggle functionality
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Update theme colors
+            if (newTheme === 'light') {
+                document.documentElement.style.setProperty('--app-bg', '#f8f9fa');
+                document.documentElement.style.setProperty('--text-primary', '#333333');
+                document.documentElement.style.setProperty('--text-secondary', 'rgba(0, 0, 0, 0.7)');
+                document.documentElement.style.setProperty('--card-bg', 'rgba(255, 255, 255, 0.8)');
+                document.documentElement.style.setProperty('--glass-bg', 'rgba(255, 255, 255, 0.2)');
+                document.documentElement.style.setProperty('--border-glass', 'rgba(0, 0, 0, 0.1)');
+            } else {
+                document.documentElement.style.setProperty('--app-bg', '#0f0f0f');
+                document.documentElement.style.setProperty('--text-primary', '#ffffff');
+                document.documentElement.style.setProperty('--text-secondary', 'rgba(255, 255, 255, 0.7)');
+                document.documentElement.style.setProperty('--card-bg', 'rgba(255, 255, 255, 0.08)');
+                document.documentElement.style.setProperty('--glass-bg', 'rgba(255, 255, 255, 0.05)');
+                document.documentElement.style.setProperty('--border-glass', 'rgba(255, 255, 255, 0.18)');
+            }
+        }
+
+        // Load saved theme
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-bs-theme', savedTheme);
+                if (savedTheme === 'light') {
+                    document.documentElement.style.setProperty('--app-bg', '#f8f9fa');
+                    document.documentElement.style.setProperty('--text-primary', '#333333');
+                    document.documentElement.style.setProperty('--text-secondary', 'rgba(0, 0, 0, 0.7)');
+                    document.documentElement.style.setProperty('--card-bg', 'rgba(255, 255, 255, 0.8)');
+                    document.documentElement.style.setProperty('--glass-bg', 'rgba(255, 255, 255, 0.2)');
+                    document.documentElement.style.setProperty('--border-glass', 'rgba(0, 0, 0, 0.1)');
+                }
+            }
+            
+            // Add animation classes to elements
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.classList.add('animate-fade-scale');
+            });
+            
+            // Add haptic feedback for mobile (if supported)
+            if ('vibrate' in navigator) {
+                document.querySelectorAll('.btn, .nav-item').forEach(element => {
+                    element.addEventListener('click', () => {
+                        navigator.vibrate(50);
+                    });
+                });
+            }
+        });
+
+        // Show app info modal
+        function showAppInfo() {
+            const modal = new bootstrap.Modal(document.getElementById('appInfoModal'));
+            modal.show();
+        }
+
+        // Add touch feedback for mobile interactions
+        document.addEventListener('touchstart', function(e) {
+            if (e.target.matches('.btn, .card, .nav-item, .form-control')) {
+                e.target.style.transform = 'scale(0.98)';
+                e.target.style.transition = 'transform 0.1s';
+            }
+        });
+
+        document.addEventListener('touchend', function(e) {
+            if (e.target.matches('.btn, .card, .nav-item, .form-control')) {
+                setTimeout(() => {
+                    e.target.style.transform = '';
+                }, 100);
+            }
+        });
+
+        // Prevent zoom on double tap for mobile app experience
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+
+        // Add pull-to-refresh effect (visual only)
+        let startY = 0;
+        let pullDistance = 0;
+        const refreshThreshold = 100;
+
+        document.addEventListener('touchstart', function(e) {
+            if (window.scrollY === 0) {
+                startY = e.touches[0].pageY;
+            }
+        });
+
+        document.addEventListener('touchmove', function(e) {
+            if (window.scrollY === 0 && startY < e.touches[0].pageY) {
+                pullDistance = e.touches[0].pageY - startY;
+                if (pullDistance > 0 && pullDistance < refreshThreshold) {
+                    document.body.style.transform = `translateY(${pullDistance * 0.5}px)`;
+                    document.body.style.opacity = 1 - (pullDistance / refreshThreshold * 0.3);
+                }
+            }
+        });
+
+        document.addEventListener('touchend', function(e) {
+            if (pullDistance > refreshThreshold) {
+                // Trigger refresh action
+                window.location.reload();
+            }
+            document.body.style.transform = '';
+            document.body.style.opacity = '';
+            pullDistance = 0;
+        });
+    </script>
     
     <!-- Custom JS -->
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
