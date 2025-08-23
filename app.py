@@ -25,3 +25,18 @@ os.makedirs('data', exist_ok=True)
 with app.app_context():
     import models
     import routes
+    
+    # Start periodic cleanup on app startup
+    try:
+        from utils.cleanup import schedule_periodic_cleanup, run_full_cleanup
+        
+        # Run initial cleanup
+        cleanup_results = run_full_cleanup()
+        if cleanup_results['upload_files_deleted'] + cleanup_results['download_files_deleted'] + cleanup_results['data_entries_removed'] > 0:
+            app.logger.info(f"Startup cleanup completed: {cleanup_results}")
+        
+        # Schedule periodic cleanup
+        schedule_periodic_cleanup()
+        
+    except Exception as e:
+        app.logger.warning(f"Failed to initialize cleanup system: {e}")

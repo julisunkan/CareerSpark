@@ -1,6 +1,6 @@
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import List, Dict, Any
 
 class ResumeHistory:
@@ -58,6 +58,35 @@ class ResumeHistory:
             if resume['id'] == resume_id:
                 return resume
         return {}
+    
+    def cleanup_old_entries(self, max_age_hours: int = 24) -> int:
+        """Remove resume entries older than specified hours"""
+        resumes = self._load_all()
+        if not resumes:
+            return 0
+        
+        cutoff_time = datetime.now() - timedelta(hours=max_age_hours)
+        original_count = len(resumes)
+        
+        # Filter out old entries
+        filtered_resumes = []
+        for resume in resumes:
+            try:
+                resume_time = datetime.fromisoformat(resume.get('timestamp', ''))
+                if resume_time > cutoff_time:
+                    filtered_resumes.append(resume)
+            except (ValueError, TypeError):
+                # Keep entries with invalid timestamps
+                filtered_resumes.append(resume)
+        
+        # Save if changes were made
+        if len(filtered_resumes) != original_count:
+            with open(self.data_file, 'w') as f:
+                json.dump(filtered_resumes, f, indent=2)
+            
+            return original_count - len(filtered_resumes)
+        
+        return 0
     
 
 # Global instance

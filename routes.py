@@ -276,6 +276,23 @@ def api_status():
     """API endpoint to check service status"""
     return jsonify({'status': 'online', 'timestamp': '2025-08-23T18:25:00Z'})
 
+@app.route('/api/cleanup', methods=['POST'])
+def manual_cleanup():
+    """Manual cleanup endpoint for maintenance"""
+    try:
+        from utils.cleanup import manual_cleanup_now
+        results = manual_cleanup_now()
+        return jsonify({
+            'success': True,
+            'message': 'Cleanup completed successfully',
+            'results': results
+        })
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'message': f'Cleanup failed: {str(e)}'
+        }), 500
+
 @app.errorhandler(413)
 def too_large(e):
     flash('File is too large. Maximum size is 16MB.', 'error')
