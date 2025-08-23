@@ -10,16 +10,33 @@ def get_language_tool():
     global tool
     if tool is None:
         try:
-            # Try to initialize with a longer timeout and fallback settings
-            tool = language_tool_python.LanguageTool('en-US', config={
-                'cacheSize': 1000,
-                'pipelineCaching': True
-            })
-            # Test the tool with a simple check
-            tool.check("Test sentence.")
-        except Exception as e:
-            logging.warning(f"LanguageTool unavailable: {e}")
+            import signal
+            
+            def timeout_handler(signum, frame):
+                raise TimeoutError("LanguageTool initialization timed out")
+            
+            # Set a 30-second timeout for initialization
+            signal.signal(signal.SIGALRM, timeout_handler)
+            signal.alarm(30)
+            
+            try:
+                # Try to use remote service first (faster)
+                tool = language_tool_python.LanguageToolPublicAPI('en-US')
+                # Quick test
+                tool.check("Test.")
+            except:
+                # Fallback to local with minimal config
+                tool = language_tool_python.LanguageTool('en-US', config={
+                    'cacheSize': 100,
+                    'maxTextLength': 10000
+                })
+            
+            signal.alarm(0)  # Cancel the alarm
+            
+        except (TimeoutError, Exception) as e:
+            logging.warning(f"LanguageTool unavailable, using fallback: {e}")
             tool = False  # Use False to indicate permanent failure
+            signal.alarm(0)  # Cancel the alarm
     return tool if tool is not False else None
 
 def check_grammar(text: str) -> Dict[str, Any]:
