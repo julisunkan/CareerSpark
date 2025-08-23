@@ -1,0 +1,45 @@
+
+SUMMARY
+-------
+Experienced professional with strong background in delivering results and exceeding expectations. Experienced in very high-profile shareholders, any outstanding collections, daily remittance collection with proven track record of success.
+
+RELEVANT SKILLS
+---------------
+• _____________________________________________________________________________________________________
+• Languages: JavaScript
+• PHP
+• CSS
+• AngularJS
+• Python
+• MySQL
+• LinUX
+• C++
+• Kotlin
+• Libraries and Framework:  jQuery and React
+• Node.js
+• Xamarin
+• Development Software: Visual Studios
+• Android Studios
+• Git Command
+• his/her responsibility
+• unique opportunities
+• online transactions
+
+RELEVANT EXPERIENCE
+-------------------
+• {'title': 'a. 3D Ball Crusher', 'company': 'https://apps.microsoft.com/detail/9pk3g0xwvc2k?hl=en-us&gl=US', 'duration': '', 'responsibilities': ['Implemented very high-profile shareholders solutions to streamline operations and improve efficiency']}
+• {'title': 'b. 3D Galaxy Defender', 'company': 'https://apps.microsoft.com/detail/9nsvsj01lzpr?hl=en-us&gl=US', 'duration': '', 'responsibilities': ['Achieved c. advanced data science guide - https://apps.microsoft.com/detail/9plqvn0bmwz8?hl=en-us&gl=us', 'Implemented any outstanding collections solutions to streamline operations and improve efficiency']}
+• {'title': 'd. Carrot Board Game', 'company': 'https://apps.microsoft.com/detail/9nwf76d5k2kj', 'duration': '', 'responsibilities': ['Achieved e. complete data analytics with projects - https://apps.microsoft.com/detail/9ppc7x39h7n8', 'Achieved f. cybersecurity guides and tools - https://apps.microsoft.com/detail/9nrbgh4pxbtz?hl=en-us&gl=us', 'Achieved g. ethical hacking methods and tools - https://apps.microsoft.com/detail/9nz6twwtw3hv', 'Achieved h. machine learning guides and projects - https://apps.microsoft.com/detail/9ngvj4bc1q2p']}
+• {'title': 'i. Mini Golf Strike', 'company': 'https://apps.microsoft.com/detail/9pf9zbd38c76?hl=en-us&gl=US', 'duration': '', 'responsibilities': ['Achieved j. network penetration guides and tools - https://apps.microsoft.com/detail/9n5pql0cwtxp', 'Achieved k. practical DevOps guides and tools - https://apps.microsoft.com/detail/9mvc107k337w', 'Achieved l. programming interviews questions and answers - https://apps.microsoft.com/detail/9nrkdgsk1fnh']}
+• {'title': 'm. Shoot Dropping Balloons', 'company': 'https://apps.microsoft.com/detail/9n07c8kv3jzz?hl=en-us&gl=US', 'duration': '', 'responsibilities': ['Achieved n. web3 dev guides and tools - https://apps.microsoft.com/detail/9pjhls0r0tfv', 'Implemented any outstanding collections solutions to streamline operations and improve efficiency']}
+
+EDUCATION
+---------
+
+KEY ACHIEVEMENTS
+----------------
+• Successfully applied very high-profile shareholders expertise to deliver exceptional results
+• Successfully applied any outstanding collections expertise to deliver exceptional results
+• Successfully applied daily remittance collection expertise to deliver exceptional results
+• Recognized for outstanding performance and commitment to excellence
+• Consistently exceeded performance targets and quality standards

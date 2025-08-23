@@ -2224,5 +2224,1046 @@
         ]
       }
     }
+  },
+  {
+    "id": "1755971332854",
+    "timestamp": "2025-08-23T17:48:52.854860",
+    "original_filename": "Agbajelola_Olasunkanmi_Julius-Software-Developer.docx",
+    "original_text": "Olasunkanmi Julius Agbajelola\nFull Stack Web Developer \nIbadan, Nigeria \u2022 +2349166501964 \u2022 ceo@digitalskeleton.com.ng \u2022 linkedin.com/digitalskeleton \u2022 https://github.com/julisunkan\nWORK EXPERIENCE \n____________________________________________________________________________________________________\nFiverr, 01/2021 \u2013 Present Freelance Software developer \nFull Stack Web Developer (MERN & LAMP Stack) (https://www.fiverr.com/digitalskeleton)\n\u25cf Contributed to the design of API endpoints in collaboration with a 20+ person product team and backend developers for my startup business DigitalSkeleton Services \u2013 https://digitalskeleton.com.ng\n\u25cf Partnered with a team of 60+ developers to create dynamic e-commerce websites for SMEs hosted on an Apache HTTP web server. \n\u25cf Coordinated performance tuning of retail e-commerce websites for 600+ key clients using minification of CSS and JS files and Image Sprites.  \u2013 https://massageofdallas.com\nMicrosoft Corporation 01/2022 \u2013 Present Freelance Microsoft Apps Developer \nSoftware Engineer \n\u25cf Developed the following apps and games for the Microsoft App Store using C++, HTML, CSS and JavaScript Programming Languages: \na. 3D Ball Crusher - https://apps.microsoft.com/detail/9pk3g0xwvc2k?hl=en-us&gl=US\nb. 3D Galaxy Defender - https://apps.microsoft.com/detail/9nsvsj01lzpr?hl=en-us&gl=US\nc. Advanced Data Science Guide - https://apps.microsoft.com/detail/9plqvn0bmwz8?hl=en-us&gl=US\nd. Carrom Board Game - https://apps.microsoft.com/detail/9nwf76d5k2kj\ne. Complete Data Analytics with Projects - https://apps.microsoft.com/detail/9ppc7x39h7n8\nf. Cyber Security Guides and Tools - https://apps.microsoft.com/detail/9nrbgh4pxbtz?hl=en-us&gl=US\ng. Ethical Hacking Methods and Tools - https://apps.microsoft.com/detail/9nz6twwtw3hv\t\nh. Machine Learning Guides and Projects - https://apps.microsoft.com/detail/9ngvj4bc1q2p\ni. Mini Golf Strike - https://apps.microsoft.com/detail/9pf9zbd38c76?hl=en-us&gl=US\nj. Network Penetration Guides and Tools - https://apps.microsoft.com/detail/9n5pql0cwtxp\t\nk. Practical DevOps Guides and Tools - https://apps.microsoft.com/detail/9mvc107k337w\nl. Programming Interviews Questions and Answers - https://apps.microsoft.com/detail/9nrkdgsk1fnh\nm. Shoot Dropping Balloons - https://apps.microsoft.com/detail/9n07c8kv3jzz?hl=en-us&gl=US\nn. Web3 Dev Guides and Tools - https://apps.microsoft.com/detail/9pjhls0r0tfv\nEDUCATION \n____________________________________________________________________________________________________\nEC-Council Network Defense Essentials (NDE), 10/2023 Credential ID 259146\nEC-Council Ethical Hacking Essentials (EHE), 10/2023 Credential ID 259109\nSKILLS \n_____________________________________________________________________________________________________ \nLanguages: JavaScript, PHP, CSS, AngularJS, Python, MySQL, Python, Linux, C++,Kotlin\nLibraries and Framework:  jQuery and React, Node.js, Xamarin\nDevelopment Software: Visual Studios, Android Studios, Git Command",
+    "job_description": "Jumia is a leading e-commerce platform in Africa. It is built around a marketplace, Jumia Logistics, and JumiaPay. The marketplace helps millions of consumers and sellers to connect and transact. Jumia Logistics enables the delivery of millions of packages through our network of local partners. JumiaPay facilitates the payments of online transactions for Jumia's ecosystem. With over 1 billion people and 500 million internet users in Africa, Jumia believes that e-commerce is making people's lives easier by helping them shop and pay for millions of products at the best prices wherever they live. E-commerce is also creating new opportunities for SMEs to grow, and job opportunities for a new generation to thrive.\r\n\r\nWith over 5,000 employees in more than 10 countries in Africa, Jumia is led by top talented leaders offering a great mix of local and international talents and is backed by very high-profile shareholders. Jumia is committed to creating sustainable impact in Africa. Jumia offers unique opportunities in a vibrant and booming environment, creating new jobs, new skills, and empowering a new generation.\r\n\r\n\r\nJob Description\r\n\r\nTasks and duties\r\n\r\nYou are in charge of the daily reconciliation of cash collections from riders, this consists in:\r\nmaking sure that all delivered orders have been paid for\r\nverifying the payment method indicated by the delivery associates and the corresponding cash / POS remittance\r\nbooking all collections in CPMT against the list of orders delivered\r\nYou are responsible for the cash collected and its timely remittance to the Finance team\r\nat the end of each day, you will remit the cash collected to FETS and get a proof of deposit\r\nyou will transfer this proof of deposit to the Finance team and create a payment in CPMT\r\nYou are responsible of the accuracy of the balances of each rider and your hub\r\nall collections must be completed and recorded the same day\r\nat the beginning of each day, you will report the collections of the previous day and share the list of any outstanding collections\r\nYou will publish daily remittance collection pending report by riders from cpmt. The information will be used by the city managers to chase the recovery from the reported riders daily with necessary actions if needed.\r\n\r\n\r\nQualifications\r\nGreat attention to details\r\nRigorous and won't close business before making sure all orders are reconciled and cash is collected.\r\nFull collection of payments will be his/her responsibility.\r\n1-2 years experience\r\nBSc in Accounting or any related course",
+    "analysis": {
+      "keyword_overlap": 5.660377358490567,
+      "skills_match": {
+        "percentage": 0.0,
+        "matched_skills": [],
+        "missing_skills": []
+      },
+      "semantic_similarity": 0.6947526230624494,
+      "missing_keywords": [
+        "very high-profile shareholders",
+        "any outstanding collections",
+        "daily remittance collection",
+        "the daily reconciliation",
+        "the delivery associates",
+        "his/her responsibility",
+        "all delivered orders",
+        "over 5,000 employees",
+        "top talented leaders",
+        "unique opportunities",
+        "online transactions",
+        "the reported riders",
+        "any related course",
+        "sustainable impact",
+        "the payment method",
+        "job opportunities",
+        "jumia's ecosystem",
+        "necessary actions",
+        "new opportunities",
+        "the city managers"
+      ],
+      "resume_keywords": [
+        "shoot",
+        "network",
+        "image sprites",
+        "questions",
+        "c++",
+        "golf",
+        "interviews",
+        "design",
+        "react",
+        "dev",
+        "startup",
+        "https://apps.microsoft.com/detail/9n07c8kv3jzz?hl=en-us&gl=us",
+        "web3",
+        "cyber",
+        "https://digitalskeleton.com.ng",
+        "client",
+        "learning",
+        "the following apps",
+        "penetration",
+        "https://apps.microsoft.com/detail/9nz6twwtw3hv",
+        "https://apps.microsoft.com/detail/9pjhls0r0tfv",
+        "devops",
+        "partner",
+        "server",
+        "html",
+        "ball",
+        "tools - https://apps.microsoft.com/detail/9mvc107k337w",
+        "mern",
+        "experience",
+        "tools",
+        "api",
+        "projects",
+        "https://apps.microsoft.com/detail/9ngvj4bc1q2p",
+        "node.js",
+        "c++,",
+        "board game - https://apps.microsoft.com/detail/9nwf76d5k2kj e. complete data analytics with projects - https://apps.microsoft.com/detail/9ppc7x39h7n8 f. cyber security guides",
+        "sprites",
+        "app",
+        "commerce",
+        "https://apps.microsoft.com/detail/9nwf76d5k2kj",
+        "services",
+        "git command",
+        "01/2022",
+        "visual studios",
+        "libraries",
+        "retail e-commerce websites",
+        "credential",
+        "website",
+        "nde",
+        "council",
+        "dynamic e-commerce websites",
+        "smes",
+        "answers - https://apps.microsoft.com/detail/9nrkdgsk1fnh",
+        "minification",
+        "essentials",
+        "lamp",
+        "host",
+        "https://apps.microsoft.com/detail/9pk3g0xwvc2k?hl=en-us&gl=us",
+        "skill",
+        "https://apps.microsoft.com/detail/9nsvsj01lzpr?hl=en-us&gl=us",
+        "backend",
+        "digitalskeleton",
+        "following",
+        "store",
+        "corporation",
+        "credential id 259109",
+        "tools - https://apps.microsoft.com/detail/9nz6twwtw3hv",
+        "defender",
+        "javascript",
+        "stack",
+        "mini",
+        "skills",
+        "work",
+        "business",
+        "https://github.com/julisunkan",
+        "education",
+        "credential id 259146",
+        "mern & lamp stack",
+        "android",
+        "angularjs",
+        "development",
+        "the design",
+        "balloons",
+        "microsoft corporation 01/2022",
+        "complete",
+        "security",
+        "software",
+        "key",
+        "guide",
+        "https://apps.microsoft.com/detail/9pf9zbd38c76?hl=en-us&gl=us",
+        "programming",
+        "team",
+        "galaxy",
+        "mysql",
+        "create",
+        "olasunkanmi",
+        "backend developers",
+        "game",
+        "css, angularjs, python",
+        "nigeria",
+        "crusher",
+        "lamp stack",
+        "fiverr",
+        "http",
+        "tuning",
+        "c++,kotlin libraries",
+        "olasunkanmi julius agbajelola full stack web developer ibadan",
+        "g. ethical hacking methods",
+        "developer",
+        "ethical",
+        "answers",
+        "product",
+        "engineer",
+        "c++,kotlin",
+        "ibadan",
+        "agbajelola",
+        "data",
+        "person",
+        "performance",
+        "command",
+        "60+ developers",
+        "present",
+        "microsoft",
+        "digitalskeleton services",
+        "coordinated",
+        "guides",
+        "ehe",
+        "js files",
+        "julius",
+        "file",
+        "web",
+        "endpoint",
+        "analytics",
+        "apps",
+        "defense",
+        "css",
+        "practical",
+        "studios",
+        "board",
+        "https://apps.microsoft.com/detail/9nrkdgsk1fnh",
+        "php",
+        "machine",
+        "a team",
+        "apache",
+        "advanced",
+        "https://apps.microsoft.com/detail/9mvc107k337w",
+        "framework",
+        "dropping",
+        "xamarin development software",
+        "advanced data science guide - https://apps.microsoft.com/detail/9plqvn0bmwz8?hl=en-us&gl=us d.",
+        "01/2021",
+        "600+ key clients",
+        "ceo@digitalskeleton.com.ng",
+        "https://www.fiverr.com/digitalskeleton",
+        "languages",
+        "git",
+        "ec-council ethical hacking essentials",
+        "retail",
+        "https://apps.microsoft.com/detail/9nrbgh4pxbtz?hl=en-us&gl=us",
+        "methods",
+        "linux",
+        "dynamic",
+        "api endpoints",
+        "xamarin",
+        "android studios",
+        "https://apps.microsoft.com/detail/9plqvn0bmwz8?hl=en-us&gl=us",
+        "science",
+        "hacking",
+        "python",
+        "credential id",
+        "https://apps.microsoft.com/detail/9ppc7x39h7n8",
+        "develop",
+        "js",
+        "strike",
+        "jquery",
+        "visual",
+        "ec-council network defense essentials",
+        "my startup business",
+        "freelance",
+        "collaboration",
+        "image",
+        "contribute",
+        "games",
+        "sme",
+        "carrom"
+      ],
+      "job_keywords": [
+        "network",
+        "online",
+        "environment",
+        "job",
+        "the delivery",
+        "balance",
+        "this proof",
+        "profile",
+        "need",
+        "transfer",
+        "hub",
+        "chase",
+        "ecosystem",
+        "logistics",
+        "order",
+        "attention",
+        "any related course",
+        "sustainable impact",
+        "them",
+        "report",
+        "shareholder",
+        "sustainable",
+        "partner",
+        "accuracy",
+        "publish",
+        "a proof",
+        "course",
+        "record",
+        "experience",
+        "the accuracy",
+        "reconcile",
+        "jumia logistics",
+        "back",
+        "the list",
+        "deliver",
+        "finance",
+        "a great mix",
+        "indicate",
+        "charge",
+        "tasks",
+        "people's lives",
+        "cpmt",
+        "our network",
+        "jumiapay",
+        "all orders",
+        "each rider",
+        "the payments",
+        "associate",
+        "make",
+        "remit",
+        "leading",
+        "commerce",
+        "talented",
+        "live",
+        "proof",
+        "daily",
+        "country",
+        "all collections",
+        "rider",
+        "a payment",
+        "top talented leaders",
+        "the payment method",
+        "jumia",
+        "packages",
+        "smes",
+        "it",
+        "help",
+        "skill",
+        "description",
+        "you",
+        "timely",
+        "transaction",
+        "remittance",
+        "daily remittance collection",
+        "riders",
+        "e",
+        "full collection",
+        "opportunity",
+        "responsibility",
+        "easy",
+        "a marketplace",
+        "commit",
+        "end",
+        "impact",
+        "business",
+        "local partners",
+        "booming",
+        "generation",
+        "lead",
+        "job opportunities",
+        "life",
+        "unique opportunities",
+        "accounting",
+        "seller",
+        "orders",
+        "they",
+        "reconciliation",
+        "qualifications",
+        "the finance team",
+        "complete",
+        "book",
+        "year",
+        "-",
+        "necessary actions",
+        "close",
+        "fets",
+        "team",
+        "create",
+        "the recovery",
+        "the end",
+        "mix",
+        "great attention",
+        "new opportunities",
+        "package",
+        "day",
+        "consumers",
+        "any outstanding collections",
+        "talent",
+        "africa",
+        "collect",
+        "detail",
+        "sellers",
+        "facilitate",
+        "product",
+        "online transactions",
+        "new jobs",
+        "transact",
+        "collection",
+        "duty",
+        "the marketplace",
+        "action",
+        "user",
+        "deposit",
+        "list",
+        "enable",
+        "new",
+        "high",
+        "pending report",
+        "outstanding",
+        "connect",
+        "payment",
+        "vibrant",
+        "method",
+        "the delivery associates",
+        "employee",
+        "cash collections",
+        "build",
+        "marketplace",
+        "million",
+        "consist",
+        "products",
+        "pay",
+        "shop",
+        "responsible",
+        "bsc",
+        "grow",
+        "thrive",
+        "delivery",
+        "a new generation",
+        "people",
+        "cash",
+        "each day",
+        "unique",
+        "believe",
+        "related",
+        "information",
+        "necessary",
+        "internet",
+        "this",
+        "verify",
+        "price",
+        "great",
+        "the reported riders",
+        "share",
+        "jumia's ecosystem",
+        "new skills",
+        "empower",
+        "international",
+        "payments",
+        "pos",
+        "his/her responsibility",
+        "the city managers",
+        "the daily reconciliation",
+        "very high-profile shareholders",
+        "city",
+        "local",
+        "correspond",
+        "the beginning",
+        "consumer",
+        "qualification",
+        "sure",
+        "previous",
+        "the best prices",
+        "over 5,000 employees",
+        "all delivered orders",
+        "recovery",
+        "pende",
+        "manager",
+        "the collections",
+        "leader",
+        "beginning",
+        "rigorous",
+        "platform",
+        "the balances",
+        "offer",
+        "details",
+        "good",
+        "the cash",
+        "the previous day",
+        "sme",
+        "the information",
+        "millions"
+      ],
+      "resume_skills": [
+        "visual studios",
+        "github",
+        "advanced data science guide - https://apps.microsoft.com/detail/9plqvn0bmwz8?hl=en-us&gl=us d.",
+        "git",
+        "react",
+        "linux",
+        "devops",
+        "android studios",
+        "html",
+        "javascript",
+        "python",
+        "api",
+        "machine learning",
+        "node.js",
+        "css",
+        "data science",
+        "microsoft corporation 01/2022",
+        "board game - https://apps.microsoft.com/detail/9nwf76d5k2kj e. complete data analytics with projects - https://apps.microsoft.com/detail/9ppc7x39h7n8 f. cyber security guides",
+        "mysql"
+      ],
+      "job_skills": [],
+      "suggestions": [
+        "Add these important keywords: very high-profile shareholders, any outstanding collections, daily remittance collection, the daily reconciliation, the delivery associates",
+        "Consider rephrasing your experience to better match the job description language",
+        "Your resume appears to be generic. Tailor it more specifically to this job."
+      ]
+    },
+    "score": {
+      "overall_score": 30.5,
+      "category": "Poor Match",
+      "breakdown": {
+        "keyword_match": 20,
+        "skills_match": 30,
+        "semantic_similarity": 0.7,
+        "grammar": 72.3,
+        "completeness": 100.0
+      },
+      "weights": {
+        "keyword_match": 0.35,
+        "skills_match": 0.25,
+        "semantic_similarity": 0.2,
+        "grammar": 0.15,
+        "completeness": 0.05
+      },
+      "recommendations": [
+        "Major revisions needed to match this job",
+        "Consider if this position aligns with your experience",
+        "Focus on highlighting transferable skills and relevant experience"
+      ],
+      "improvement_potential": [
+        {
+          "area": "Keyword Optimization",
+          "current_score": 20,
+          "potential_gain": 25,
+          "priority": "High",
+          "actions": [
+            "Add missing keywords from job description",
+            "Use industry-specific terminology",
+            "Include relevant technical terms"
+          ]
+        },
+        {
+          "area": "Skills Alignment",
+          "current_score": 30,
+          "potential_gain": 25,
+          "priority": "High",
+          "actions": [
+            "Highlight relevant technical skills",
+            "Add missing required skills",
+            "Organize skills by relevance"
+          ]
+        },
+        {
+          "area": "Content Relevance",
+          "current_score": 0.6947526230624494,
+          "potential_gain": 25,
+          "priority": "Medium",
+          "actions": [
+            "Rewrite experience using job description language",
+            "Focus on relevant achievements",
+            "Align content with job requirements"
+          ]
+        }
+      ]
+    },
+    "suggestions": {
+      "grammar": {
+        "issues": [
+          {
+            "message": "Possible spelling mistake found.",
+            "context": "Olasunkanmi Julius Agbajelola Full Stack Web Develo...",
+            "offset": 0,
+            "length": 11,
+            "replacements": [],
+            "rule_id": "MORFOLOGIK_RULE_EN_US",
+            "category": "TYPOS"
+          },
+          {
+            "message": "Possible spelling mistake found.",
+            "context": "Olasunkanmi Julius Agbajelola Full Stack Web Developer  Ibadan, Niger...",
+            "offset": 19,
+            "length": 10,
+            "replacements": [],
+            "rule_id": "MORFOLOGIK_RULE_EN_US",
+            "category": "TYPOS"
+          },
+          {
+            "message": "Possible spelling mistake found.",
+            "context": "...kend developers for my startup business DigitalSkeleton Services \u2013 https://digitalskeleton.com....",
+            "offset": 581,
+            "length": 15,
+            "replacements": [
+              "Digital Skeleton"
+            ],
+            "rule_id": "MORFOLOGIK_RULE_EN_US",
+            "category": "TYPOS"
+          },
+          {
+            "message": "Possible spelling mistake found.",
+            "context": "...m/detail/9plqvn0bmwz8?hl=en-us&gl=US d. Carrom Board Game - https://apps.microsoft.com...",
+            "offset": 1430,
+            "length": 6,
+            "replacements": [
+              "Carrot",
+              "Carom"
+            ],
+            "rule_id": "MORFOLOGIK_RULE_EN_US",
+            "category": "TYPOS"
+          },
+          {
+            "message": "The word \u201ccybersecurity\u201d is spelled as one.",
+            "context": "...ps.microsoft.com/detail/9ppc7x39h7n8 f. Cyber Security Guides and Tools - https://apps.microso...",
+            "offset": 1590,
+            "length": 14,
+            "replacements": [
+              "Cybersecurity"
+            ],
+            "rule_id": "CYBER_COMPOUNDS",
+            "category": "GRAMMAR"
+          },
+          {
+            "message": "Possible spelling mistake found.",
+            "context": "... EC-Council Ethical Hacking Essentials (EHE), 10/2023 Credential ID 259109 SKILLS  ...",
+            "offset": 2613,
+            "length": 3,
+            "replacements": [
+              "THE",
+              "HE",
+              "SHE"
+            ],
+            "rule_id": "MORFOLOGIK_RULE_EN_US",
+            "category": "TYPOS"
+          },
+          {
+            "message": "Put a space after the comma.",
+            "context": "...larJS, Python, MySQL, Python, Linux, C++,Kotlin Libraries and Framework:  jQuery and Re...",
+            "offset": 2836,
+            "length": 7,
+            "replacements": [
+              ", Kotlin"
+            ],
+            "rule_id": "COMMA_PARENTHESIS_WHITESPACE",
+            "category": "TYPOGRAPHY"
+          },
+          {
+            "message": "Possible typo: you repeated a whitespace",
+            "context": "...nux, C++,Kotlin Libraries and Framework:  jQuery and React, Node.js, Xamarin Devel...",
+            "offset": 2868,
+            "length": 2,
+            "replacements": [
+              " "
+            ],
+            "rule_id": "WHITESPACE_RULE",
+            "category": "TYPOGRAPHY"
+          }
+        ],
+        "issue_count": 8,
+        "suggestions": [
+          "Consider changing '...kend develop' to 'Digital Skeleton'",
+          "Consider changing '...m/d' to 'Carrot'",
+          "Consider changing '...ps.microsof' to 'Cybersecurity'",
+          "Consider changing '...' to 'THE'",
+          "Consider changing '...larJ' to ', Kotlin'",
+          "Consider changing '..' to ' '",
+          "Consider reviewing your text for grammar and style improvements"
+        ],
+        "score": 72.31833910034602
+      },
+      "keywords": [
+        "very high-profile shareholders",
+        "any outstanding collections",
+        "daily remittance collection",
+        "the daily reconciliation",
+        "the delivery associates",
+        "his/her responsibility",
+        "all delivered orders",
+        "over 5,000 employees",
+        "top talented leaders",
+        "unique opportunities",
+        "online transactions",
+        "the reported riders",
+        "any related course",
+        "sustainable impact",
+        "the payment method",
+        "job opportunities",
+        "jumia's ecosystem",
+        "necessary actions",
+        "new opportunities",
+        "the city managers"
+      ],
+      "improvements": [
+        "Add these important keywords: very high-profile shareholders, any outstanding collections, daily remittance collection, the daily reconciliation, the delivery associates",
+        "Consider rephrasing your experience to better match the job description language",
+        "Your resume appears to be generic. Tailor it more specifically to this job."
+      ]
+    },
+    "optimized_resumes": {
+      "chronological": {
+        "format_type": "chronological",
+        "personal_info": {},
+        "summary": "Experienced professional with strong background in delivering results and exceeding expectations.",
+        "sections": [
+          {
+            "title": "Professional Experience",
+            "content": [
+              {
+                "title": "a. 3D Ball Crusher",
+                "company": "https://apps.microsoft.com/detail/9pk3g0xwvc2k?hl=en-us&gl=US",
+                "duration": "",
+                "responsibilities": [
+                  "Implemented very high-profile shareholders solutions to streamline operations and improve efficiency"
+                ]
+              },
+              {
+                "title": "b. 3D Galaxy Defender",
+                "company": "https://apps.microsoft.com/detail/9nsvsj01lzpr?hl=en-us&gl=US",
+                "duration": "",
+                "responsibilities": [
+                  "Achieved c. advanced data science guide - https://apps.microsoft.com/detail/9plqvn0bmwz8?hl=en-us&gl=us",
+                  "Implemented any outstanding collections solutions to streamline operations and improve efficiency"
+                ]
+              },
+              {
+                "title": "d. Carrot Board Game",
+                "company": "https://apps.microsoft.com/detail/9nwf76d5k2kj",
+                "duration": "",
+                "responsibilities": [
+                  "Achieved e. complete data analytics with projects - https://apps.microsoft.com/detail/9ppc7x39h7n8",
+                  "Achieved f. cybersecurity guides and tools - https://apps.microsoft.com/detail/9nrbgh4pxbtz?hl=en-us&gl=us",
+                  "Achieved g. ethical hacking methods and tools - https://apps.microsoft.com/detail/9nz6twwtw3hv",
+                  "Achieved h. machine learning guides and projects - https://apps.microsoft.com/detail/9ngvj4bc1q2p"
+                ]
+              },
+              {
+                "title": "i. Mini Golf Strike",
+                "company": "https://apps.microsoft.com/detail/9pf9zbd38c76?hl=en-us&gl=US",
+                "duration": "",
+                "responsibilities": [
+                  "Achieved j. network penetration guides and tools - https://apps.microsoft.com/detail/9n5pql0cwtxp",
+                  "Achieved k. practical DevOps guides and tools - https://apps.microsoft.com/detail/9mvc107k337w",
+                  "Achieved l. programming interviews questions and answers - https://apps.microsoft.com/detail/9nrkdgsk1fnh"
+                ]
+              },
+              {
+                "title": "m. Shoot Dropping Balloons",
+                "company": "https://apps.microsoft.com/detail/9n07c8kv3jzz?hl=en-us&gl=US",
+                "duration": "",
+                "responsibilities": [
+                  "Achieved n. web3 dev guides and tools - https://apps.microsoft.com/detail/9pjhls0r0tfv",
+                  "Implemented any outstanding collections solutions to streamline operations and improve efficiency"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Skills",
+            "content": [
+              "_____________________________________________________________________________________________________",
+              "Languages: JavaScript",
+              "PHP",
+              "CSS",
+              "AngularJS",
+              "Python",
+              "MySQL",
+              "LinUX",
+              "C++",
+              "Kotlin",
+              "Libraries and Framework:  jQuery and React",
+              "Node.js",
+              "Xamarin",
+              "Development Software: Visual Studios",
+              "Android Studios",
+              "Git Command",
+              "his/her responsibility",
+              "unique opportunities",
+              "online transactions"
+            ]
+          },
+          {
+            "title": "Education",
+            "content": []
+          },
+          {
+            "title": "Achievements",
+            "content": [
+              "Successfully applied very high-profile shareholders expertise to deliver exceptional results",
+              "Successfully applied any outstanding collections expertise to deliver exceptional results",
+              "Successfully applied daily remittance collection expertise to deliver exceptional results",
+              "Recognized for outstanding performance and commitment to excellence",
+              "Consistently exceeded performance targets and quality standards"
+            ]
+          }
+        ]
+      },
+      "functional": {
+        "format_type": "functional",
+        "personal_info": {},
+        "summary": "Experienced professional with strong background in delivering results and exceeding expectations.",
+        "sections": [
+          {
+            "title": "Core Competencies",
+            "content": {
+              "Programming Languages": [
+                "Languages: JavaScript",
+                "CSS",
+                "Python",
+                "MySQL"
+              ],
+              "Tools & Technologies": [
+                "Git Command"
+              ],
+              "Other Skills": [
+                "_____________________________________________________________________________________________________",
+                "PHP",
+                "AngularJS",
+                "LinUX",
+                "C++",
+                "Kotlin",
+                "Libraries and Framework:  jQuery and React",
+                "Node.js",
+                "Xamarin",
+                "Development Software: Visual Studios",
+                "Android Studios",
+                "his/her responsibility",
+                "unique opportunities",
+                "online transactions"
+              ]
+            }
+          },
+          {
+            "title": "Professional Experience",
+            "content": [
+              {
+                "title": "a. 3D Ball Crusher",
+                "company": "https://apps.microsoft.com/detail/9pk3g0xwvc2k?hl=en-us&gl=US",
+                "duration": "",
+                "responsibilities": [
+                  "Implemented very high-profile shareholders solutions to streamline operations and improve efficiency"
+                ]
+              },
+              {
+                "title": "b. 3D Galaxy Defender",
+                "company": "https://apps.microsoft.com/detail/9nsvsj01lzpr?hl=en-us&gl=US",
+                "duration": "",
+                "responsibilities": [
+                  "Achieved c. advanced data science guide - https://apps.microsoft.com/detail/9plqvn0bmwz8?hl=en-us&gl=us",
+                  "Implemented any outstanding collections solutions to streamline operations and improve efficiency"
+                ]
+              },
+              {
+                "title": "d. Carrot Board Game",
+                "company": "https://apps.microsoft.com/detail/9nwf76d5k2kj",
+                "duration": "",
+                "responsibilities": [
+                  "Achieved e. complete data analytics with projects - https://apps.microsoft.com/detail/9ppc7x39h7n8",
+                  "Achieved f. cybersecurity guides and tools - https://apps.microsoft.com/detail/9nrbgh4pxbtz?hl=en-us&gl=us",
+                  "Achieved g. ethical hacking methods and tools - https://apps.microsoft.com/detail/9nz6twwtw3hv",
+                  "Achieved h. machine learning guides and projects - https://apps.microsoft.com/detail/9ngvj4bc1q2p"
+                ]
+              },
+              {
+                "title": "i. Mini Golf Strike",
+                "company": "https://apps.microsoft.com/detail/9pf9zbd38c76?hl=en-us&gl=US",
+                "duration": "",
+                "responsibilities": [
+                  "Achieved j. network penetration guides and tools - https://apps.microsoft.com/detail/9n5pql0cwtxp",
+                  "Achieved k. practical DevOps guides and tools - https://apps.microsoft.com/detail/9mvc107k337w",
+                  "Achieved l. programming interviews questions and answers - https://apps.microsoft.com/detail/9nrkdgsk1fnh"
+                ]
+              },
+              {
+                "title": "m. Shoot Dropping Balloons",
+                "company": "https://apps.microsoft.com/detail/9n07c8kv3jzz?hl=en-us&gl=US",
+                "duration": "",
+                "responsibilities": [
+                  "Achieved n. web3 dev guides and tools - https://apps.microsoft.com/detail/9pjhls0r0tfv",
+                  "Implemented any outstanding collections solutions to streamline operations and improve efficiency"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Education",
+            "content": []
+          }
+        ]
+      },
+      "combination": {
+        "format_type": "combination",
+        "personal_info": {},
+        "summary": "Experienced professional with strong background in delivering results and exceeding expectations.",
+        "sections": [
+          {
+            "title": "Skills Summary",
+            "content": [
+              "_____________________________________________________________________________________________________",
+              "Languages: JavaScript",
+              "PHP",
+              "CSS",
+              "AngularJS",
+              "Python",
+              "MySQL",
+              "LinUX",
+              "C++",
+              "Kotlin",
+              "Libraries and Framework:  jQuery and React",
+              "Node.js",
+              "Xamarin",
+              "Development Software: Visual Studios",
+              "Android Studios",
+              "Git Command",
+              "his/her responsibility",
+              "unique opportunities",
+              "online transactions"
+            ]
+          },
+          {
+            "title": "Professional Experience",
+            "content": [
+              {
+                "title": "a. 3D Ball Crusher",
+                "company": "https://apps.microsoft.com/detail/9pk3g0xwvc2k?hl=en-us&gl=US",
+                "duration": "",
+                "responsibilities": [
+                  "Implemented very high-profile shareholders solutions to streamline operations and improve efficiency"
+                ]
+              },
+              {
+                "title": "b. 3D Galaxy Defender",
+                "company": "https://apps.microsoft.com/detail/9nsvsj01lzpr?hl=en-us&gl=US",
+                "duration": "",
+                "responsibilities": [
+                  "Achieved c. advanced data science guide - https://apps.microsoft.com/detail/9plqvn0bmwz8?hl=en-us&gl=us",
+                  "Implemented any outstanding collections solutions to streamline operations and improve efficiency"
+                ]
+              },
+              {
+                "title": "d. Carrot Board Game",
+                "company": "https://apps.microsoft.com/detail/9nwf76d5k2kj",
+                "duration": "",
+                "responsibilities": [
+                  "Achieved e. complete data analytics with projects - https://apps.microsoft.com/detail/9ppc7x39h7n8",
+                  "Achieved f. cybersecurity guides and tools - https://apps.microsoft.com/detail/9nrbgh4pxbtz?hl=en-us&gl=us",
+                  "Achieved g. ethical hacking methods and tools - https://apps.microsoft.com/detail/9nz6twwtw3hv",
+                  "Achieved h. machine learning guides and projects - https://apps.microsoft.com/detail/9ngvj4bc1q2p"
+                ]
+              },
+              {
+                "title": "i. Mini Golf Strike",
+                "company": "https://apps.microsoft.com/detail/9pf9zbd38c76?hl=en-us&gl=US",
+                "duration": "",
+                "responsibilities": [
+                  "Achieved j. network penetration guides and tools - https://apps.microsoft.com/detail/9n5pql0cwtxp",
+                  "Achieved k. practical DevOps guides and tools - https://apps.microsoft.com/detail/9mvc107k337w",
+                  "Achieved l. programming interviews questions and answers - https://apps.microsoft.com/detail/9nrkdgsk1fnh"
+                ]
+              },
+              {
+                "title": "m. Shoot Dropping Balloons",
+                "company": "https://apps.microsoft.com/detail/9n07c8kv3jzz?hl=en-us&gl=US",
+                "duration": "",
+                "responsibilities": [
+                  "Achieved n. web3 dev guides and tools - https://apps.microsoft.com/detail/9pjhls0r0tfv",
+                  "Implemented any outstanding collections solutions to streamline operations and improve efficiency"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Education",
+            "content": []
+          },
+          {
+            "title": "Additional Achievements",
+            "content": [
+              "Successfully applied very high-profile shareholders expertise to deliver exceptional results",
+              "Successfully applied any outstanding collections expertise to deliver exceptional results",
+              "Successfully applied daily remittance collection expertise to deliver exceptional results",
+              "Recognized for outstanding performance and commitment to excellence",
+              "Consistently exceeded performance targets and quality standards"
+            ]
+          }
+        ]
+      },
+      "targeted": {
+        "format_type": "targeted",
+        "personal_info": {},
+        "summary": "Experienced professional with strong background in delivering results and exceeding expectations. Experienced in very high-profile shareholders, any outstanding collections, daily remittance collection with proven track record of success.",
+        "sections": [
+          {
+            "title": "Relevant Skills",
+            "content": [
+              "_____________________________________________________________________________________________________",
+              "Languages: JavaScript",
+              "PHP",
+              "CSS",
+              "AngularJS",
+              "Python",
+              "MySQL",
+              "LinUX",
+              "C++",
+              "Kotlin",
+              "Libraries and Framework:  jQuery and React",
+              "Node.js",
+              "Xamarin",
+              "Development Software: Visual Studios",
+              "Android Studios",
+              "Git Command",
+              "his/her responsibility",
+              "unique opportunities",
+              "online transactions"
+            ]
+          },
+          {
+            "title": "Relevant Experience",
+            "content": [
+              {
+                "title": "a. 3D Ball Crusher",
+                "company": "https://apps.microsoft.com/detail/9pk3g0xwvc2k?hl=en-us&gl=US",
+                "duration": "",
+                "responsibilities": [
+                  "Implemented very high-profile shareholders solutions to streamline operations and improve efficiency"
+                ]
+              },
+              {
+                "title": "b. 3D Galaxy Defender",
+                "company": "https://apps.microsoft.com/detail/9nsvsj01lzpr?hl=en-us&gl=US",
+                "duration": "",
+                "responsibilities": [
+                  "Achieved c. advanced data science guide - https://apps.microsoft.com/detail/9plqvn0bmwz8?hl=en-us&gl=us",
+                  "Implemented any outstanding collections solutions to streamline operations and improve efficiency"
+                ]
+              },
+              {
+                "title": "d. Carrot Board Game",
+                "company": "https://apps.microsoft.com/detail/9nwf76d5k2kj",
+                "duration": "",
+                "responsibilities": [
+                  "Achieved e. complete data analytics with projects - https://apps.microsoft.com/detail/9ppc7x39h7n8",
+                  "Achieved f. cybersecurity guides and tools - https://apps.microsoft.com/detail/9nrbgh4pxbtz?hl=en-us&gl=us",
+                  "Achieved g. ethical hacking methods and tools - https://apps.microsoft.com/detail/9nz6twwtw3hv",
+                  "Achieved h. machine learning guides and projects - https://apps.microsoft.com/detail/9ngvj4bc1q2p"
+                ]
+              },
+              {
+                "title": "i. Mini Golf Strike",
+                "company": "https://apps.microsoft.com/detail/9pf9zbd38c76?hl=en-us&gl=US",
+                "duration": "",
+                "responsibilities": [
+                  "Achieved j. network penetration guides and tools - https://apps.microsoft.com/detail/9n5pql0cwtxp",
+                  "Achieved k. practical DevOps guides and tools - https://apps.microsoft.com/detail/9mvc107k337w",
+                  "Achieved l. programming interviews questions and answers - https://apps.microsoft.com/detail/9nrkdgsk1fnh"
+                ]
+              },
+              {
+                "title": "m. Shoot Dropping Balloons",
+                "company": "https://apps.microsoft.com/detail/9n07c8kv3jzz?hl=en-us&gl=US",
+                "duration": "",
+                "responsibilities": [
+                  "Achieved n. web3 dev guides and tools - https://apps.microsoft.com/detail/9pjhls0r0tfv",
+                  "Implemented any outstanding collections solutions to streamline operations and improve efficiency"
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Education",
+            "content": []
+          },
+          {
+            "title": "Key Achievements",
+            "content": [
+              "Successfully applied very high-profile shareholders expertise to deliver exceptional results",
+              "Successfully applied any outstanding collections expertise to deliver exceptional results",
+              "Successfully applied daily remittance collection expertise to deliver exceptional results",
+              "Recognized for outstanding performance and commitment to excellence",
+              "Consistently exceeded performance targets and quality standards"
+            ]
+          }
+        ]
+      }
+    }
   }
 ]
