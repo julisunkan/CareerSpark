@@ -16,9 +16,17 @@ class ResumeHistory:
             with open(self.data_file, 'w') as f:
                 json.dump([], f)
     
+    def _load_all(self) -> List[Dict[str, Any]]:
+        """Load all resume entries (private method for internal use)"""
+        try:
+            with open(self.data_file, 'r') as f:
+                return json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            return []
+    
     def save_resume(self, resume_data: Dict[str, Any]) -> str:
         """Save a resume analysis and return the ID"""
-        resumes = self.load_all()
+        resumes = self._load_all()
         
         # Generate a simple ID based on timestamp
         resume_id = str(int(datetime.now().timestamp() * 1000))
@@ -42,33 +50,15 @@ class ResumeHistory:
         
         return resume_id
     
-    def load_all(self) -> List[Dict[str, Any]]:
-        """Load all resume entries"""
-        try:
-            with open(self.data_file, 'r') as f:
-                return json.load(f)
-        except (FileNotFoundError, json.JSONDecodeError):
-            return []
     
     def load_by_id(self, resume_id: str) -> Dict[str, Any]:
         """Load a specific resume by ID"""
-        resumes = self.load_all()
+        resumes = self._load_all()
         for resume in resumes:
             if resume['id'] == resume_id:
                 return resume
         return {}
     
-    def delete_by_id(self, resume_id: str) -> bool:
-        """Delete a resume by ID"""
-        resumes = self.load_all()
-        original_count = len(resumes)
-        resumes = [r for r in resumes if r['id'] != resume_id]
-        
-        if len(resumes) < original_count:
-            with open(self.data_file, 'w') as f:
-                json.dump(resumes, f, indent=2)
-            return True
-        return False
 
 # Global instance
 resume_history = ResumeHistory()

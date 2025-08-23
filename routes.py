@@ -175,20 +175,7 @@ def download_all(resume_id):
         flash(f'Error generating ZIP file: {str(e)}', 'error')
         return redirect(url_for('analyze', resume_id=resume_id))
 
-@app.route('/history')
-def history():
-    resumes = resume_history.load_all()
-    # Sort by timestamp, newest first
-    resumes.sort(key=lambda x: x.get('timestamp', ''), reverse=True)
-    return render_template('history.html', resumes=resumes)
 
-@app.route('/delete/<resume_id>')
-def delete_resume(resume_id):
-    if resume_history.delete_by_id(resume_id):
-        flash('Resume deleted successfully', 'success')
-    else:
-        flash('Resume not found', 'error')
-    return redirect(url_for('history'))
 
 @app.errorhandler(413)
 def too_large(e):
