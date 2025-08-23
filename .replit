@@ -1,8 +1,8 @@
-modules = ["python-3.11"]
+modules = ["web", "python-3.11", "nodejs-20"]
 
 [nix]
 channel = "stable-25_05"
-packages = ["fontconfig", "ghostscript", "glib", "glibcLocales", "harfbuzz", "openssl", "pango", "postgresql", "openjdk"]
+packages = ["fontconfig", "ghostscript", "glib", "glibcLocales", "harfbuzz", "openjdk", "openssl", "pango", "postgresql"]
 
 [deployment]
 deploymentTarget = "autoscale"
