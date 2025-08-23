@@ -307,6 +307,65 @@ def correct_skill_text(skill: str) -> str:
 
 
 
+def optimize_summary_comprehensive(summary: str, missing_keywords: List[str], suggestions: List[str], job_description: str) -> str:
+    """Comprehensively optimize summary with missing keywords and suggestions"""
+    if not summary:
+        # Create a basic summary if none exists
+        summary = "Experienced professional with strong background in delivering results and exceeding expectations."
+    
+    # Enhance summary with missing keywords
+    enhanced_summary = summary.strip()
+    keywords_to_add = missing_keywords[:3]  # Add top 3 missing keywords
+    
+    for keyword in keywords_to_add:
+        if keyword.lower() not in enhanced_summary.lower():
+            # Add keyword naturally to summary
+            if 'experience' in enhanced_summary.lower():
+                enhanced_summary = enhanced_summary.replace(
+                    'experience',
+                    f'experience in {keyword.lower()}'
+                )
+            else:
+                enhanced_summary = f"{enhanced_summary.rstrip('.')}. Skilled in {keyword.lower()}."
+    
+    # Ensure summary ends with period
+    if not enhanced_summary.endswith('.'):
+        enhanced_summary += '.'
+    
+    return enhanced_summary
+
+def optimize_skills_comprehensive(skills: List[str], job_skills: List[str], missing_keywords: List[str], matched_skills: List[str]) -> List[str]:
+    """Comprehensively optimize skills with job requirements"""
+    optimized_skills = skills.copy()
+    
+    # Add missing job skills that aren't already present
+    for skill in job_skills[:5]:  # Add top 5 job skills
+        skill_lower = skill.lower()
+        if not any(skill_lower in existing_skill.lower() for existing_skill in optimized_skills):
+            optimized_skills.append(skill)
+    
+    # Add missing keywords that are skill-related
+    skill_keywords = [k for k in missing_keywords if len(k.split()) <= 2]  # Likely to be skills
+    for keyword in skill_keywords[:3]:
+        keyword_lower = keyword.lower()
+        if not any(keyword_lower in existing_skill.lower() for existing_skill in optimized_skills):
+            optimized_skills.append(keyword)
+    
+    # Ensure matched skills are properly formatted
+    for i, skill in enumerate(optimized_skills):
+        optimized_skills[i] = correct_skill_text(skill)
+    
+    # Remove duplicates while preserving order
+    seen = set()
+    unique_skills = []
+    for skill in optimized_skills:
+        skill_lower = skill.lower()
+        if skill_lower not in seen:
+            seen.add(skill_lower)
+            unique_skills.append(skill)
+    
+    return unique_skills
+
 def optimize_experience_comprehensive(experience: List[Dict[str, Any]], missing_keywords: List[str], suggestions: List[str], job_description: str) -> List[Dict[str, Any]]:
     """Comprehensively optimize experience with keywords and impact statements"""
     optimized_exp = []
