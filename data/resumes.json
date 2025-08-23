@@ -12537,5 +12537,445 @@
         ]
       }
     }
+  },
+  {
+    "id": "1755978530827",
+    "timestamp": "2025-08-23T19:48:50.827015",
+    "original_filename": "generated_resume.txt",
+    "original_text": "[Your Name]\n[your.email@example.com] | [Your Phone Number] | [Your City, State]\n[LinkedIn Profile URL]\n\nPROFESSIONAL SUMMARY\nExperienced professional with 3-5 years of experience in business. Seeking to leverage strong analytical and problem-solving skills in a professional role.\n\nWORK EXPERIENCE\n\n[Previous Job Title 1]\n[Company Name 1] | [City, State] | [Start Date - End Date]\n\u2022 Managed key client relationships and accounts\n\u2022 Analyzed business processes and identified improvement opportunities\n\u2022 Collaborated with stakeholders to achieve project objectives\n\u2022 Prepared detailed reports and presentations for management\n\n[Previous Job Title 2]\n[Company Name 2] | [City, State] | [Start Date - End Date]\n\u2022 Managed key client relationships and accounts\n\u2022 Analyzed business processes and identified improvement opportunities\n\u2022 Collaborated with stakeholders to achieve project objectives\n\u2022 Prepared detailed reports and presentations for management\n\nEDUCATION\nBachelor's Degree in Business Administration\n[University Name] | [City, State] | [Graduation Year]\n\nTECHNICAL SKILLS\n\u2022 Technical: Excel, PowerPoint, Data Analysis, Project Management\n\u2022 Soft Skills: Communication, Leadership, Problem Solving, Team Collaboration, Time Management\n\nCERTIFICATIONS\n\u2022 Project Management Professional (PMP)\n\u2022 Six Sigma Green Belt",
+    "job_description": "Test job",
+    "analysis": {
+      "keyword_overlap": 33.33333333333333,
+      "skills_match": {
+        "percentage": 0.0,
+        "matched_skills": [],
+        "missing_skills": []
+      },
+      "semantic_similarity": 2.9221271380305622,
+      "missing_keywords": [
+        "test job",
+        "test"
+      ],
+      "resume_keywords": [
+        "seek",
+        "end",
+        "summary",
+        "client",
+        "(pmp",
+        "belt",
+        "[your name",
+        "management",
+        "\u2022 collaborated",
+        "phone",
+        "degree in business administration",
+        "previous job title 2",
+        "identify",
+        "prepare",
+        "leverage",
+        "analytical",
+        "stakeholder",
+        "project management \u2022 soft skills: communication, leadership, problem solving",
+        "your phone number",
+        "3-5 years",
+        "your city",
+        "bachelor",
+        "previous",
+        "project objectives",
+        "time",
+        "solving",
+        "linkedin",
+        "work experience",
+        "[city, state] |",
+        "analyzed",
+        "soft",
+        "stakeholders",
+        "strong",
+        "business",
+        "city",
+        "technical",
+        "excel",
+        "a professional role",
+        "team collaboration, time management certifications \u2022 project management professional",
+        "problem solving",
+        "degree",
+        "detailed",
+        "job",
+        "skill",
+        "professional",
+        "process",
+        "data",
+        "presentations",
+        "sigma",
+        "green",
+        "objective",
+        "team",
+        "date",
+        "solve",
+        "start date - end date] \u2022 managed",
+        "key",
+        "year",
+        "analysis",
+        "data analysis",
+        "presentation",
+        "\u2022 analyzed",
+        "improvement",
+        "communication",
+        "experience",
+        "[company name",
+        "relationship",
+        "university",
+        "report",
+        "url",
+        "certifications",
+        "problem",
+        "state",
+        "work",
+        "pmp",
+        "account",
+        "[university name",
+        "project",
+        "collaborate",
+        "opportunity",
+        "education",
+        "profile",
+        "analyzed business processes",
+        "collaboration",
+        "administration",
+        "[your.email@example.com] |",
+        "skills",
+        "manage",
+        "graduation",
+        "number",
+        "improvement opportunities",
+        "project management professional",
+        "university name",
+        "business administration",
+        "linkedin profile",
+        "achieve",
+        "\u2022 prepared",
+        "leadership",
+        "|",
+        "title",
+        "company",
+        "time management certifications",
+        "powerpoint",
+        "role",
+        "accounts",
+        "team collaboration"
+      ],
+      "job_keywords": [
+        "job",
+        "test job",
+        "test"
+      ],
+      "resume_skills": [
+        "excel"
+      ],
+      "job_skills": [],
+      "suggestions": [
+        "Add these important keywords: test job, test",
+        "Consider rephrasing your experience to better match the job description language"
+      ]
+    },
+    "score": {
+      "overall_score": 45.3,
+      "category": "Needs Improvement",
+      "breakdown": {
+        "keyword_match": 55,
+        "skills_match": 30,
+        "semantic_similarity": 2.9,
+        "grammar": 95.0,
+        "completeness": 75.0
+      },
+      "weights": {
+        "keyword_match": 0.35,
+        "skills_match": 0.25,
+        "semantic_similarity": 0.2,
+        "grammar": 0.15,
+        "completeness": 0.05
+      },
+      "recommendations": [
+        "Significant improvements needed to match this position",
+        "Add relevant keywords and skills from the job description",
+        "Consider restructuring content to better align with requirements"
+      ],
+      "improvement_potential": [
+        {
+          "area": "Skills Alignment",
+          "current_score": 30,
+          "potential_gain": 25,
+          "priority": "High",
+          "actions": [
+            "Highlight relevant technical skills",
+            "Add missing required skills",
+            "Organize skills by relevance"
+          ]
+        },
+        {
+          "area": "Content Relevance",
+          "current_score": 2.9221271380305622,
+          "potential_gain": 25,
+          "priority": "Medium",
+          "actions": [
+            "Rewrite experience using job description language",
+            "Focus on relevant achievements",
+            "Align content with job requirements"
+          ]
+        },
+        {
+          "area": "Keyword Optimization",
+          "current_score": 55,
+          "potential_gain": 25,
+          "priority": "Medium",
+          "actions": [
+            "Add missing keywords from job description",
+            "Use industry-specific terminology",
+            "Include relevant technical terms"
+          ]
+        }
+      ]
+    },
+    "suggestions": {
+      "grammar": {
+        "issues": [],
+        "issue_count": 0,
+        "suggestions": [
+          "Grammar checking service is currently unavailable"
+        ],
+        "score": 95.0
+      },
+      "keywords": [
+        "test job",
+        "test"
+      ],
+      "improvements": [
+        "Add these important keywords: test job, test",
+        "Consider rephrasing your experience to better match the job description language"
+      ]
+    },
+    "optimized_resumes": {
+      "chronological": {
+        "format_type": "chronological",
+        "personal_info": {
+          "email": "your.email@example.com"
+        },
+        "summary": "Experienced professional with 3-5 years of experience in test job in business. Seeking to leverage strong analytical and problem-solving skills in a professional role.",
+        "sections": [
+          {
+            "title": "Professional Experience",
+            "content": []
+          },
+          {
+            "title": "Skills",
+            "content": [
+              "\u2022 Technical: Excel",
+              "PowerPoint",
+              "Data Analysis",
+              "Project Management",
+              "\u2022 Soft Skills: Communication",
+              "Leadership",
+              "Problem Solving",
+              "Team Collaboration",
+              "Time Management",
+              "CERTIFICATIONS",
+              "Project Management Professional (PMP)",
+              "Six Sigma Green Belt",
+              "test job"
+            ]
+          },
+          {
+            "title": "Education",
+            "content": [
+              {
+                "institution": "",
+                "degree": "",
+                "year": "",
+                "details": "Bachelor's Degree in Business Administration"
+              },
+              {
+                "institution": "",
+                "degree": "",
+                "year": "",
+                "details": "[University Name] | [City, State] | [Graduation Year]"
+              }
+            ]
+          },
+          {
+            "title": "Achievements",
+            "content": [
+              "Successfully applied test job expertise to deliver exceptional results",
+              "Recognized for outstanding performance and commitment to excellence",
+              "Consistently exceeded performance targets and quality standards"
+            ]
+          }
+        ]
+      },
+      "functional": {
+        "format_type": "functional",
+        "personal_info": {
+          "email": "your.email@example.com"
+        },
+        "summary": "Experienced professional with 3-5 years of experience in test job in business. Seeking to leverage strong analytical and problem-solving skills in a professional role.",
+        "sections": [
+          {
+            "title": "Core Competencies",
+            "content": {
+              "Tools & Technologies": [
+                "\u2022 Technical: Excel"
+              ],
+              "Soft Skills": [
+                "Project Management",
+                "\u2022 Soft Skills: Communication",
+                "Leadership",
+                "Time Management",
+                "Project Management Professional (PMP)"
+              ],
+              "Other Skills": [
+                "PowerPoint",
+                "Data Analysis",
+                "Problem Solving",
+                "Team Collaboration",
+                "CERTIFICATIONS",
+                "Six Sigma Green Belt",
+                "test job"
+              ]
+            }
+          },
+          {
+            "title": "Professional Experience",
+            "content": []
+          },
+          {
+            "title": "Education",
+            "content": [
+              {
+                "institution": "",
+                "degree": "",
+                "year": "",
+                "details": "Bachelor's Degree in Business Administration"
+              },
+              {
+                "institution": "",
+                "degree": "",
+                "year": "",
+                "details": "[University Name] | [City, State] | [Graduation Year]"
+              }
+            ]
+          }
+        ]
+      },
+      "combination": {
+        "format_type": "combination",
+        "personal_info": {
+          "email": "your.email@example.com"
+        },
+        "summary": "Experienced professional with 3-5 years of experience in test job in business. Seeking to leverage strong analytical and problem-solving skills in a professional role.",
+        "sections": [
+          {
+            "title": "Skills Summary",
+            "content": [
+              "\u2022 Technical: Excel",
+              "PowerPoint",
+              "Data Analysis",
+              "Project Management",
+              "\u2022 Soft Skills: Communication",
+              "Leadership",
+              "Problem Solving",
+              "Team Collaboration",
+              "Time Management",
+              "CERTIFICATIONS",
+              "Project Management Professional (PMP)",
+              "Six Sigma Green Belt",
+              "test job"
+            ]
+          },
+          {
+            "title": "Professional Experience",
+            "content": []
+          },
+          {
+            "title": "Education",
+            "content": [
+              {
+                "institution": "",
+                "degree": "",
+                "year": "",
+                "details": "Bachelor's Degree in Business Administration"
+              },
+              {
+                "institution": "",
+                "degree": "",
+                "year": "",
+                "details": "[University Name] | [City, State] | [Graduation Year]"
+              }
+            ]
+          },
+          {
+            "title": "Additional Achievements",
+            "content": [
+              "Successfully applied test job expertise to deliver exceptional results",
+              "Recognized for outstanding performance and commitment to excellence",
+              "Consistently exceeded performance targets and quality standards"
+            ]
+          }
+        ]
+      },
+      "targeted": {
+        "format_type": "targeted",
+        "personal_info": {
+          "email": "your.email@example.com"
+        },
+        "summary": "Experienced professional with 3-5 years of experience in test job in business. Seeking to leverage strong analytical and problem-solving skills in a professional role. Experienced in test job, test with proven track record of success.",
+        "sections": [
+          {
+            "title": "Relevant Skills",
+            "content": [
+              "\u2022 Technical: Excel",
+              "PowerPoint",
+              "Data Analysis",
+              "Project Management",
+              "\u2022 Soft Skills: Communication",
+              "Leadership",
+              "Problem Solving",
+              "Team Collaboration",
+              "Time Management",
+              "CERTIFICATIONS",
+              "Project Management Professional (PMP)",
+              "Six Sigma Green Belt",
+              "test job"
+            ]
+          },
+          {
+            "title": "Relevant Experience",
+            "content": []
+          },
+          {
+            "title": "Education",
+            "content": [
+              {
+                "institution": "",
+                "degree": "",
+                "year": "",
+                "details": "Bachelor's Degree in Business Administration"
+              },
+              {
+                "institution": "",
+                "degree": "",
+                "year": "",
+                "details": "[University Name] | [City, State] | [Graduation Year]"
+              }
+            ]
+          },
+          {
+            "title": "Key Achievements",
+            "content": [
+              "Successfully applied test job expertise to deliver exceptional results",
+              "Recognized for outstanding performance and commitment to excellence",
+              "Consistently exceeded performance targets and quality standards"
+            ]
+          }
+        ]
+      }
+    }
   }
 ]

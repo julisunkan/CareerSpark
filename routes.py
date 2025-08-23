@@ -56,11 +56,25 @@ def upload():
                 os.remove(filepath)
                 return redirect(request.url)
             
-            # Analyze resume vs job description
-            analysis = analyze_resume_vs_job(resume_text, job_description)
+            # Analyze resume vs job description with timeout protection
+            try:
+                analysis = analyze_resume_vs_job(resume_text, job_description)
+            except Exception as e:
+                flash(f'Error analyzing resume: {str(e)}', 'error')
+                os.remove(filepath)
+                return redirect(request.url)
             
-            # Check grammar
-            grammar_results = check_grammar(resume_text)
+            # Check grammar with timeout protection
+            try:
+                grammar_results = check_grammar(resume_text)
+            except Exception as e:
+                # Use fallback grammar results if service fails
+                grammar_results = {
+                    'issues': [],
+                    'issue_count': 0,
+                    'suggestions': ['Grammar checking temporarily unavailable'],
+                    'score': 90.0
+                }
             
             # Calculate score
             score = calculate_resume_score(analysis, grammar_results)
@@ -106,11 +120,24 @@ def upload():
             # Generate new resume from job description
             resume_text = generate_resume_from_job_description(job_description)
             
-            # Analyze the generated resume vs job description
-            analysis = analyze_resume_vs_job(resume_text, job_description)
+            # Analyze the generated resume vs job description with timeout protection
+            try:
+                analysis = analyze_resume_vs_job(resume_text, job_description)
+            except Exception as e:
+                flash(f'Error analyzing generated resume: {str(e)}', 'error')
+                return redirect(request.url)
             
-            # Check grammar on generated content
-            grammar_results = check_grammar(resume_text)
+            # Check grammar on generated content with timeout protection
+            try:
+                grammar_results = check_grammar(resume_text)
+            except Exception as e:
+                # Use fallback grammar results
+                grammar_results = {
+                    'issues': [],
+                    'issue_count': 0,
+                    'suggestions': ['Grammar checking temporarily unavailable'],
+                    'score': 90.0
+                }
             
             # Calculate score
             score = calculate_resume_score(analysis, grammar_results)

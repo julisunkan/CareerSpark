@@ -103,7 +103,7 @@ def run_full_cleanup(upload_dir: str = 'uploads',
         'upload_files_deleted': 0,
         'download_files_deleted': 0,
         'data_entries_removed': 0,
-        'total_cleanup_time': 0
+        'total_cleanup_time': 0.0
     }
     
     start_time = time.time()

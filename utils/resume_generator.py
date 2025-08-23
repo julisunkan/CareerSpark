@@ -949,7 +949,13 @@ def get_pdf_css_styles() -> str:
 
 def generate_simple_pdf_resume(optimized_resume: Dict[str, Any], format_type: str, output_dir: str) -> str:
     """Generate simple PDF using FPDF as fallback"""
-    from fpdf import FPDF
+    try:
+        from fpdf import FPDF
+    except ImportError:
+        # If FPDF is not available, create a simple text file instead
+        logging.warning("FPDF not available, creating text file instead")
+        # Fallback to text format if FPDF fails
+        return generate_txt_resume({}, optimized_resume, format_type, output_dir)
     
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     filename = os.path.join(output_dir, f"resume_{format_type}_{timestamp}.pdf")
