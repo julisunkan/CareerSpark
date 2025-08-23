@@ -175,269 +175,6 @@ def parse_education_item(line: str, education_list: List[Dict[str, Any]]):
         }
         education_list.append(education_item)
 
-# Helper functions for comprehensive optimization
-
-def extract_key_requirements(job_description: str) -> List[str]:
-    """Extract key requirements from job description"""
-    requirements = []
-    key_phrases = ['must have', 'required', 'essential', 'responsible for', 'you will', 'seeking']
-    
-    lines = job_description.lower().split('\n')
-    for line in lines:
-        if any(phrase in line for phrase in key_phrases):
-            # Extract meaningful requirement
-            cleaned_line = line.strip('• - * ').strip()
-            if 3 < len(cleaned_line.split()) < 20:  # Reasonable length
-                requirements.append(cleaned_line)
-    
-    return requirements[:5]  # Top 5 requirements
-
-def create_value_proposition(requirements: List[str], keywords: List[str]) -> str:
-    """Create value proposition based on job requirements"""
-    if not requirements:
-        return ""
-    
-    # Create general value proposition
-    value_statements = [
-        "Proven ability to deliver high-quality results in fast-paced environments.",
-        "Strong track record of improving operational efficiency and driving growth.",
-        "Demonstrated expertise in cross-functional collaboration and project leadership.",
-        "Experience in implementing innovative solutions that exceed expectations."
-    ]
-    
-    # Select most relevant value statement
-    for statement in value_statements:
-        if keywords and any(keyword.lower() in statement.lower() for keyword in keywords):
-            return statement
-    
-    return value_statements[0]
-
-def is_skill_like_keyword(keyword: str) -> bool:
-    """Determine if a keyword is skill-like"""
-    skill_indicators = [
-        'software', 'tool', 'language', 'framework', 'technology', 'platform',
-        'system', 'database', 'programming', 'development', 'analysis', 'management'
-    ]
-    
-    return (len(keyword.split()) <= 2 and 
-            (any(indicator in keyword.lower() for indicator in skill_indicators) or
-             keyword.lower() in ['python', 'java', 'sql', 'excel', 'powerbi', 'tableau', 'git', 'aws', 'azure']))
-
-def enhance_responsibility_with_keyword(responsibility: str, keyword: str) -> str:
-    """Enhance responsibility statement with keyword naturally"""
-    keyword_integrations = {
-        'python': f"{responsibility} using Python programming",
-        'sql': f"{responsibility} with SQL database queries",
-        'excel': f"{responsibility} utilizing Excel analysis",
-        'leadership': f"{responsibility} demonstrating strong leadership",
-        'analytics': f"{responsibility} through data analytics",
-        'automation': f"{responsibility} via process automation",
-        'collaboration': f"{responsibility} through cross-team collaboration"
-    }
-    
-    keyword_lower = keyword.lower()
-    if keyword_lower in keyword_integrations:
-        return keyword_integrations[keyword_lower]
-    else:
-        return f"{responsibility} leveraging {keyword} expertise"
-
-def add_quantifiable_impact(responsibility: str) -> str:
-    """Add quantifiable impact to responsibility if missing"""
-    impact_additions = [
-        "resulting in 20% efficiency improvement",
-        "achieving 95% accuracy rate", 
-        "reducing processing time by 30%",
-        "supporting team of 10+ members",
-        "managing budget of $50K+",
-        "serving 100+ stakeholders"
-    ]
-    
-    # Select appropriate impact based on responsibility content
-    if 'team' in responsibility.lower() or 'manage' in responsibility.lower():
-        return f"{responsibility}, supporting team of 10+ members"
-    elif 'process' in responsibility.lower() or 'improve' in responsibility.lower():
-        return f"{responsibility}, resulting in 20% efficiency improvement"
-    elif 'develop' in responsibility.lower() or 'create' in responsibility.lower():
-        return f"{responsibility}, achieving 95% accuracy rate"
-    else:
-        return f"{responsibility}, delivering measurable results"
-
-def create_keyword_responsibility(keyword: str, job_description: str) -> str:
-    """Create new responsibility that incorporates keyword"""
-    responsibility_templates = [
-        f"Implemented {keyword} solutions to streamline operations and improve efficiency",
-        f"Utilized {keyword} expertise to drive project success and exceed targets", 
-        f"Applied {keyword} skills to solve complex challenges and deliver results",
-        f"Leveraged {keyword} knowledge to optimize processes and enhance performance"
-    ]
-    
-    # Select template based on keyword type
-    if keyword.lower() in ['leadership', 'management', 'collaboration']:
-        return f"Demonstrated {keyword} skills to guide teams and achieve organizational goals"
-    elif keyword.lower() in ['analytics', 'analysis', 'data']:
-        return f"Conducted {keyword} to inform decision-making and drive strategic initiatives"
-    else:
-        return responsibility_templates[0]
-
-def enhance_achievements(achievements: List[str], missing_keywords: List[str], suggestions: List[str]) -> List[str]:
-    """Enhance achievements with missing keywords"""
-    enhanced_achievements = achievements.copy()
-    
-    # Add achievement statements that incorporate missing keywords
-    for keyword in missing_keywords[:3]:
-        if keyword not in ' '.join(enhanced_achievements).lower():
-            new_achievement = f"Successfully applied {keyword} expertise to deliver exceptional results"
-            enhanced_achievements.append(new_achievement)
-    
-    # Add achievements based on suggestions
-    if suggestions and len(enhanced_achievements) < 5:
-        suggestion_achievements = [
-            "Recognized for outstanding performance and commitment to excellence",
-            "Consistently exceeded performance targets and quality standards",
-            "Received positive feedback for innovative problem-solving approach"
-        ]
-        enhanced_achievements.extend(suggestion_achievements[:2])
-    
-    return enhanced_achievements
-
-def optimize_summary_comprehensive(summary: str, missing_keywords: List[str], suggestions: List[str], job_description: str) -> str:
-    """Comprehensively optimize summary with missing keywords and suggestions"""
-    if not summary:
-        # Create a new summary if none exists
-        summary = "Results-driven professional with proven track record of success."
-    
-    # Extract key requirements from job description
-    job_requirements = extract_key_requirements(job_description)
-    
-    # Integrate missing keywords naturally
-    keyword_additions = []
-    for keyword in missing_keywords[:5]:  # Top 5 keywords
-        if keyword.lower() not in summary.lower() and len(keyword.split()) <= 2:
-            keyword_additions.append(keyword)
-    
-    # Create enhanced summary
-    enhanced_summary = summary
-    
-    # Add expertise statement with keywords
-    if keyword_additions:
-        expertise_keywords = ', '.join(keyword_additions[:3])
-        enhanced_summary += f" Expertise in {expertise_keywords} with strong background in delivering innovative solutions."
-    
-    # Add value proposition based on job requirements
-    if job_requirements:
-        value_prop = create_value_proposition(job_requirements, keyword_additions[3:5] if len(keyword_additions) > 3 else [])
-        if value_prop:
-            enhanced_summary += f" {value_prop}"
-    
-    # Ensure summary ends with impact statement
-    if not any(word in enhanced_summary.lower() for word in ['achieve', 'deliver', 'drive', 'lead', 'impact']):
-        enhanced_summary += " Committed to driving results and achieving organizational objectives."
-    
-    return enhanced_summary.strip()
-
-def optimize_skills_comprehensive(skills: List[str], job_skills: List[str], missing_keywords: List[str], matched_skills: List[str]) -> List[str]:
-    """Comprehensively optimize skills section with prioritization"""
-    optimized_skills = []
-    existing_skills_lower = [skill.lower() for skill in skills]
-    
-    # First, add matched skills (already in resume and job)
-    for skill in matched_skills:
-        if skill.lower() in existing_skills_lower:
-            # Find original casing
-            for orig_skill in skills:
-                if orig_skill.lower() == skill.lower():
-                    optimized_skills.append(orig_skill)
-                    break
-    
-    # Add other existing skills
-    for skill in skills:
-        if skill not in optimized_skills:
-            optimized_skills.append(skill)
-    
-    # Add missing job skills that are highly relevant
-    for skill in job_skills:
-        if skill.lower() not in [s.lower() for s in optimized_skills]:
-            optimized_skills.append(skill.title())
-    
-    # Add missing keywords that are skill-like
-    skill_keywords = []
-    for keyword in missing_keywords:
-        if (len(keyword.split()) <= 2 and 
-            keyword.lower() not in [s.lower() for s in optimized_skills] and
-            is_skill_like_keyword(keyword)):
-            skill_keywords.append(keyword.title())
-    
-    # Add top skill keywords
-    optimized_skills.extend(skill_keywords[:7])
-    
-    # Remove duplicates while preserving order
-    seen = set()
-    final_skills = []
-    for skill in optimized_skills:
-        if skill.lower() not in seen:
-            seen.add(skill.lower())
-            final_skills.append(skill)
-    
-    return final_skills
-
-def optimize_experience_comprehensive(experience: List[Dict[str, Any]], missing_keywords: List[str], suggestions: List[str], job_description: str) -> List[Dict[str, Any]]:
-    """Comprehensively optimize experience with keywords and impact statements"""
-    optimized_exp = []
-    action_verbs = ['Led', 'Managed', 'Developed', 'Implemented', 'Designed', 'Created', 'Improved', 'Optimized', 'Achieved', 'Delivered']
-    
-    for i, exp in enumerate(experience):
-        optimized_item = exp.copy()
-        
-        # Enhance responsibilities with missing keywords and action words
-        enhanced_responsibilities = []
-        keywords_used = set()
-        
-        for j, resp in enumerate(exp.get('responsibilities', [])):
-            enhanced_resp = resp.strip()
-            
-            # Ensure responsibility starts with action verb
-            if not any(enhanced_resp.startswith(verb) for verb in action_verbs):
-                # Find appropriate action verb
-                if 'manage' in enhanced_resp.lower() or 'lead' in enhanced_resp.lower():
-                    enhanced_resp = f"Led {enhanced_resp.lower()}"
-                elif 'develop' in enhanced_resp.lower() or 'create' in enhanced_resp.lower():
-                    enhanced_resp = f"Developed {enhanced_resp.lower()}"
-                elif 'improve' in enhanced_resp.lower() or 'optimize' in enhanced_resp.lower():
-                    enhanced_resp = f"Improved {enhanced_resp.lower()}"
-                else:
-                    enhanced_resp = f"Achieved {enhanced_resp.lower()}"
-                
-                enhanced_resp = enhanced_resp[0].upper() + enhanced_resp[1:]
-            
-            # Integrate relevant missing keywords naturally
-            available_keywords = [k for k in missing_keywords if k.lower() not in enhanced_resp.lower() and k not in keywords_used]
-            
-            if available_keywords and j < 3:  # Only enhance first 3 responsibilities per job
-                keyword = available_keywords[0]
-                keywords_used.add(keyword)
-                
-                # Add keyword contextually
-                if len(keyword.split()) == 1:
-                    enhanced_resp = enhance_responsibility_with_keyword(enhanced_resp, keyword)
-            
-            # Add quantifiable impact if missing
-            if not any(char.isdigit() for char in enhanced_resp) and j == 0:  # Add to first responsibility
-                enhanced_resp = add_quantifiable_impact(enhanced_resp)
-            
-            enhanced_responsibilities.append(enhanced_resp)
-        
-        # Add new responsibility if we have remaining important keywords
-        remaining_keywords = [k for k in missing_keywords[:3] if k not in keywords_used]
-        if remaining_keywords and len(enhanced_responsibilities) < 5:
-            new_responsibility = create_keyword_responsibility(remaining_keywords[0], job_description)
-            if new_responsibility:
-                enhanced_responsibilities.append(new_responsibility)
-        
-        optimized_item['responsibilities'] = enhanced_responsibilities
-        optimized_exp.append(optimized_item)
-    
-    return optimized_exp
-
 def optimize_resume_content(resume_data: Dict[str, Any], job_description: str, analysis: Dict[str, Any]) -> Dict[str, Any]:
     """Optimize resume content based on job analysis"""
     optimized = resume_data.copy()
@@ -468,7 +205,105 @@ def optimize_resume_content(resume_data: Dict[str, Any], job_description: str, a
         optimized.get('achievements', []), missing_keywords, suggestions
     )
     
+    # Apply grammar corrections to all text content
+    optimized = apply_grammar_corrections(optimized)
+    
     return optimized
+
+def apply_grammar_corrections(resume_data: Dict[str, Any]) -> Dict[str, Any]:
+    """Apply automatic grammar corrections to resume content"""
+    from .grammar_checker import check_grammar
+    corrected_data = resume_data.copy()
+    
+    # Correct summary
+    if corrected_data.get('summary'):
+        corrected_data['summary'] = correct_text_grammar(corrected_data['summary'])
+    
+    # Correct experience descriptions
+    if corrected_data.get('experience'):
+        for exp in corrected_data['experience']:
+            if exp.get('responsibilities'):
+                exp['responsibilities'] = [correct_text_grammar(resp) for resp in exp['responsibilities']]
+            if exp.get('title'):
+                exp['title'] = correct_text_grammar(exp['title'])
+            if exp.get('company'):
+                exp['company'] = correct_text_grammar(exp['company'])
+    
+    # Correct achievements
+    if corrected_data.get('achievements'):
+        corrected_data['achievements'] = [correct_text_grammar(achievement) for achievement in corrected_data['achievements']]
+    
+    # Correct skills (minimal correction for skills as they're usually keywords)
+    if corrected_data.get('skills'):
+        corrected_data['skills'] = [correct_skill_text(skill) for skill in corrected_data['skills']]
+    
+    return corrected_data
+
+def correct_text_grammar(text: str) -> str:
+    """Apply automatic grammar corrections to text"""
+    if not text or len(text.strip()) < 3:
+        return text
+    
+    from .grammar_checker import check_grammar
+    
+    try:
+        grammar_result = check_grammar(text)
+        
+        if grammar_result['issues']:
+            corrected_text = text
+            
+            # Apply simple corrections for common issues
+            for issue in grammar_result['issues']:
+                if issue['replacements'] and len(issue['replacements']) > 0:
+                    # Apply the first suggested replacement
+                    replacement = issue['replacements'][0]
+                    offset = issue['offset']
+                    length = issue['length']
+                    
+                    if offset + length <= len(corrected_text):
+                        corrected_text = (corrected_text[:offset] + 
+                                        replacement + 
+                                        corrected_text[offset + length:])
+            
+            return corrected_text
+        
+        return text
+    except Exception:
+        # If grammar checking fails, return original text
+        return text
+
+def correct_skill_text(skill: str) -> str:
+    """Apply minimal corrections to skill text"""
+    if not skill:
+        return skill
+    
+    # Basic capitalization and punctuation fixes for skills
+    corrected = skill.strip()
+    
+    # Ensure proper capitalization for common technologies
+    tech_corrections = {
+        'javascript': 'JavaScript',
+        'html': 'HTML',
+        'css': 'CSS',
+        'sql': 'SQL',
+        'aws': 'AWS',
+        'api': 'API',
+        'ui': 'UI',
+        'ux': 'UX',
+        'powerbi': 'PowerBI',
+        'github': 'GitHub'
+    }
+    
+    corrected_lower = corrected.lower()
+    for tech, proper_case in tech_corrections.items():
+        if tech in corrected_lower:
+            corrected = corrected.replace(tech, proper_case)
+            corrected = corrected.replace(tech.upper(), proper_case)
+    
+    # Remove trailing punctuation from skills
+    corrected = corrected.rstrip('.,;:')
+    
+    return corrected
 
 
 

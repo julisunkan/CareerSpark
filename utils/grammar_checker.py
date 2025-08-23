@@ -57,8 +57,21 @@ def check_grammar(text: str) -> Dict[str, Any]:
             
             # Generate suggestions for common issues
             if match.replacements:
-                suggestion = f"Consider changing '{match.context[match.contextOffset:match.contextOffset + match.errorLength]}' to '{match.replacements[0]}'"
-                suggestions.append(suggestion)
+                # Use correct attributes for LanguageTool match object
+                try:
+                    context_offset = getattr(match, 'contextOffset', getattr(match, 'context_offset', 0))
+                    error_length = getattr(match, 'errorLength', getattr(match, 'error_length', len(match.replacements[0]) if match.replacements else 1))
+                    
+                    if hasattr(match, 'context') and match.context:
+                        original_text = match.context[context_offset:context_offset + error_length] if context_offset + error_length <= len(match.context) else match.context[context_offset:]
+                        suggestion = f"Consider changing '{original_text}' to '{match.replacements[0]}'"
+                    else:
+                        suggestion = f"Consider using '{match.replacements[0]}' instead"
+                    suggestions.append(suggestion)
+                except Exception:
+                    # Fallback suggestion
+                    suggestion = f"Consider using '{match.replacements[0]}' for better grammar"
+                    suggestions.append(suggestion)
         
         # Calculate grammar score
         word_count = len(text.split())
