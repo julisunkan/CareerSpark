@@ -19,6 +19,11 @@ def allowed_file(filename):
 def index():
     return render_template('index.html')
 
+
+@app.route("/health")
+def health():
+    return {"status": "ok"}, 200
+    
 @app.route('/offline')
 def offline():
     """Offline page for PWA"""
